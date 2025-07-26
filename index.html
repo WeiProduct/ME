@@ -360,14 +360,27 @@
     <!-- Chat Widget -->
     <div id="chatWidget" class="chat-widget">
         <div class="chat-header">
-            <h4>Chat with Wei's AI Assistant</h4>
-            <button class="chat-minimize" id="chatMinimize">
-                <i class="fas fa-minus"></i>
-            </button>
+            <div class="chat-header-left">
+                <div>
+                    <h4>Wei Fu - AI Digital Persona</h4>
+                    <div class="chat-header-subtitle">INTJ | CS & Economics | UMass Amherst</div>
+                </div>
+            </div>
+            <div class="chat-header-controls">
+                <button class="voice-toggle" id="voiceToggle" title="Toggle voice">
+                    <i class="fas fa-volume-up"></i> Voice
+                </button>
+                <button class="fullscreen-toggle" id="fullscreenToggle" title="Toggle fullscreen">
+                    <i class="fas fa-expand"></i>
+                </button>
+                <button class="chat-minimize" id="chatMinimize">
+                    <i class="fas fa-minus"></i>
+                </button>
+            </div>
         </div>
         <div class="chat-messages" id="chatMessages"></div>
         <form class="chat-input-form" id="chatForm">
-            <input type="text" class="chat-input" id="chatInput" placeholder="Ask me anything about Wei..." required>
+            <input type="text" class="chat-input" id="chatInput" placeholder="Ask about my projects, investments, or technical expertise..." required>
             <button type="submit" class="chat-send">
                 <i class="fas fa-paper-plane"></i>
             </button>
