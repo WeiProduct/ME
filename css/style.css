@@ -1,7 +1,7 @@
 :root {
     --primary-color: #2563eb;
     --secondary-color: #64748b;
-    --text-color: #1e293b;
+    --text-color: #000000;
     --bg-color: #ffffff;
     --section-bg: #f8fafc;
     --border-color: #e2e8f0;
@@ -90,7 +90,7 @@ body {
     display: flex;
     align-items: center;
     background: white;
-    color: #1e293b;
+    color: #000000;
 }
 
 
@@ -186,7 +186,7 @@ body {
 }
 
 .social-links a {
-    color: #1e293b;
+    color: #000000;
     font-size: 1.5rem;
     transition: transform 0.3s ease;
 }
