@@ -3,7 +3,7 @@
     --secondary-color: #64748b;
     --text-color: #000000;
     --bg-color: #ffffff;
-    --section-bg: #f8fafc;
+    --section-bg: #ffffff;
     --border-color: #e2e8f0;
     --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
@@ -19,7 +19,8 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: var(--bg-color);
+    background-color: #ffffff;
+    background: #ffffff;
 }
 
 .container {

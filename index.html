@@ -9,16 +9,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Critical inline CSS for immediate hero visibility -->
     <style>
-        /* Critical CSS to ensure hero text is always visible */
+        /* Critical CSS to ensure pure white background */
+        html, body {
+            background-color: #ffffff !important;
+            background: #ffffff !important;
+        }
+        
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background-color: white !important;
-            background: white !important;
-            color: black !important;
+            background-color: #ffffff !important;
+            background: #ffffff !important;
+            color: #000000 !important;
             position: relative;
-            /* Add dark overlay for text contrast */
             isolation: isolate;
         }
         
@@ -33,7 +37,7 @@
         .hero-title,
         .hero-subtitle,
         .hero-description {
-            color: black !important;
+            color: #000000 !important;
         }
         
         .hero-buttons .btn {
@@ -41,7 +45,7 @@
         }
         
         .social-links a {
-            color: black !important;
+            color: #000000 !important;
         }
     </style>
     <noscript>
