@@ -4,7 +4,7 @@
     --text-color: #000000;
     --bg-color: #ffffff;
     --section-bg: #ffffff;
-    --border-color: #e2e8f0;
+    --border-color: #ffffff;
     --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
 }
@@ -15,12 +15,18 @@
     box-sizing: border-box;
 }
 
+html {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: #ffffff;
-    background: #ffffff;
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    min-height: 100vh;
 }
 
 .container {
@@ -31,7 +37,8 @@ body {
 
 /* Navigation */
 .navbar {
-    background: var(--bg-color);
+    background-color: #ffffff !important;
+    background: #ffffff !important;
     box-shadow: var(--shadow);
     position: sticky;
     top: 0;
@@ -90,7 +97,8 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: white;
+    background-color: #ffffff !important;
+    background: #ffffff !important;
     color: #000000;
 }
 
@@ -113,8 +121,8 @@ body {
     opacity: 1;
     animation: fadeInUp 0.8s ease;
     animation-fill-mode: backwards;
-    color: white !important;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    color: #000000 !important;
+    text-shadow: none;
 }
 
 .hero-subtitle {
@@ -123,8 +131,8 @@ body {
     opacity: 1;
     animation: fadeInUp 0.8s ease 0.2s;
     animation-fill-mode: backwards;
-    color: white !important;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    color: #000000 !important;
+    text-shadow: none;
 }
 
 .hero-description {
@@ -133,8 +141,8 @@ body {
     opacity: 1;
     animation: fadeInUp 0.8s ease 0.4s;
     animation-fill-mode: backwards;
-    color: white !important;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    color: #000000 !important;
+    text-shadow: none;
 }
 
 .hero-buttons {
@@ -157,8 +165,8 @@ body {
 }
 
 .btn-primary {
-    background: white;
-    color: var(--primary-color);
+    background: var(--primary-color);
+    color: #ffffff;
 }
 
 .btn-primary:hover {
@@ -168,13 +176,13 @@ body {
 
 .btn-secondary {
     background: transparent;
-    color: white;
-    border: 2px solid white;
+    color: #000000;
+    border: 2px solid #000000;
 }
 
 .btn-secondary:hover {
-    background: white;
-    color: var(--primary-color);
+    background: #000000;
+    color: #ffffff;
 }
 
 .social-links {
@@ -207,13 +215,21 @@ body {
 
 section {
     padding: 80px 0;
+    background-color: #ffffff !important;
+    background: #ffffff !important;
 }
 
 section:nth-child(even) {
-    background: var(--section-bg);
+    background-color: #ffffff !important;
+    background: #ffffff !important;
 }
 
 /* About Section */
+.about {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+}
+
 .about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -235,9 +251,10 @@ section:nth-child(even) {
 .education-item {
     margin-bottom: 2rem;
     padding: 1.5rem;
-    background: white;
+    background: #ffffff;
     border-radius: 8px;
     box-shadow: var(--shadow);
+    border: 1px solid #f0f0f0;
 }
 
 .education-item h4 {
@@ -246,6 +263,11 @@ section:nth-child(even) {
 }
 
 /* Projects Section */
+.projects {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -253,11 +275,12 @@ section:nth-child(even) {
 }
 
 .project-card {
-    background: white;
+    background: #ffffff;
     border-radius: 8px;
     padding: 2rem;
     box-shadow: var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f0f0f0;
 }
 
 .project-card:hover {
@@ -287,6 +310,11 @@ section:nth-child(even) {
 }
 
 /* Apps Section */
+.apps {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+}
+
 .apps-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -294,12 +322,13 @@ section:nth-child(even) {
 }
 
 .app-card {
-    background: white;
+    background: #ffffff;
     border-radius: 16px;
     padding: 1.5rem;
     text-align: center;
     box-shadow: var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f0f0f0;
 }
 
 .app-card:hover {
@@ -326,6 +355,11 @@ section:nth-child(even) {
 }
 
 /* Skills Section */
+.skills {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+}
+
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -333,10 +367,11 @@ section:nth-child(even) {
 }
 
 .skill-category {
-    background: white;
+    background: #ffffff;
     padding: 2rem;
     border-radius: 8px;
     box-shadow: var(--shadow);
+    border: 1px solid #f0f0f0;
 }
 
 .skill-category h3 {
@@ -365,6 +400,11 @@ section:nth-child(even) {
 }
 
 /* Contact Section */
+.contact {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+}
+
 .contact-content {
     max-width: 600px;
     margin: 0 auto;
@@ -374,7 +414,7 @@ section:nth-child(even) {
 .contact-intro {
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    color: var(--secondary-color);
+    color: #333333;
 }
 
 .contact-methods {
@@ -443,7 +483,7 @@ section:nth-child(even) {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background-color: white;
+        background-color: #ffffff;
         width: 100%;
         text-align: center;
         transition: 0.3s;

@@ -82,7 +82,7 @@ style.textContent = `
         display: inline-block;
         padding: 0.25rem 0.75rem;
         background: var(--primary-color);
-        color: white;
+        color: #ffffff;
         border-radius: 20px;
         font-size: 0.875rem;
         margin-bottom: 1rem;
