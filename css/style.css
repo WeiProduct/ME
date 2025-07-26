@@ -127,12 +127,18 @@ body {
 
 .hero-subtitle {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     opacity: 1;
     animation: fadeInUp 0.8s ease 0.2s;
     animation-fill-mode: backwards;
     color: #000000 !important;
     text-shadow: none;
+}
+
+.hero-subtitle:last-of-type {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: #666666 !important;
 }
 
 .hero-description {
@@ -425,13 +431,14 @@ section:nth-child(even) {
 
 .contact-method {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 0.5rem;
     color: var(--text-color);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
+    white-space: nowrap;
 }
 
 .contact-method i {
