@@ -272,6 +272,77 @@ section:nth-child(even) {
     color: var(--text-color);
 }
 
+/* Coursework Section */
+.coursework {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    padding: 5rem 0;
+}
+
+.coursework-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.coursework-intro p {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.coursework-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.coursework-category {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    border: 1px solid #f0f0f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.coursework-category:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.coursework-category h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.coursework-category h3 i {
+    font-size: 1.2rem;
+}
+
+.course-list {
+    list-style: none;
+}
+
+.course-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.course-list li:last-child {
+    border-bottom: none;
+}
+
+.course-list strong {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
 /* Projects Section */
 .projects {
     background-color: #ffffff !important;
