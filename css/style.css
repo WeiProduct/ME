@@ -89,11 +89,8 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background-color: #667eea;
-    background: -webkit-linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    background: -moz-linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: white;
+    color: #1e293b;
 }
 
 
@@ -189,7 +186,7 @@ body {
 }
 
 .social-links a {
-    color: white;
+    color: #1e293b;
     font-size: 1.5rem;
     transition: transform 0.3s ease;
 }
