@@ -66,9 +66,12 @@ voiceToggleBtn.addEventListener('click', () => {
     const icon = voiceToggleBtn.querySelector('i');
     if (voiceEnabled) {
         icon.className = 'fas fa-volume-up';
-        // Announce voice enabled
+        // Announce voice enabled with a professional greeting
         if (window.speechSynthesis) {
-            speakMessage("Voice enabled. I'll speak my responses.");
+            // Wait a moment for voice to be ready
+            setTimeout(() => {
+                speakMessage("Voice enabled. Ready to discuss my technical and business expertise.");
+            }, 100);
         }
     } else {
         icon.className = 'fas fa-volume-mute';
@@ -130,16 +133,88 @@ function addMessage(sender, text) {
 let voiceEnabled = false;
 let selectedVoice = null;
 
-// Initialize voices
+// Voice preference scoring system for magnetic male voices
+const voicePreferences = {
+    // Premium voices with deeper, more professional sound
+    preferred: [
+        'Google UK English Male',
+        'Microsoft David - English (United States)',
+        'Microsoft Mark - English (United States)',
+        'Daniel',
+        'Alex',
+        'Fred',
+        'Bruce',
+        'Junior',
+        'Ralph'
+    ],
+    // Keywords that indicate deeper male voices
+    deepVoiceKeywords: ['david', 'mark', 'daniel', 'alex', 'fred', 'bruce', 'ralph', 'male', 'man'],
+    // Keywords to avoid
+    avoidKeywords: ['female', 'woman', 'girl', 'child', 'kid', 'samantha', 'victoria', 'karen']
+};
+
+// Initialize voices with sophisticated selection
 function initVoices() {
     const voices = window.speechSynthesis.getVoices();
-    // Prefer a professional male voice
-    selectedVoice = voices.find(voice => 
-        voice.lang.startsWith('en') && voice.name.toLowerCase().includes('male')
-    ) || voices.find(voice => voice.lang.startsWith('en')) || voices[0];
+    
+    if (voices.length === 0) {
+        // Try again if voices aren't loaded yet
+        setTimeout(initVoices, 100);
+        return;
+    }
+    
+    // Score each voice based on preferences
+    const scoredVoices = voices
+        .filter(voice => voice.lang.startsWith('en'))
+        .map(voice => {
+            let score = 0;
+            const nameLower = voice.name.toLowerCase();
+            
+            // Check if it's a preferred voice
+            if (voicePreferences.preferred.some(pref => nameLower.includes(pref.toLowerCase()))) {
+                score += 100;
+            }
+            
+            // Check for deep voice keywords
+            voicePreferences.deepVoiceKeywords.forEach(keyword => {
+                if (nameLower.includes(keyword)) {
+                    score += 50;
+                }
+            });
+            
+            // Penalize avoided keywords
+            voicePreferences.avoidKeywords.forEach(keyword => {
+                if (nameLower.includes(keyword)) {
+                    score -= 100;
+                }
+            });
+            
+            // Prefer US or UK English for clarity
+            if (voice.lang === 'en-US' || voice.lang === 'en-GB') {
+                score += 25;
+            }
+            
+            // Bonus for Google voices (usually higher quality)
+            if (nameLower.includes('google')) {
+                score += 30;
+            }
+            
+            // Bonus for Microsoft voices (professional sound)
+            if (nameLower.includes('microsoft')) {
+                score += 20;
+            }
+            
+            return { voice, score };
+        })
+        .sort((a, b) => b.score - a.score);
+    
+    // Select the highest scoring voice
+    selectedVoice = scoredVoices[0]?.voice || voices[0];
+    
+    console.log('Selected voice:', selectedVoice.name, 'Score:', scoredVoices[0]?.score);
 }
 
-// Speak message using Web Speech API
+// Speak message using Web Speech API with optimized parameters
 function speakMessage(text) {
     if (!window.speechSynthesis || !selectedVoice) return;
     
@@ -148,9 +223,23 @@ function speakMessage(text) {
     
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.voice = selectedVoice;
-    utterance.rate = 1.0;
-    utterance.pitch = 0.9;
-    utterance.volume = 0.8;
+    
+    // Magnetic voice parameters
+    utterance.rate = 0.9;  // Slightly slower for gravitas
+    utterance.pitch = 0.8; // Lower pitch for deeper sound
+    utterance.volume = 0.85; // Confident volume
+    
+    // Add slight pauses for better articulation
+    const processedText = text
+        .replace(/\. /g, '. ')  // Add slight pause after sentences
+        .replace(/, /g, ', ');  // Add slight pause after commas
+    
+    utterance.text = processedText;
+    
+    // Error handling
+    utterance.onerror = (event) => {
+        console.error('Speech synthesis error:', event.error);
+    };
     
     window.speechSynthesis.speak(utterance);
 }
@@ -160,6 +249,38 @@ if (window.speechSynthesis) {
     window.speechSynthesis.onvoiceschanged = initVoices;
     initVoices();
 }
+
+// Debug function to list all available voices (can be called from console)
+window.listAvailableVoices = function() {
+    const voices = window.speechSynthesis.getVoices();
+    console.log('Available voices:');
+    voices.forEach((voice, index) => {
+        console.log(`${index}: ${voice.name} (${voice.lang})`);
+    });
+    return voices;
+};
+
+// Function to manually select a voice by index (for testing)
+window.selectVoiceByIndex = function(index) {
+    const voices = window.speechSynthesis.getVoices();
+    if (index >= 0 && index < voices.length) {
+        selectedVoice = voices[index];
+        console.log('Voice changed to:', selectedVoice.name);
+        return true;
+    }
+    return false;
+};
+
+// Test the current voice with a sample message
+window.testVoice = function(message = "Hello, I'm Wei Fu. Let me tell you about my experience in combining computer science with economics to create innovative solutions.") {
+    if (!voiceEnabled) {
+        voiceEnabled = true;
+        voiceToggleBtn.classList.add('active');
+        const icon = voiceToggleBtn.querySelector('i');
+        icon.className = 'fas fa-volume-up';
+    }
+    speakMessage(message);
+};
 
 // API configuration - Using secure proxy
 const API_ENDPOINT = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
