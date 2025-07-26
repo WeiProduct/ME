@@ -14,31 +14,14 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            /* Fallback solid color */
-            background-color: #667eea;
-            /* SVG pattern fallback for older browsers */
-            background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='100%25' y1='0' y2='100%25'%3E%3Cstop offset='0' style='stop-color:%23667eea;stop-opacity:1' /%3E%3Cstop offset='1' style='stop-color:%23764ba2;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23a)' /%3E%3C/svg%3E");
-            /* Multiple gradient fallbacks */
-            background: #667eea;
-            background: -webkit-gradient(linear, left top, right bottom, from(#667eea), to(#764ba2));
-            background: -webkit-linear-gradient(top left, #667eea 0%, #764ba2 100%);
-            background: -moz-linear-gradient(top left, #667eea 0%, #764ba2 100%);
-            background: -o-linear-gradient(top left, #667eea 0%, #764ba2 100%);
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background-color: white;
+            background: white;
+            color: #1e293b;
             position: relative;
             /* Add dark overlay for text contrast */
             isolation: isolate;
         }
         
-        /* Dark overlay for guaranteed text contrast */
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.2);
-            z-index: 0;
-        }
         
         .hero-content {
             position: relative;
@@ -50,8 +33,7 @@
         .hero-title,
         .hero-subtitle,
         .hero-description {
-            color: white !important;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            color: #1e293b !important;
         }
         
         .hero-buttons .btn {
@@ -59,8 +41,7 @@
         }
         
         .social-links a {
-            color: white !important;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            color: #1e293b !important;
         }
     </style>
     <noscript>
@@ -315,9 +296,13 @@
                     Whether you have a project in mind or just want to connect, feel free to reach out!
                 </p>
                 <div class="contact-methods">
-                    <a href="mailto:weifu@example.com" class="contact-method">
+                    <a href="tel:+14134727021" class="contact-method">
+                        <i class="fas fa-phone"></i>
+                        <span>(413) 472-7021</span>
+                    </a>
+                    <a href="mailto:1597498880weiproduct@gmail.com" class="contact-method">
                         <i class="fas fa-envelope"></i>
-                        <span>Email Me</span>
+                        <span>1597498880weiproduct@gmail.com</span>
                     </a>
                     <a href="https://github.com/WeiProduct" target="_blank" class="contact-method">
                         <i class="fab fa-github"></i>
