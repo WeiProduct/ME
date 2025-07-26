@@ -181,14 +181,18 @@ body {
 }
 
 .btn-secondary {
-    background: #ffffff;
-    color: #000000;
-    border: 2px solid #000000;
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline-block !important;
 }
 
 .btn-secondary:hover {
-    background: #000000;
-    color: #ffffff;
+    background: #000000 !important;
+    color: #ffffff !important;
+    border: 2px solid #000000 !important;
 }
 
 .social-links {
@@ -427,10 +431,11 @@ section:nth-child(even) {
     display: flex;
     gap: 2rem;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .contact-method {
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     align-items: center;
     gap: 0.5rem;
@@ -525,6 +530,12 @@ section:nth-child(even) {
 
     .contact-methods {
         flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-method {
+        justify-content: center;
+        min-width: 250px;
     }
 
     .skills-grid {
