@@ -38,7 +38,7 @@ Results-driven Computer Science and Economics professional with demonstrated exp
 **Independent iOS Developer & AI Integration Specialist** | Boston, MA  
 *2023 - Present*
 
-- Architected and deployed 19 AI-powered iOS applications to the App Store, including productivity tools for calendar management, habit tracking, and task automation
+- Architected and deployed 13 AI-powered iOS applications to the App Store, including productivity tools for calendar management, habit tracking, and task automation
 - Integrated cutting-edge AI APIs (OpenAI, Whisper, Claude) to create intelligent user experiences, resulting in enhanced app functionality and user engagement
 - Implemented efficient development workflows using parallel project management, reducing time-to-market by 40%
 - Maintained 12-hour focused work sessions to maximize productivity and deliver high-quality applications on schedule
@@ -55,17 +55,20 @@ Results-driven Computer Science and Economics professional with demonstrated exp
 
 ## KEY PROJECTS
 
-**AI-Powered iOS Application Suite (19 Apps Published)**
-- **AI日历 (AI Calendar):** Intelligent scheduling with natural language processing
-- **AIMBTi:** AI-powered MBTI personality analysis and matching
-- **AI建管系统2:** Construction site management with real-time monitoring
-- **WeathersPro:** Advanced weather app with AI predictions
-- **AI录音笔记:** Voice recording with AI transcription and summarization
-- **AI卡路里:** Calorie tracking with AI nutritional analysis
-- **智能补光师:** Smart lighting assistant for photography
-- **WeiRabits:** Habit tracking with behavioral analytics
-- **AI番茄闹钟:** Pomodoro timer with productivity insights
-- **Additional Apps:** AI平台, AI背单词, AITouchGrass, TouchNature, AI的合助手, 记账2, PiggyFinance, AI上班打卡系统, AI实想
+**AI-Powered iOS Application Suite (13 Apps Published)**
+- **Piggy Accounting:** Personal finance management with expense tracking
+- **AI Calendar:** Intelligent scheduling with natural language processing
+- **Habits (WeiRabits):** Habit tracking with behavioral analytics
+- **AI Weather (WeathersPro):** Advanced weather app with AI predictions
+- **AI Pomodoro Timer:** Productivity timer with focus insights
+- **AI Vocabulary:** Language learning with spaced repetition
+- **Food Calories:** AI-powered calorie tracking and nutritional analysis
+- **Dating Chat:** AI-assisted dating conversation helper
+- **Grok iOS: AI Platform:** Comprehensive AI assistant platform
+- **AI Smart Light:** Intelligent lighting control for photography
+- **Meditation:** Mindfulness and meditation guidance
+- **Dailymatters:** Daily task and event management
+- **AI Daily Matters:** Enhanced daily planning with AI insights
 
 **Personal Portfolio Website with AI Digital Persona**
 - Developed interactive portfolio at weiproduct.github.io/ME featuring an AI-powered digital assistant
@@ -82,7 +85,7 @@ Results-driven Computer Science and Economics professional with demonstrated exp
 - Self-funded education and investments through strategic financial planning
 - Generated 200%+ returns ($100K+ gains) through technology equity investments
 - Building foundation for international short-video production studio targeting Chinese market
-- Developed and maintained 19 iOS applications with AI integration
+- Developed and maintained 13 iOS applications with AI integration
 
 ---
 
