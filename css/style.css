@@ -429,10 +429,13 @@ section:nth-child(even) {
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
     color: var(--text-color);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 100%;
+    min-height: 3.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.5;
+    word-wrap: break-word;
+    text-align: center;
 }
 
 .app-card p {
