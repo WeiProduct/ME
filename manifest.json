@@ -1,0 +1,21 @@
+{
+  "name": "Wei Fu — Portfolio",
+  "short_name": "Wei Fu",
+  "start_url": "/ME/",
+  "scope": "/ME/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "assets/icons/ai-voice-notes.png",
+      "sizes": "80x80",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/ai-voice-notes@2x.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
