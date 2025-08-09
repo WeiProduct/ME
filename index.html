@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Wei Fu — CS & Managerial Economics graduate. 19 iOS apps, ML/AI, and product-minded engineering.">
+    <link rel="preconnect" href="https://api.github.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <meta property="og:title" content="Wei Fu — Portfolio">
+    <meta property="og:description" content="CS & Managerial Economics • 19 iOS apps • ML/AI">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://weiproduct.github.io/ME/">
+    <meta property="og:image" content="assets/icons/ai-voice-notes.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Wei Fu — Portfolio">
+    <meta name="twitter:description" content="CS & Managerial Economics • 19 iOS apps • ML/AI">
+
     <title>Wei Fu - Computer Science & Managerial Economics</title>
     <link rel="preload" href="css/style.css" as="style">
     <link rel="stylesheet" href="css/style.css">
@@ -96,7 +108,7 @@
             <div class="nav-brand">
                 <a href="#home">Wei Fu</a>
             </div>
-            <button class="nav-toggle" id="navToggle">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navMenu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -563,11 +575,11 @@
     </div>
     
     <!-- Chat Toggle Button -->
-    <button class="chat-toggle" id="chatToggle">
+    <button class="chat-toggle" id="chatToggle" aria-label="Open chat">
         <i class="fas fa-comments"></i>
     </button>
 
-    <script src="js/main.js"></script>
-    <script src="js/chat.js"></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/chat.js" defer></script>
 </body>
 </html>

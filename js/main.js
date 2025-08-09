@@ -4,6 +4,8 @@ const navMenu = document.getElementById('navMenu');
 
 navToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
+    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', String(!expanded));
 });
 
 // Close mobile menu when clicking on a link
@@ -14,6 +16,13 @@ document.querySelectorAll('.nav-link').forEach(link => {
 });
 
 // Smooth scrolling for navigation links
+// Secure external links opened in new tab
+Array.from(document.querySelectorAll('a[target="_blank"]')).forEach(a => {
+    if (!a.rel) a.rel = 'noopener noreferrer';
+    else if (!a.rel.includes('noopener')) a.rel += ' noopener';
+    else if (!a.rel.includes('noreferrer')) a.rel += ' noreferrer';
+});
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -48,6 +57,15 @@ async function fetchGitHubProjects() {
     }
 }
 
+function escapeHTML(str) {
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
 function displayProjects(repos) {
     const projectsContainer = document.getElementById('github-projects');
     if (!projectsContainer) { return; }
@@ -56,11 +74,12 @@ function displayProjects(repos) {
         const projectCard = document.createElement('div');
         projectCard.className = 'project-card';
         
-        const languages = repo.language ? `<span class="project-language">${repo.language}</span>` : '';
-        const description = repo.description || 'No description available';
+        const lang = repo.language ? escapeHTML(repo.language) : null;
+        const languages = lang ? `<span class="project-language">${lang}</span>` : '';
+        const description = escapeHTML(repo.description || 'No description available');
         
         projectCard.innerHTML = `
-            <h3>${repo.name}</h3>
+            <h3>${escapeHTML(repo.name)}</h3>
             <p>${description}</p>
             ${languages}
             <div class="project-links">
