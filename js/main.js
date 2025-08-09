@@ -31,6 +31,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 async function fetchGitHubProjects() {
     const username = 'WeiProduct';
     const projectsContainer = document.getElementById('github-projects');
+    if (!projectsContainer) { return; }
     
     try {
         const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=12`);
@@ -49,6 +50,7 @@ async function fetchGitHubProjects() {
 
 function displayProjects(repos) {
     const projectsContainer = document.getElementById('github-projects');
+    if (!projectsContainer) { return; }
     
     repos.forEach(repo => {
         const projectCard = document.createElement('div');
