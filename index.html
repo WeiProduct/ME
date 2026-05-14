@@ -37,12 +37,9 @@
     />
     <meta name="twitter:image" content="https://weiproduct.github.io/ME/assets/og.png" />
 
-    <link rel="icon" href="assets/icons/ai-voice-notes.png" sizes="80x80" type="image/png" />
-    <link
-      rel="apple-touch-icon"
-      href="assets/icons/ai-voice-notes@2x.png"
-      sizes="160x160"
-    />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/icon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/icon-180.png" sizes="180x180" />
     <link rel="manifest" href="manifest.json" />
 
     <link rel="preload" href="css/style.css" as="style" />
@@ -52,30 +49,52 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Wei Fu",
-        "url": "https://weiproduct.github.io/ME/",
-        "image": "https://weiproduct.github.io/ME/assets/og.png",
-        "jobTitle": "Founder",
-        "worksFor": {
-          "@type": "Organization",
-          "name": "WeiProduct",
-          "url": "https://weiproduct.com"
-        },
-        "alumniOf": {
-          "@type": "CollegeOrUniversity",
-          "name": "University of Massachusetts Amherst"
-        },
-        "sameAs": [
-          "https://github.com/WeiProduct",
-          "https://www.linkedin.com/in/wei-fu-004724256/",
-          "https://weiproduct.com"
-        ],
-        "knowsAbout": [
-          "iOS development",
-          "Consumer AI",
-          "Product design",
-          "Machine learning"
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://weiproduct.github.io/ME/#wei",
+            "name": "Wei Fu",
+            "url": "https://weiproduct.github.io/ME/",
+            "image": "https://weiproduct.github.io/ME/assets/og.png",
+            "jobTitle": "Founder",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "WeiProduct",
+              "url": "https://weiproduct.com"
+            },
+            "alumniOf": {
+              "@type": "CollegeOrUniversity",
+              "name": "University of Massachusetts Amherst"
+            },
+            "sameAs": [
+              "https://github.com/WeiProduct",
+              "https://www.linkedin.com/in/wei-fu-004724256/",
+              "https://weiproduct.com"
+            ],
+            "knowsAbout": [
+              "iOS development",
+              "Consumer AI",
+              "Product design",
+              "Machine learning"
+            ]
+          },
+          {
+            "@type": "ItemList",
+            "itemListElement": [
+              {"@type": "ListItem", "position": 1, "item": {"@type": "SoftwareApplication", "name": "Piggy Accounting", "applicationCategory": "FinanceApplication", "operatingSystem": "iOS", "author": {"@id": "https://weiproduct.github.io/ME/#wei"}, "url": "https://apps.apple.com/us/app/id6748370595"}},
+              {"@type": "ListItem", "position": 2, "item": {"@type": "SoftwareApplication", "name": "AI Calendar", "applicationCategory": "ProductivityApplication", "operatingSystem": "iOS", "author": {"@id": "https://weiproduct.github.io/ME/#wei"}, "url": "https://apps.apple.com/us/app/id6748324487"}},
+              {"@type": "ListItem", "position": 3, "item": {"@type": "SoftwareApplication", "name": "AI Voice Notes", "applicationCategory": "ProductivityApplication", "operatingSystem": "iOS", "author": {"@id": "https://weiproduct.github.io/ME/#wei"}, "url": "https://apps.apple.com/us/app/id6748947046"}},
+              {"@type": "ListItem", "position": 4, "item": {"@type": "SoftwareApplication", "name": "Habits", "applicationCategory": "LifestyleApplication", "operatingSystem": "iOS", "author": {"@id": "https://weiproduct.github.io/ME/#wei"}, "url": "https://apps.apple.com/us/app/id6748370992"}},
+              {"@type": "ListItem", "position": 5, "item": {"@type": "SoftwareApplication", "name": "AI Weather", "applicationCategory": "WeatherApplication", "operatingSystem": "iOS", "author": {"@id": "https://weiproduct.github.io/ME/#wei"}, "url": "https://apps.apple.com/us/app/id6748373741"}},
+              {"@type": "ListItem", "position": 6, "item": {"@type": "SoftwareApplication", "name": "AI Pomodoro", "applicationCategory": "ProductivityApplication", "operatingSystem": "iOS", "author": {"@id": "https://weiproduct.github.io/ME/#wei"}, "url": "https://apps.apple.com/us/app/id6748548518"}},
+              {"@type": "ListItem", "position": 7, "item": {"@type": "SoftwareApplication", "name": "AI Vocabulary", "applicationCategory": "EducationApplication", "operatingSystem": "iOS", "author": {"@id": "https://weiproduct.github.io/ME/#wei"}, "url": "https://apps.apple.com/us/app/id6748568205"}},
+              {"@type": "ListItem", "position": 8, "item": {"@type": "SoftwareApplication", "name": "Food Calories", "applicationCategory": "HealthApplication", "operatingSystem": "iOS", "author": {"@id": "https://weiproduct.github.io/ME/#wei"}, "url": "https://apps.apple.com/us/app/id6748717022"}},
+              {"@type": "ListItem", "position": 9, "item": {"@type": "SoftwareApplication", "name": "Meditation", "applicationCategory": "HealthApplication", "operatingSystem": "iOS", "author": {"@id": "https://weiproduct.github.io/ME/#wei"}, "url": "https://apps.apple.com/us/app/id6749164175"}},
+              {"@type": "ListItem", "position": 10, "item": {"@type": "SoftwareApplication", "name": "AI Platform", "applicationCategory": "UtilitiesApplication", "operatingSystem": "iOS", "author": {"@id": "https://weiproduct.github.io/ME/#wei"}, "url": "https://apps.apple.com/us/app/id6748650326"}},
+              {"@type": "ListItem", "position": 11, "item": {"@type": "SoftwareApplication", "name": "AIMBTI", "applicationCategory": "LifestyleApplication", "operatingSystem": "iOS", "author": {"@id": "https://weiproduct.github.io/ME/#wei"}, "url": "https://apps.apple.com/us/app/id6749165632"}},
+              {"@type": "ListItem", "position": 12, "item": {"@type": "SoftwareApplication", "name": "Dailymatters", "applicationCategory": "ProductivityApplication", "operatingSystem": "iOS", "author": {"@id": "https://weiproduct.github.io/ME/#wei"}, "url": "https://apps.apple.com/us/app/id6749191628"}}
+            ]
+          }
         ]
       }
     </script>
@@ -181,7 +200,7 @@
                 decoding="async"
               />
               <h3 class="app-name">Piggy Accounting</h3>
-              <p class="app-tagline">Personal finance tracking, AI-assisted.</p>
+              <p class="app-tagline">Expense tracking with smart spending insights.</p>
               <div class="app-links">
                 <a
                   href="https://apps.apple.com/us/app/%E8%AE%B0%E8%B4%A62/id6748370595"
@@ -213,7 +232,7 @@
                 decoding="async"
               />
               <h3 class="app-name">AI Calendar</h3>
-              <p class="app-tagline">Schedule events in plain language.</p>
+              <p class="app-tagline">Auto-arranges your day by priority and deadline.</p>
               <div class="app-links">
                 <a
                   href="https://apps.apple.com/us/app/ai%E6%97%A5%E5%8E%86/id6748324487"
@@ -245,7 +264,7 @@
                 decoding="async"
               />
               <h3 class="app-name">AI Voice Notes</h3>
-              <p class="app-tagline">Voice memos with auto-transcription.</p>
+              <p class="app-tagline">Recordings turned into structured, searchable notes.</p>
               <div class="app-links">
                 <a
                   href="https://apps.apple.com/us/app/ai%E5%BD%95%E9%9F%B3%E7%AC%94%E8%AE%B0/id6748947046"
@@ -277,7 +296,7 @@
                 decoding="async"
               />
               <h3 class="app-name">Habits</h3>
-              <p class="app-tagline">Tracker for things that compound.</p>
+              <p class="app-tagline">Atomic Habits in your pocket — identity, loops, streaks.</p>
               <div class="app-links">
                 <a
                   href="https://apps.apple.com/us/app/weirabits/id6748370992"
@@ -309,7 +328,7 @@
                 decoding="async"
               />
               <h3 class="app-name">AI Weather</h3>
-              <p class="app-tagline">Forecasts with natural-language briefings.</p>
+              <p class="app-tagline">Forecasts with personalized clothing advice.</p>
               <div class="app-links">
                 <a
                   href="https://apps.apple.com/us/app/weatherspro/id6748373741"
@@ -341,7 +360,7 @@
                 decoding="async"
               />
               <h3 class="app-name">AI Pomodoro</h3>
-              <p class="app-tagline">Focus timer with session insights.</p>
+              <p class="app-tagline">Focus timer that adapts to your rhythm.</p>
               <div class="app-links">
                 <a
                   href="https://apps.apple.com/us/app/ai%E7%95%AA%E8%8C%84%E9%97%B9%E9%92%9F/id6748548518"
@@ -373,7 +392,7 @@
                 decoding="async"
               />
               <h3 class="app-name">AI Vocabulary</h3>
-              <p class="app-tagline">Language drills with spaced repetition.</p>
+              <p class="app-tagline">English study with AI-tuned spaced repetition.</p>
               <div class="app-links">
                 <a
                   href="https://apps.apple.com/us/app/ai%E8%83%8C%E5%8D%95%E8%AF%8D/id6748568205"
@@ -405,7 +424,7 @@
                 decoding="async"
               />
               <h3 class="app-name">Food Calories</h3>
-              <p class="app-tagline">Photo → calorie estimate.</p>
+              <p class="app-tagline">Snap a meal, get the calorie breakdown.</p>
               <div class="app-links">
                 <a
                   href="https://apps.apple.com/us/app/ai%E5%8D%A1%E8%B7%AF%E9%87%8C/id6748717022"
@@ -437,7 +456,7 @@
                 decoding="async"
               />
               <h3 class="app-name">Meditation</h3>
-              <p class="app-tagline">Guided sessions, generated daily.</p>
+              <p class="app-tagline">Guided sessions with an AI companion.</p>
               <div class="app-links">
                 <a
                   href="https://apps.apple.com/us/app/ai%E5%86%A5%E6%83%B3/id6749164175"
@@ -469,7 +488,7 @@
                 decoding="async"
               />
               <h3 class="app-name">AI Platform</h3>
-              <p class="app-tagline">Multi-model assistant in one app.</p>
+              <p class="app-tagline">GPT and Gemini, side-by-side in one app.</p>
               <div class="app-links">
                 <a
                   href="https://apps.apple.com/us/app/ai%E5%B9%B3%E5%8F%B0/id6748650326"
@@ -501,7 +520,7 @@
                 decoding="async"
               />
               <h3 class="app-name">AIMBTI</h3>
-              <p class="app-tagline">Personality assessment with AI follow-up.</p>
+              <p class="app-tagline">93-question MBTI with an AI advisor for follow-up.</p>
               <div class="app-links">
                 <a
                   href="https://apps.apple.com/us/app/aimbti/id6749165632"
@@ -533,7 +552,7 @@
                 decoding="async"
               />
               <h3 class="app-name">Dailymatters</h3>
-              <p class="app-tagline">Daily planning, kept simple.</p>
+              <p class="app-tagline">Daily planner that gives time-management advice.</p>
               <div class="app-links">
                 <a
                   href="https://apps.apple.com/us/app/dailymatters/id6749191628"

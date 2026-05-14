@@ -49,6 +49,22 @@ Wei_Fu_Resume.md    Resume (linked from the site)
 
 Edit `api/chat-proxy.js` if you move to a custom domain.
 
+## Optional: Lighthouse CI
+
+`docs/lighthouse-ci.yml.example` and `docs/lighthouse-config.json.example` are
+ready to drop into place. To enable:
+
+```bash
+gh auth refresh -s workflow      # one-time, grants the workflow scope
+mkdir -p .github/workflows
+mv docs/lighthouse-ci.yml.example     .github/workflows/lighthouse.yml
+mv docs/lighthouse-config.json.example .github/lighthouse-config.json
+git add .github && git commit -m "ci: add lighthouse" && git push
+```
+
+Runs on every PR against `main`; fails the build if performance, accessibility,
+or SEO drops below the thresholds in the config.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
