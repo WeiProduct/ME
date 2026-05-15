@@ -244,20 +244,33 @@ section + section {
 .hero-specs {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--s-2) var(--s-6);
+  align-items: center;
+  gap: var(--s-2) var(--s-4);
   font-size: var(--t-xs);
   color: var(--fg-subtle);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: var(--s-8);
+  padding: 0;
 }
 .hero-specs li {
   list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-1);
+}
+.hero-specs li + li::before {
+  content: '';
+  width: 3px;
+  height: 3px;
+  background: var(--fg-subtle);
+  border-radius: 50%;
+  margin-right: var(--s-3);
+  display: inline-block;
 }
 .hero-specs strong {
   color: var(--fg);
   font-weight: 600;
-  margin-right: var(--s-1);
   font-feature-settings: 'tnum';
 }
 .hero-actions {
@@ -425,16 +438,31 @@ section + section {
   border-bottom-color: var(--fg);
 }
 .apps-more {
-  margin-top: var(--s-8);
-  text-align: center;
+  margin-top: var(--s-12);
+  padding-top: var(--s-6);
+  border-top: 1px solid var(--rule);
   font-size: var(--t-sm);
   color: var(--fg-muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--s-4);
+}
+.apps-more strong {
+  color: var(--fg);
+  font-weight: 500;
 }
 .apps-more a {
   color: var(--fg);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
+  text-decoration: none;
+  border-bottom: 1px solid var(--fg);
+  padding-bottom: 1px;
+}
+.apps-more a:hover,
+.apps-more a:focus-visible {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
 }
 
 /* Notes (writing) */
