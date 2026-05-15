@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+    />
+
+    <title>消费级 AI 不是聊天框 — 付玮</title>
+    <meta
+      name="description"
+      content="做了两年、上架 17 款应用后,关于消费级 AI 该长在哪里的一个论点。"
+    />
+    <meta name="author" content="Wei Fu" />
+
+    <link rel="canonical" href="https://weiproduct.github.io/ME/zh/essays/consumer-ai-utility-layer.html" />
+    <link rel="alternate" hreflang="en" href="https://weiproduct.github.io/ME/essays/consumer-ai-utility-layer.html" />
+    <link rel="alternate" hreflang="zh-CN" href="https://weiproduct.github.io/ME/zh/essays/consumer-ai-utility-layer.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="消费级 AI 不是聊天框" />
+    <meta
+      property="og:description"
+      content="关于消费级 AI 该长在哪里的一个论点——目的地层关闭了,实用层才是接下来十年。"
+    />
+    <meta property="og:url" content="https://weiproduct.github.io/ME/zh/essays/consumer-ai-utility-layer.html" />
+    <meta property="og:image" content="https://weiproduct.github.io/ME/assets/og.png" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="article:author" content="Wei Fu" />
+    <meta property="article:published_time" content="2026-05-14" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="消费级 AI 不是聊天框" />
+    <meta name="twitter:description" content="目的地层关闭了,实用层才是接下来十年。" />
+    <meta name="twitter:image" content="https://weiproduct.github.io/ME/assets/og.png" />
+
+    <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../../assets/icon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="../../assets/icon-180.png" sizes="180x180" />
+    <link rel="alternate" type="application/rss+xml" title="Wei Fu — Notes" href="../../feed.xml" />
+
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/essay.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "消费级 AI 不是聊天框",
+        "description": "做了两年、上架 17 款应用后,关于消费级 AI 该长在哪里的一个论点。",
+        "datePublished": "2026-05-14",
+        "inLanguage": "zh-CN",
+        "author": {
+          "@type": "Person",
+          "name": "Wei Fu",
+          "url": "https://weiproduct.github.io/ME/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "WeiProduct",
+          "url": "https://weiproduct.com"
+        },
+        "mainEntityOfPage": "https://weiproduct.github.io/ME/zh/essays/consumer-ai-utility-layer.html"
+      }
+    </script>
+  </head>
+  <body class="essay-page">
+    <a class="skip-link" href="#article">跳到正文</a>
+
+    <nav class="essay-nav" aria-label="导航">
+      <div class="container">
+        <a class="essay-nav-back" href="../">← 付 玮</a>
+        <span class="essay-nav-meta">
+          <a href="../../essays/consumer-ai-utility-layer.html" hreflang="en" lang="en">EN</a>
+        </span>
+      </div>
+    </nav>
+
+    <main>
+      <article id="article" class="essay">
+        <header class="essay-header">
+          <p class="essay-meta">
+            <span>文章</span>
+            <span>2026 年 5 月</span>
+            <span>约 6 分钟</span>
+          </p>
+          <h1>消费级 AI 不是聊天框。</h1>
+          <p class="essay-lede">
+            做了两年、上架 17 款应用后,关于消费级 AI 该长在哪里的一个论点。
+          </p>
+        </header>
+
+        <div class="essay-body">
+          <p>
+            2023 年我创立 <a href="https://weiproduct.com">WeiProduct</a> 的时候,最显眼的玩法是
+            套个壳——选一个细分场景,搭一个聊天机器人,卖出去。这条路上起步的人,
+            两年后大多数已经不在了。
+          </p>
+
+          <p>
+            做了 17 款应用、覆盖五个日常工作流品类之后,我看到的规律是:
+            <strong>活下来的消费级 AI 产品,AI 都是隐形的。</strong>
+          </p>
+
+          <h2>聊天机器人错在哪</h2>
+
+          <p>
+            聊天机器人让用户把活干两遍。先想清楚自己要什么,再翻译成 prompt,
+            再判断回答好不好,再来一轮。每一步都是摩擦。
+          </p>
+
+          <p>
+            真实的日常习惯里没有"翻译"这一步。早上打开日历,我想看到的是当天安排——
+            不是关于安排的对话。记一笔账,我想要尽量少的点击就把它记掉——
+            不是讨论我的消费习惯。
+          </p>
+
+          <p>
+            AI 的工作不是当界面。AI 的工作是让界面需要更少的决策。
+          </p>
+
+          <h2>容易被混在一起的两层</h2>
+
+          <p>
+            我把消费级 AI 分成两层,但人们常常把它们当成一件事。
+          </p>
+
+          <p>
+            <strong>目的地层。</strong>ChatGPT、Claude、Gemini。你去那儿。AI 就是产品本身。
+            对话就是全部体验。
+          </p>
+
+          <p>
+            <strong>实用层。</strong>你已经在用的每一个 app。AI 藏在那些以前要花脑子的功能后面。
+          </p>
+
+          <p>
+            大多数消费级 AI 创业还在目的地层里抢位置。这场仗结束了。
+            Anthropic、OpenAI、Google、Meta 每家都已经手握十亿美元量级的目的地。
+            没空间留给第 17 个通用聊天机器人。
+          </p>
+
+          <p>
+            下一个十年在实用层。它不上 demo 视频。产品是<em>能自动填上日程的日历</em>,
+            或者<em>不用打字的食物记录</em>——不是"能跟它聊天的 AI 日历"。
+          </p>
+
+          <h2>17 款应用给出的证据</h2>
+
+          <p>
+            一人工作室,靠的是盯着哪些产品让人愿意回来。回来率高的,都在实用层。
+          </p>
+
+          <p>
+            <strong>Piggy Accounting(记账 2)</strong>做支出记账。AI 是一次安静的推理调用,
+            把每笔账归类。用户从来不想 AI——他们看到的是"餐饮 · 水电 · 咖啡"。
+          </p>
+
+          <p>
+            <strong>AI 录音笔记</strong>把零散的语音变成结构化的笔记。用户讲,结构出现。
+            没有 prompt。
+          </p>
+
+          <p>
+            <strong>AI 日历</strong>按优先级自动排序。用户加事件,顺序在后台自我修正。
+          </p>
+
+          <p>
+            有些应用我做得偏目的地——用户得先<em>跟 AI 互动</em>才拿到价值。
+            那一步多出来,留存就被杀掉。每次都这样。
+          </p>
+
+          <h2>一个判断准则</h2>
+
+          <p>
+            2026 年还要做消费级 AI,我对每个想法跑一遍这个测试:
+          </p>
+
+          <p class="essay-callout">
+            一个 60 岁的人能用这个应用,而完全不知道里面有 AI 吗?
+          </p>
+
+          <p>
+            答案是 Yes,你在做实用层。AI 在背后真做事,用户不用跟它谈判。
+            这是习惯能形成的表面。
+          </p>
+
+          <p>
+            答案是 No——用户得<em>跟它说话</em>、<em>提示它</em>、<em>解读它的输出</em>——
+            你在跟万亿美元的巨头在目的地层硬碰。数据少、用户少、分发劣势。
+            一个品类容纳一个聊天机器人,容不下十七个。
+          </p>
+
+          <p>
+            所以挑一个习惯。做出能从那个习惯里拿掉一个决策的最小产品。
+            把 AI 藏进去。一周上线,不是一个月。盯留存,不是盯参与。
+          </p>
+
+          <h2>我下一步要做的</h2>
+
+          <p>
+            论点同时也是我要做什么的约束。工作室有 17 款应用,是因为测试这个论点的成本低——
+            做窄、看留存、留下能涨的那几个。一套内部工具(SwiftUI 组件、登录、IAP、遥测、
+            服务端代理)把每款新应用上架时间砍掉约 60%。猜错的代价小,反应慢的代价大。
+          </p>
+
+          <p>
+            下一个 17 款会更锋利。还在目的地路线里的,正在被淘汰。
+            在实用层里的,正在变得更好。
+          </p>
+
+          <p>
+            如果你也在做消费级 AI 并想交流,
+            <a href="../#contact">主页上的邮箱</a>常开。
+          </p>
+        </div>
+
+        <footer class="essay-footer">
+          <p class="essay-sig">— 付玮 · <time datetime="2026-05">2026 年 5 月</time></p>
+          <p class="essay-foot-links">
+            <a href="../">回首页</a>
+            <a href="../#notes">更多文章</a>
+            <a href="../../essays/consumer-ai-utility-layer.html" hreflang="en" lang="en">English</a>
+            <a href="https://github.com/WeiProduct" rel="me">GitHub</a>
+          </p>
+        </footer>
+      </article>
+    </main>
+  </body>
+</html>

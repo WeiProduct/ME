@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+    />
+
+    <title>What it takes to ship 17 apps as one person — Wei Fu</title>
+    <meta
+      name="description"
+      content="The in-house toolkit, the 60% time-to-store claim decomposed, and what doesn't reuse. By Wei Fu."
+    />
+    <meta name="author" content="Wei Fu" />
+
+    <link rel="canonical" href="https://weiproduct.github.io/ME/essays/in-house-toolkit.html" />
+    <link rel="alternate" hreflang="en" href="https://weiproduct.github.io/ME/essays/in-house-toolkit.html" />
+    <link rel="alternate" hreflang="zh-CN" href="https://weiproduct.github.io/ME/zh/essays/in-house-toolkit.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="What it takes to ship 17 apps as one person" />
+    <meta
+      property="og:description"
+      content="The in-house toolkit, the 60% time-to-store claim decomposed, and what doesn't reuse."
+    />
+    <meta property="og:url" content="https://weiproduct.github.io/ME/essays/in-house-toolkit.html" />
+    <meta property="og:image" content="https://weiproduct.github.io/ME/assets/og.png" />
+    <meta property="article:author" content="Wei Fu" />
+    <meta property="article:published_time" content="2026-05-14" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="What it takes to ship 17 apps as one person" />
+    <meta
+      name="twitter:description"
+      content="The in-house toolkit, decomposed."
+    />
+    <meta name="twitter:image" content="https://weiproduct.github.io/ME/assets/og.png" />
+
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../assets/icon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="../assets/icon-180.png" sizes="180x180" />
+    <link rel="alternate" type="application/rss+xml" title="Wei Fu — Notes" href="../feed.xml" />
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/essay.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "What it takes to ship 17 apps as one person",
+        "description": "The in-house toolkit, the 60% time-to-store claim decomposed, and what doesn't reuse.",
+        "datePublished": "2026-05-14",
+        "author": {
+          "@type": "Person",
+          "name": "Wei Fu",
+          "url": "https://weiproduct.github.io/ME/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "WeiProduct",
+          "url": "https://weiproduct.com"
+        },
+        "mainEntityOfPage": "https://weiproduct.github.io/ME/essays/in-house-toolkit.html"
+      }
+    </script>
+  </head>
+  <body class="essay-page">
+    <a class="skip-link" href="#article">Skip to article</a>
+
+    <nav class="essay-nav" aria-label="Site">
+      <div class="container">
+        <a class="essay-nav-back" href="../">← Wei Fu</a>
+        <span class="essay-nav-meta">
+          <a href="../zh/essays/in-house-toolkit.html" hreflang="zh-CN" lang="zh-CN">中文</a>
+          · <a href="../#notes">All notes</a>
+        </span>
+      </div>
+    </nav>
+
+    <main>
+      <article id="article" class="essay">
+        <header class="essay-header">
+          <p class="essay-meta">
+            <span>Essay</span>
+            <span>May 2026</span>
+            <span>~5 min read</span>
+          </p>
+          <h1>What it takes to ship seventeen apps as one person.</h1>
+          <p class="essay-lede">
+            The in-house toolkit, the time-to-store claim decomposed, and what does not reuse.
+          </p>
+        </header>
+
+        <div class="essay-body">
+          <p>
+            People ask how a one-person studio gets to seventeen iOS apps in two years. The
+            answer is unglamorous: most of the work is already done before a new app starts.
+          </p>
+
+          <p>
+            The first three apps I built at <a href="https://weiproduct.com">WeiProduct</a>
+            each rebuilt the same five things — auth, in-app purchase, settings, telemetry, a
+            server proxy in front of OpenAI. By app number four it was obvious the studio was a
+            template, not a sequence of products. So I built the template explicitly. Everything
+            below is part of that template.
+          </p>
+
+          <h2>What I reuse</h2>
+
+          <ul class="uses-list">
+            <li>
+              <strong>SwiftUI components.</strong> Forms, settings rows, paywalls, onboarding
+              screens, empty states. Pre-styled, pre-accessible, drop in. Each new app picks
+              maybe twelve of them and customizes copy.
+            </li>
+            <li>
+              <strong>Auth + IAP.</strong> One module. Anonymous Apple ID by default, optional
+              email upgrade, subscription IAP wired to App Store Connect. Has not needed a real
+              edit in a year.
+            </li>
+            <li>
+              <strong>Telemetry.</strong> A thin client that fires a fixed schema of events
+              (launch, paywall view, purchase, retention milestones). Backed by a tiny aggregation
+              endpoint. Enough to answer the only question that matters early: are people coming
+              back?
+            </li>
+            <li>
+              <strong>Server proxy template.</strong> A hardened serverless function in front of
+              OpenAI. Origin allow-list, model allow-list, input cap, server-side prompt, rate
+              limit. New app: copy the template, change the system prompt, deploy.
+            </li>
+          </ul>
+
+          <h2>The sixty percent, decomposed</h2>
+
+          <p>
+            The toolkit cuts average new-app time-to-store by roughly sixty percent. It is worth
+            being honest about where that savings comes from, because the percent has no value
+            in the abstract.
+          </p>
+
+          <p>
+            Most of it is <em>not</em> in writing code faster. Most of it is in skipping
+            decisions. When the auth flow is already chosen, I don&rsquo;t spend an afternoon
+            comparing libraries. When the paywall layout is already designed, I don&rsquo;t open
+            Figma. The toolkit&rsquo;s leverage is decision elimination — code reuse is the
+            visible part.
+          </p>
+
+          <p>
+            The rest of the savings comes from a long tail of App Store Connect work that was
+            painful the first three times: localized metadata, screenshot templates, review
+            notes, IAP setup, signing. These are now a checklist, not a discovery process.
+          </p>
+
+          <h2>What doesn&rsquo;t reuse</h2>
+
+          <p>
+            The toolkit ends where the product begins. Each app&rsquo;s core loop — the one
+            screen the user opens every day — gets built from scratch. That is on purpose. If I
+            templatize the core loop, every app starts to feel like every other app, and none
+            of them earn habits. The thesis from
+            <a href="consumer-ai-utility-layer.html">the other essay</a> applies here too: the
+            invisible AI lives in the core loop, and the core loop has to be designed for the
+            specific user moment.
+          </p>
+
+          <p>
+            The boundary is roughly: chrome reuses, the core does not.
+          </p>
+
+          <h2>Tools matter less than decisions</h2>
+
+          <p>
+            The temptation, for any technical founder, is to spend more time on the toolkit than
+            on the products it ships. I have done this. Two months sharpening the template
+            produced fewer new apps, not more.
+          </p>
+
+          <p>
+            A toolkit improvement only counts if it removes a decision from the next app. Faster
+            code paths, prettier abstractions, more clever architecture — none of these matter
+            if a new app still has to think about auth, telemetry, or the paywall. Once the
+            decisions are gone, stop improving the toolkit and go ship.
+          </p>
+
+          <p>
+            The studio works because the decisions worth making — what habit am I addressing,
+            what does the core loop feel like, does the AI stay invisible — are the only ones
+            left.
+          </p>
+        </div>
+
+        <footer class="essay-footer">
+          <p class="essay-sig">— Wei Fu · <time datetime="2026-05">May 2026</time></p>
+          <p class="essay-foot-links">
+            <a href="../">Back to homepage</a>
+            <a href="consumer-ai-utility-layer.html">Thesis essay</a>
+            <a href="../uses.html">Stack</a>
+            <a href="https://github.com/WeiProduct" rel="me">GitHub</a>
+          </p>
+        </footer>
+      </article>
+    </main>
+  </body>
+</html>

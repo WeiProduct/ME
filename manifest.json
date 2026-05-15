@@ -1,21 +1,14 @@
 {
-  "name": "Wei Fu — Portfolio",
+  "name": "Wei Fu",
   "short_name": "Wei Fu",
   "start_url": "/ME/",
   "scope": "/ME/",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#ffffff",
+  "display": "minimal-ui",
+  "background_color": "#fafaf7",
+  "theme_color": "#fafaf7",
   "icons": [
-    {
-      "src": "assets/icons/ai-voice-notes.png",
-      "sizes": "80x80",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/icons/ai-voice-notes@2x.png",
-      "sizes": "180x180",
-      "type": "image/png"
-    }
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
   ]
 }

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+    />
+
+    <title>Stack — Wei Fu</title>
+    <meta
+      name="description"
+      content="The tools and services Wei Fu uses to ship AI consumer apps at WeiProduct."
+    />
+    <meta name="author" content="Wei Fu" />
+
+    <link rel="canonical" href="https://weiproduct.github.io/ME/uses.html" />
+    <link rel="alternate" hreflang="en" href="https://weiproduct.github.io/ME/uses.html" />
+    <link rel="alternate" hreflang="zh-CN" href="https://weiproduct.github.io/ME/zh/uses.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Stack — Wei Fu" />
+    <meta property="og:description" content="The tools I ship 17 iOS apps with." />
+    <meta property="og:url" content="https://weiproduct.github.io/ME/uses.html" />
+    <meta property="og:image" content="https://weiproduct.github.io/ME/assets/og.png" />
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/icon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/icon-180.png" sizes="180x180" />
+    <link rel="alternate" type="application/rss+xml" title="Wei Fu — Notes" href="feed.xml" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/essay.css" />
+  </head>
+  <body class="essay-page">
+    <a class="skip-link" href="#article">Skip to content</a>
+
+    <nav class="essay-nav" aria-label="Site">
+      <div class="container">
+        <a class="essay-nav-back" href="./">← Wei Fu</a>
+        <span class="essay-nav-meta">
+          <a href="zh/uses.html" hreflang="zh-CN" lang="zh-CN">中文</a>
+          · <a href="./#work">Work</a>
+        </span>
+      </div>
+    </nav>
+
+    <main>
+      <article id="article" class="essay">
+        <header class="essay-header">
+          <p class="essay-meta">
+            <span>Stack</span>
+            <span>Updated May 2026</span>
+          </p>
+          <h1>What I ship with.</h1>
+          <p class="essay-lede">
+            The tools and services I use to ship AI consumer apps at WeiProduct. Updated as the
+            stack changes.
+          </p>
+        </header>
+
+        <div class="essay-body">
+          <p>
+            The studio is one person. The lever is reuse — an in-house toolkit (SwiftUI
+            components, auth, IAP, telemetry, server proxy template) cuts average time from new-app
+            kickoff to App Store submission by roughly sixty percent. Everything below is part of
+            that toolkit or directly supports it.
+          </p>
+
+          <h2>iOS</h2>
+          <ul class="uses-list">
+            <li>
+              <strong>Swift &amp; SwiftUI</strong> — every shipped app. Declarative UI is the
+              biggest single multiplier when one person designs, builds, and ships.
+            </li>
+            <li>
+              <strong>Xcode + App Store Connect</strong> — full build → review → release loop,
+              done manually per app. I have not invested in CI for iOS yet; volume hasn&rsquo;t
+              justified it.
+            </li>
+          </ul>
+
+          <h2>Web &amp; backend</h2>
+          <ul class="uses-list">
+            <li>
+              <strong>TypeScript &amp; Node.js</strong> — marketing sites, support pages, and the
+              chat proxy in front of OpenAI for this site.
+            </li>
+            <li>
+              <strong>Python</strong> — internal tooling: data cleanup, App Store metadata
+              wrangling, prompt evals.
+            </li>
+            <li>
+              <strong>Vercel</strong> — every web property and serverless function. Pay-as-you-go
+              matches a single-person studio&rsquo;s cost curve better than dedicated infra.
+            </li>
+          </ul>
+
+          <h2>AI / ML</h2>
+          <ul class="uses-list">
+            <li>
+              <strong>OpenAI</strong> — primary model provider for chat and structured output.
+              <code>gpt-4o-mini</code> handles most production traffic; cost-effective for
+              consumer use.
+            </li>
+            <li>
+              <strong>Whisper</strong> — speech-to-text, powering AI Voice Notes.
+            </li>
+            <li>
+              <strong>Anthropic</strong> — secondary provider; useful when a model needs more
+              context retention or a different prose voice.
+            </li>
+            <li>
+              <strong>No training, no fine-tunes</strong> — I lean on hosted models. The value of
+              a consumer AI product lives in product surfaces, not in the weights underneath.
+            </li>
+          </ul>
+
+          <h2>Operating principle</h2>
+          <p>
+            The stack is conservative on purpose. Every layer I add is a layer I have to maintain
+            across seventeen apps. Default to fewer dependencies, simpler primitives, and
+            hosted services. Replace something only when it&rsquo;s a clear bottleneck — never
+            because it&rsquo;s shiny.
+          </p>
+        </div>
+
+        <footer class="essay-footer">
+          <p class="essay-sig">— Wei Fu · <time datetime="2026-05">May 2026</time></p>
+          <p class="essay-foot-links">
+            <a href="./">Back to homepage</a>
+            <a href="./essays/consumer-ai-utility-layer.html">Thesis essay</a>
+            <a href="https://github.com/WeiProduct" rel="me">GitHub</a>
+          </p>
+        </footer>
+      </article>
+    </main>
+  </body>
+</html>
