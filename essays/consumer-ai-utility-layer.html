@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+    />
+
+    <title>Consumer AI is not a chat box — Wei Fu</title>
+    <meta
+      name="description"
+      content="A thesis about where consumer AI wins, drawn from two years and seventeen shipped apps. By Wei Fu, founder of WeiProduct."
+    />
+    <meta name="author" content="Wei Fu" />
+
+    <link rel="canonical" href="https://weiproduct.github.io/ME/essays/consumer-ai-utility-layer.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Consumer AI is not a chat box" />
+    <meta
+      property="og:description"
+      content="A thesis about where consumer AI wins — and why the destination layer is closed."
+    />
+    <meta property="og:url" content="https://weiproduct.github.io/ME/essays/consumer-ai-utility-layer.html" />
+    <meta property="og:image" content="https://weiproduct.github.io/ME/assets/og.png" />
+    <meta property="article:author" content="Wei Fu" />
+    <meta property="article:published_time" content="2026-05-14" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Consumer AI is not a chat box" />
+    <meta
+      name="twitter:description"
+      content="A thesis about where consumer AI wins — and why the destination layer is closed."
+    />
+    <meta name="twitter:image" content="https://weiproduct.github.io/ME/assets/og.png" />
+
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../assets/icon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="../assets/icon-180.png" sizes="180x180" />
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/essay.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Consumer AI is not a chat box",
+        "description": "A thesis about where consumer AI wins, drawn from two years and seventeen shipped apps.",
+        "datePublished": "2026-05-14",
+        "author": {
+          "@type": "Person",
+          "name": "Wei Fu",
+          "url": "https://weiproduct.github.io/ME/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "WeiProduct",
+          "url": "https://weiproduct.com"
+        },
+        "mainEntityOfPage": "https://weiproduct.github.io/ME/essays/consumer-ai-utility-layer.html"
+      }
+    </script>
+  </head>
+  <body class="essay-page">
+    <a class="skip-link" href="#article">Skip to article</a>
+
+    <nav class="essay-nav" aria-label="Site">
+      <div class="container">
+        <a class="essay-nav-back" href="../">← Wei Fu</a>
+        <span class="essay-nav-meta">
+          <a href="../#notes">All notes</a>
+        </span>
+      </div>
+    </nav>
+
+    <main>
+      <article id="article" class="essay">
+        <header class="essay-header">
+          <p class="essay-meta">
+            <span>Essay</span>
+            <span>May 2026</span>
+            <span>~6 min read</span>
+          </p>
+          <h1>Consumer AI is not a chat box.</h1>
+          <p class="essay-lede">
+            A thesis about where consumer AI wins, drawn from two years and seventeen shipped apps.
+          </p>
+        </header>
+
+        <div class="essay-body">
+          <p>
+            When I started <a href="https://weiproduct.com">WeiProduct</a> in 2023, the obvious
+            move was to build a chat wrapper. Pick a niche, build a chatbot for it, sell. Most
+            people who started that way are gone.
+          </p>
+
+          <p>
+            Here is the pattern I see after shipping seventeen apps across five everyday-workflow
+            categories: <strong>the consumer AI products that survive are the ones where the AI is
+            invisible.</strong>
+          </p>
+
+          <h2>What chatbots get wrong</h2>
+
+          <p>
+            A chatbot asks the user to do the work twice. First they think of what they want. Then
+            they translate that into a prompt. Then they evaluate the response. Then iterate. Each
+            step is friction.
+          </p>
+
+          <p>
+            Real consumer habits do not want a translation step. When I open my calendar in the
+            morning, I want to see my day — not have a conversation about it. When I track an
+            expense, I want it logged in the smallest number of taps — not a chat about my
+            spending patterns.
+          </p>
+
+          <p>
+            The AI&rsquo;s job is not to be the interface. The AI&rsquo;s job is to make the
+            interface require fewer decisions.
+          </p>
+
+          <h2>Two layers, often confused</h2>
+
+          <p>
+            I think of consumer AI as having two layers, and they get conflated all the time.
+          </p>
+
+          <p>
+            <strong>The destination layer.</strong> ChatGPT, Claude, Gemini. You go there. The AI
+            is the product. The conversation is the whole experience.
+          </p>
+
+          <p>
+            <strong>The utility layer.</strong> Every app you already use. The AI is hidden inside
+            features that used to require thought.
+          </p>
+
+          <p>
+            Most consumer AI startups are still trying to compete in the destination layer. That
+            fight is over. Anthropic, OpenAI, Google, and Meta each already have a billion-dollar
+            destination. There is no room for a seventeenth general-purpose chatbot.
+          </p>
+
+          <p>
+            The utility layer is where the next decade lives. It does not look impressive in
+            demos. The product is <em>the calendar that auto-fills</em>, or <em>the food logger
+            that doesn&rsquo;t need typing</em> — not &ldquo;the AI calendar you can chat
+            with.&rdquo;
+          </p>
+
+          <h2>Evidence from seventeen apps</h2>
+
+          <p>
+            You build a one-person studio by paying attention to which products keep people coming
+            back. The ones that grow all sit in the utility layer.
+          </p>
+
+          <p>
+            <strong>Piggy Accounting</strong> does expense tracking. The AI is a quiet inference
+            pass that categorizes each entry. The user never thinks about AI — they see
+            &ldquo;groceries · utilities · coffee.&rdquo;
+          </p>
+
+          <p>
+            <strong>AI Voice Notes</strong> turns rambling speech into structured notes. The user
+            speaks. Structure appears. No prompt.
+          </p>
+
+          <p>
+            <strong>AI Calendar</strong> auto-arranges by priority. The user adds events. The
+            order corrects itself in the background.
+          </p>
+
+          <p>
+            The apps that stagnate are the ones I built closer to the destination model — the
+            ones where the user has to <em>engage with the AI</em> before they get value. That
+            extra step kills retention every time.
+          </p>
+
+          <h2>A test for builders</h2>
+
+          <p>
+            If you are building consumer AI in 2026, here is the test I run on every idea:
+          </p>
+
+          <p class="essay-callout">
+            Could a sixty-year-old use this app and never realize there&rsquo;s AI inside it?
+          </p>
+
+          <p>
+            If yes, you are building utility. The AI is doing real work the user never has to
+            negotiate with. This is the surface where habits form.
+          </p>
+
+          <p>
+            If no — if the user has to <em>talk to it</em>, <em>prompt it</em>, <em>interpret its
+            output</em> — you are competing in the destination layer. Against trillion-dollar
+            incumbents. With less data, fewer users, and no distribution advantage. There is room
+            for one chatbot per category. Not seventeen.
+          </p>
+
+          <p>
+            So pick a habit. Build the smallest possible product that removes one decision from
+            that habit. Hide the AI inside it. Ship in a week, not a month. Iterate based on
+            retention, not engagement.
+          </p>
+
+          <h2>What I am working on next</h2>
+
+          <p>
+            The thesis is also a constraint on what I build. The studio has seventeen apps
+            because the cost of testing the thesis is low — you ship narrow, you watch retention,
+            you compound the ones that work. An in-house toolkit (SwiftUI components, auth, IAP,
+            telemetry) cuts new-app time-to-store by roughly sixty percent. The marginal cost of
+            being wrong about an idea is small. The marginal cost of being slow to test is large.
+          </p>
+
+          <p>
+            The next seventeen will be sharper. The ones still in the destination model are
+            getting deprecated. The ones in the utility layer are getting better.
+          </p>
+
+          <p>
+            If you ship consumer AI and want to compare notes, the
+            <a href="../#contact">inbox on the homepage</a> is open.
+          </p>
+        </div>
+
+        <footer class="essay-footer">
+          <p class="essay-sig">— Wei Fu · <time datetime="2026-05">May 2026</time></p>
+          <p class="essay-foot-links">
+            <a href="../">Back to homepage</a>
+            <a href="../#notes">More notes</a>
+            <a href="https://github.com/WeiProduct" rel="me">GitHub</a>
+          </p>
+        </footer>
+      </article>
+    </main>
+  </body>
+</html>
