@@ -318,13 +318,20 @@ section + section {
 
 /* Section titles */
 .section-eyebrow {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
   font-size: var(--t-xs);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--fg-subtle);
   margin-bottom: var(--s-3);
+}
+.section-num {
+  color: var(--accent);
+  font-feature-settings: 'tnum';
+  font-weight: 600;
 }
 .section-title {
   font-size: var(--t-xl);
