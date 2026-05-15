@@ -37,8 +37,9 @@
   --s-20: 5rem;
   --s-24: 6rem;
 
-  --measure: 38rem;       /* readable content width */
-  --container: 56rem;     /* outer container */
+  --measure: 34rem;          /* readable content width */
+  --container: 48rem;        /* default outer container */
+  --container-wide: 64rem;   /* wider for grid sections */
   --radius: 8px;
   --transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -107,6 +108,9 @@ body {
   max-width: var(--container);
   margin: 0 auto;
   padding: 0 var(--s-6);
+}
+.container--wide {
+  max-width: var(--container-wide);
 }
 
 main {
@@ -193,10 +197,31 @@ section + section {
 .hero-content {
   max-width: var(--measure);
 }
+.hero-row {
+  display: flex;
+  gap: var(--s-6);
+  align-items: flex-start;
+  margin-bottom: var(--s-6);
+}
+.hero-avatar {
+  flex: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--accent);
+  color: var(--on-accent);
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  font-feature-settings: 'ss01';
+  user-select: none;
+}
 .hero-eyebrow {
   font-size: var(--t-sm);
   color: var(--fg-muted);
-  margin-bottom: var(--s-3);
+  margin-bottom: var(--s-2);
   letter-spacing: 0.01em;
 }
 .hero-title {
@@ -209,12 +234,31 @@ section + section {
 .hero-description {
   font-size: var(--t-md);
   color: var(--fg-muted);
-  margin-bottom: var(--s-8);
+  margin-bottom: var(--s-6);
   max-width: 34rem;
 }
 .hero-description strong {
   color: var(--fg);
   font-weight: 500;
+}
+.hero-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-6);
+  font-size: var(--t-xs);
+  color: var(--fg-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--s-8);
+}
+.hero-specs li {
+  list-style: none;
+}
+.hero-specs strong {
+  color: var(--fg);
+  font-weight: 600;
+  margin-right: var(--s-1);
+  font-feature-settings: 'tnum';
 }
 .hero-actions {
   display: flex;
@@ -376,6 +420,58 @@ section + section {
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
+}
+
+/* Notes (writing) */
+.notes-content {
+  max-width: var(--measure);
+  color: var(--fg-muted);
+  font-size: var(--t-md);
+}
+.notes-content p + p {
+  margin-top: var(--s-4);
+}
+.notes-content a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.notes-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--s-8) 0 0;
+  border-top: 1px solid var(--rule);
+}
+.notes-list li {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: var(--s-4);
+  padding: var(--s-4) 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: baseline;
+}
+.notes-list time {
+  color: var(--fg-subtle);
+  font-size: var(--t-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-feature-settings: 'tnum';
+}
+.notes-list .note-title {
+  color: var(--fg);
+  font-size: var(--t-base);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition);
+}
+.notes-list .note-title:hover,
+.notes-list .note-title:focus-visible {
+  border-bottom-color: var(--fg);
+}
+.notes-list .note-status {
+  color: var(--fg-subtle);
+  font-style: italic;
 }
 
 /* About */
