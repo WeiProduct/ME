@@ -35,6 +35,30 @@ function trapFocus(e) {
   }
 }
 
+const SUGGESTIONS = [
+  "What's the thesis?",
+  'How do you ship so fast?',
+  'Open to collab?',
+];
+
+function renderSuggestions() {
+  const wrap = document.createElement('div');
+  wrap.className = 'chat-suggestions';
+  for (const text of SUGGESTIONS) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'chat-suggestion';
+    btn.textContent = text;
+    btn.addEventListener('click', () => {
+      input.value = text;
+      wrap.remove();
+      form.requestSubmit();
+    });
+    wrap.appendChild(btn);
+  }
+  messagesEl.appendChild(wrap);
+}
+
 function openWidget() {
   openerEl = document.activeElement instanceof HTMLElement ? document.activeElement : toggle;
   widget.hidden = false;
@@ -46,6 +70,7 @@ function openWidget() {
       'bot',
       "Hi — I'm Wei's assistant. Ask about the apps, the studio, or how I work.",
     );
+    renderSuggestions();
   }
   input.focus();
 }
@@ -95,6 +120,7 @@ form?.addEventListener('submit', async (e) => {
   const userText = input.value.trim();
   if (!userText) return;
 
+  messagesEl.querySelector('.chat-suggestions')?.remove();
   appendMessage('user', userText);
   history.push({ role: 'user', content: userText });
   input.value = '';
