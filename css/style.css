@@ -52,8 +52,8 @@
     --fg-muted: #a3a3a3;
     --fg-subtle: #6b6b6b;
     --rule: #262626;
-    --accent: #4ade80;
-    --accent-hover: #86efac;
+    --accent: #5b9d72;
+    --accent-hover: #79b48b;
     --on-accent: #0a0a0a;
   }
 }
@@ -378,7 +378,15 @@ section + section {
   height: 64px;
   border-radius: 14px;
   display: block;
-  margin-bottom: var(--s-4);
+  margin-bottom: var(--s-3);
+}
+.app-category {
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--fg-subtle);
+  margin-bottom: var(--s-1);
 }
 .app-name {
   font-size: var(--t-base);
