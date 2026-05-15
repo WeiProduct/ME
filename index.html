@@ -1,795 +1,609 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
-    <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self' https://personal-portfolio-api-sandy.vercel.app; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Wei Fu — CS & Managerial Economics graduate. 19 iOS apps, ML/AI, and product-minded engineering.">
+    <link rel="preconnect" href="https://api.github.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <meta property="og:title" content="Wei Fu — Portfolio">
+    <meta property="og:description" content="CS & Managerial Economics • 19 iOS apps • ML/AI">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://weiproduct.github.io/ME/">
+    <meta property="og:image" content="assets/icons/ai-voice-notes.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Wei Fu — Portfolio">
+    <meta name="twitter:description" content="CS & Managerial Economics • 19 iOS apps • ML/AI">
 
-    <title>Wei Fu — Building AI consumer products</title>
-    <meta
-      name="description"
-      content="Wei Fu — founder of WeiProduct. 17 AI consumer apps shipped on the App Store. Computer Science + Managerial Economics, UMass Amherst 2025."
-    />
-    <meta name="author" content="Wei Fu" />
-
-    <link rel="canonical" href="https://weiproduct.github.io/ME/" />
-    <link rel="alternate" hreflang="en" href="https://weiproduct.github.io/ME/" />
-    <link rel="alternate" hreflang="zh-CN" href="https://weiproduct.github.io/ME/zh/" />
-    <link rel="alternate" hreflang="x-default" href="https://weiproduct.github.io/ME/" />
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Wei Fu — Building AI consumer products" />
-    <meta
-      property="og:description"
-      content="Founder of WeiProduct. 17 AI consumer apps shipped on the App Store."
-    />
-    <meta property="og:url" content="https://weiproduct.github.io/ME/" />
-    <meta property="og:image" content="https://weiproduct.github.io/ME/assets/og.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Wei Fu — Building AI consumer products" />
-    <meta
-      name="twitter:description"
-      content="Founder of WeiProduct. 17 AI consumer apps shipped on the App Store."
-    />
-    <meta name="twitter:image" content="https://weiproduct.github.io/ME/assets/og.png" />
-
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <link rel="icon" href="assets/icon-32.png" sizes="32x32" type="image/png" />
-    <link rel="apple-touch-icon" href="assets/icon-180.png" sizes="180x180" />
-    <link rel="manifest" href="manifest.json" />
-    <link rel="alternate" type="application/rss+xml" title="Wei Fu — Notes" href="feed.xml" />
-
-    <link rel="preload" href="css/style.css" as="style" />
-    <link rel="preconnect" href="https://personal-portfolio-api-sandy.vercel.app" crossorigin />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/chat.css" />
+    <title>Wei Fu - Computer Science & Managerial Economics</title>
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Critical inline CSS for immediate hero visibility -->
+    <style>
+        /* Critical CSS to ensure pure white background */
+        html {
+            background-color: #ffffff !important;
+            background: #ffffff !important;
+        }
+        
+        body {
+            background-color: #ffffff !important;
+            background: #ffffff !important;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background-color: #ffffff !important;
+            background: #ffffff !important;
+            color: #000000 !important;
+            position: relative;
+            isolation: isolate;
+        }
+        
+        /* Remove any potential gray overlays */
+        .hero::before,
+        .hero::after {
+            display: none !important;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        
+        /* Ensure text is always visible */
+        .hero-title,
+        .hero-subtitle,
+        .hero-description {
+            color: #000000 !important;
+            text-shadow: none !important;
+        }
+        
+        .hero-buttons .btn {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Ensure btn-secondary is visible */
+        .hero-buttons .btn-secondary {
+            background: #ffffff !important;
+            color: #000000 !important;
+            border: 2px solid #000000 !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        .social-links a {
+            color: #000000 !important;
+        }
+        
+        /* Ensure all sections have white background */
+        section {
+            background-color: #ffffff !important;
+            background: #ffffff !important;
+        }
+    </style>
+    <noscript>
+        <style>
+            .hero-title,
+            .hero-subtitle,
+            .hero-description,
+            .hero-buttons,
+            .social-links {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        </style>
+    </noscript>
+    <link rel="canonical" href="https://weiproduct.github.io/ME/">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="assets/icons/ai-voice-notes@2x.png" sizes="180x180">
+    <link rel="icon" href="assets/icons/ai-voice-notes.png" sizes="80x80" type="image/png">
 
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "Person",
-            "@id": "https://weiproduct.github.io/ME/#wei",
-            "name": "Wei Fu",
-            "url": "https://weiproduct.github.io/ME/",
-            "image": "https://weiproduct.github.io/ME/assets/wei-1024.jpg",
-            "jobTitle": "Founder",
-            "worksFor": {
-              "@type": "Organization",
-              "name": "WeiProduct",
-              "url": "https://weiproduct.com"
-            },
-            "alumniOf": {
-              "@type": "CollegeOrUniversity",
-              "name": "University of Massachusetts Amherst"
-            },
-            "sameAs": [
-              "https://github.com/WeiProduct",
-              "https://www.linkedin.com/in/wei-fu-004724256/",
-              "https://weiproduct.com"
-            ],
-            "knowsAbout": [
-              "iOS development",
-              "Consumer AI",
-              "Product design",
-              "Machine learning"
-            ]
-          },
-          {
-            "@type": "ItemList",
-            "itemListElement": [
-              {"@type": "ListItem", "position": 1, "item": {"@type": "SoftwareApplication", "name": "Piggy Accounting", "applicationCategory": "FinanceApplication", "operatingSystem": "iOS", "author": {"@id": "https://weiproduct.github.io/ME/#wei"}, "url": "https://apps.apple.com/us/app/id6748370595"}},
-              {"@type": "ListItem", "position": 2, "item": {"@type": "SoftwareApplication", "name": "AI Calendar", "applicationCategory": "ProductivityApplication", "operatingSystem": "iOS", "author": {"@id": "https://weiproduct.github.io/ME/#wei"}, "url": "https://apps.apple.com/us/app/id6748324487"}},
-              {"@type": "ListItem", "position": 3, "item": {"@type": "SoftwareApplication", "name": "AI Voice Notes", "applicationCategory": "ProductivityApplication", "operatingSystem": "iOS", "author": {"@id": "https://weiproduct.github.io/ME/#wei"}, "url": "https://apps.apple.com/us/app/id6748947046"}},
-              {"@type": "ListItem", "position": 4, "item": {"@type": "SoftwareApplication", "name": "Habits", "applicationCategory": "LifestyleApplication", "operatingSystem": "iOS", "author": {"@id": "https://weiproduct.github.io/ME/#wei"}, "url": "https://apps.apple.com/us/app/id6748370992"}},
-              {"@type": "ListItem", "position": 5, "item": {"@type": "SoftwareApplication", "name": "AI Weather", "applicationCategory": "WeatherApplication", "operatingSystem": "iOS", "author": {"@id": "https://weiproduct.github.io/ME/#wei"}, "url": "https://apps.apple.com/us/app/id6748373741"}},
-              {"@type": "ListItem", "position": 6, "item": {"@type": "SoftwareApplication", "name": "AI Pomodoro", "applicationCategory": "ProductivityApplication", "operatingSystem": "iOS", "author": {"@id": "https://weiproduct.github.io/ME/#wei"}, "url": "https://apps.apple.com/us/app/id6748548518"}},
-              {"@type": "ListItem", "position": 7, "item": {"@type": "SoftwareApplication", "name": "AI Vocabulary", "applicationCategory": "EducationApplication", "operatingSystem": "iOS", "author": {"@id": "https://weiproduct.github.io/ME/#wei"}, "url": "https://apps.apple.com/us/app/id6748568205"}},
-              {"@type": "ListItem", "position": 8, "item": {"@type": "SoftwareApplication", "name": "Food Calories", "applicationCategory": "HealthApplication", "operatingSystem": "iOS", "author": {"@id": "https://weiproduct.github.io/ME/#wei"}, "url": "https://apps.apple.com/us/app/id6748717022"}},
-              {"@type": "ListItem", "position": 9, "item": {"@type": "SoftwareApplication", "name": "Meditation", "applicationCategory": "HealthApplication", "operatingSystem": "iOS", "author": {"@id": "https://weiproduct.github.io/ME/#wei"}, "url": "https://apps.apple.com/us/app/id6749164175"}},
-              {"@type": "ListItem", "position": 10, "item": {"@type": "SoftwareApplication", "name": "AI Platform", "applicationCategory": "UtilitiesApplication", "operatingSystem": "iOS", "author": {"@id": "https://weiproduct.github.io/ME/#wei"}, "url": "https://apps.apple.com/us/app/id6748650326"}},
-              {"@type": "ListItem", "position": 11, "item": {"@type": "SoftwareApplication", "name": "AIMBTI", "applicationCategory": "LifestyleApplication", "operatingSystem": "iOS", "author": {"@id": "https://weiproduct.github.io/ME/#wei"}, "url": "https://apps.apple.com/us/app/id6749165632"}},
-              {"@type": "ListItem", "position": 12, "item": {"@type": "SoftwareApplication", "name": "Dailymatters", "applicationCategory": "ProductivityApplication", "operatingSystem": "iOS", "author": {"@id": "https://weiproduct.github.io/ME/#wei"}, "url": "https://apps.apple.com/us/app/id6749191628"}}
-            ]
-          }
-        ]
-      }
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Wei Fu",
+      "url": "https://weiproduct.github.io/ME/",
+      "sameAs": [
+        "https://github.com/WeiProduct",
+        "https://www.linkedin.com/in/wei-fu-004724256/"
+      ],
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Massachusetts Amherst"
+      },
+      "knowsAbout": ["iOS Development", "Machine Learning", "Web Development", "Finance"],
+      "jobTitle": "Software Engineer"
+    }
     </script>
-  </head>
-  <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-
-    <nav class="navbar" aria-label="Primary">
-      <div class="container">
-        <div class="nav-brand">
-          <a href="#top">Wei Fu</a>
+</head>
+<body>
+    <a class="skip-link" href="#home">Skip to content</a>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="#home">Wei Fu</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#coursework" class="nav-link">Coursework</a></li>
+                <li><a href="#apps" class="nav-link">iOS Apps</a></li>
+                <!-- <li><a href="#projects" class="nav-link">Projects</a></li> -->
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
         </div>
-        <button
-          class="nav-toggle"
-          id="navToggle"
-          aria-label="Toggle navigation"
-          aria-expanded="false"
-          aria-controls="navMenu"
-        >
-          <span></span><span></span><span></span>
-        </button>
-        <ul class="nav-menu" id="navMenu">
-          <li><a class="nav-link" href="#now">Now</a></li>
-          <li><a class="nav-link" href="#work">Work</a></li>
-          <li><a class="nav-link" href="#notes">Notes</a></li>
-          <li><a class="nav-link" href="#about">About</a></li>
-          <li><a class="nav-link" href="#contact">Contact</a></li>
-          <li><a class="nav-link nav-lang" href="zh/" hreflang="zh-CN" lang="zh-CN">中文</a></li>
-        </ul>
-      </div>
     </nav>
 
-    <main id="main">
-      <section id="top" class="hero">
+    <section id="home" class="hero">
         <div class="container">
-          <div class="hero-content">
-            <div class="hero-row">
-              <img
-                class="hero-avatar"
-                src="assets/wei-128.jpg"
-                srcset="assets/wei-128.jpg 1x, assets/wei-256.jpg 2x"
-                width="64"
-                height="64"
-                alt="Wei Fu"
-                loading="eager"
-                decoding="async"
-                fetchpriority="high"
-              />
-              <div>
-                <p class="hero-eyebrow">Founder, WeiProduct &middot; since 2023</p>
-                <h1 class="hero-title">I build AI consumer apps.</h1>
-              </div>
+            <div class="hero-content">
+                <h1 class="hero-title">Wei Fu</h1>
+                <p class="hero-subtitle">Computer Science & Managerial Economics Graduate</p>
+                <p class="hero-subtitle">University of Massachusetts Amherst • Class of 2025</p>
+                <p class="hero-description">
+                    Bridging technology and business to create products that are useful at scale
+                </p>
+                <div class="hero-buttons">
+                    <a href="#apps" class="btn btn-primary">View iOS Apps</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/WeiProduct" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/wei-fu-004724256/" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
             </div>
-            <p class="hero-description">
-              Running a one-person studio shipping AI-powered apps for everyday workflows —
-              finance, productivity, health. The thesis at
-              <a href="https://weiproduct.com">weiproduct.com</a>: durable daily habits are where
-              consumer AI wins, not chatbots.
-            </p>
-            <ul class="hero-specs">
-              <li><strong>17</strong> apps shipped</li>
-              <li><strong>5</strong> categories</li>
-              <li><strong>40+</strong> public repos</li>
-            </ul>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="#work">See the apps</a>
-              <a class="btn btn-secondary" href="#contact">Get in touch</a>
-              <span class="social-links">
-                <a
-                  href="https://github.com/WeiProduct"
-                  target="_blank"
-                  rel="me noopener noreferrer"
-                  aria-label="GitHub"
-                  >GitHub</a
-                >
-                <a
-                  href="https://www.linkedin.com/in/wei-fu-004724256/"
-                  target="_blank"
-                  rel="me noopener noreferrer"
-                  aria-label="LinkedIn"
-                  >LinkedIn</a
-                >
-              </span>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        My name, Wei Fu, combines the Chinese characters for 'to strive' (Wei) and 'blessing' (Fu), 
+                        representing the beautiful meaning of creating happiness and good fortune for oneself and others.
+                    </p>
+                    <p>
+                        I'm a recent graduate from UMass Amherst with dual Bachelor of Science degrees in Computer Science 
+                        and Managerial Economics, earning <strong>Dean's List honors for 5 semesters</strong> and receiving a <strong>4-year Merit-Based Scholarship</strong>. 
+                        This unique combination of technical expertise and strategic business acumen allows me to develop innovative 
+                        technological solutions while understanding their business impact.
+                    </p>
+                    <p>
+                        My academic journey demonstrates resilience and determination—I successfully mastered challenging courses 
+                        like Operating Systems and Machine Learning, earning top grades upon completion. As a multiple-time 
+                        <strong>Dean's List honoree</strong>, I've proven my ability to excel in both technical and business domains.
+                    </p>
+                    <p>
+                        My passion lies in creating user-centric applications that solve real-world problems. 
+                        With experience developing multiple iOS applications and various software projects, 
+                        I bring both technical proficiency and business insight to every project.
+                    </p>
+                </div>
+                <div class="education">
+                    <h3>Education</h3>
+                    <div class="education-item">
+                        <h4>Bachelor of Science in Computer Science</h4>
+                        <p>University of Massachusetts Amherst • Dean's List Honor (5 Semesters) • 4-Year Merit-Based Scholarship</p>
+                        <p>Focus on software development, algorithms, machine learning, and mobile application development</p>
+                    </div>
+                    <div class="education-item">
+                        <h4>Bachelor of Science in Managerial Economics</h4>
+                        <p>University of Massachusetts Amherst • Dean's List Multiple Terms • 4-Year Merit-Based Scholarship</p>
+                        <p>Emphasis on business strategy, financial analysis, and economic decision-making</p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-      <section id="now">
+    <section id="coursework" class="coursework">
         <div class="container">
-          <span class="section-eyebrow"><span class="section-num">01</span>Now</span>
-          <h2 class="section-title">What I'm working on</h2>
-          <div class="now-content">
-            <p>
-              <strong>Iterating the apps that show signal, pruning the rest.</strong> One-person
-              studio means every product fights for its slot — the calendar shipped last week
-              affects whether the food tracker gets attention next week.
-            </p>
-            <p>
-              <strong>Open to collaborators</strong> on the parts I'm weak at: production design,
-              CN ↔ EN localization, growth experiments. If you ship consumer products, the inbox
-              below is open.
-            </p>
-            <small class="now-meta">Last updated 2026-05</small>
-          </div>
-        </div>
-      </section>
-
-      <section id="work">
-        <div class="container container--wide">
-          <span class="section-eyebrow"><span class="section-num">02</span>Work</span>
-          <h2 class="section-title">Selected apps</h2>
-          <div class="apps-grid">
-            <article class="app-card">
-              <img
-                src="assets/icons/piggyfinance.png"
-                srcset="
-                  assets/icons/piggyfinance.png    1x,
-                  assets/icons/piggyfinance@2x.png 2x
-                "
-                alt=""
-                width="64"
-                height="64"
-                class="app-icon"
-                loading="lazy"
-                decoding="async"
-              />
-              <p class="app-category">Finance</p>
-              <h3 class="app-name">Piggy Accounting</h3>
-              <p class="app-tagline">Expense tracking with smart spending insights.</p>
-              <div class="app-links">
-                <a
-                  href="https://apps.apple.com/us/app/%E8%AE%B0%E8%B4%A62/id6748370595"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >App Store ↗</a
-                >
-                <a
-                  href="https://weiproduct.github.io/piggy-finance/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Site ↗</a
-                >
-              </div>
-            </article>
-
-            <article class="app-card">
-              <img
-                src="assets/icons/ai-calendar.png"
-                srcset="
-                  assets/icons/ai-calendar.png    1x,
-                  assets/icons/ai-calendar@2x.png 2x
-                "
-                alt=""
-                width="64"
-                height="64"
-                class="app-icon"
-                loading="lazy"
-                decoding="async"
-              />
-              <p class="app-category">Productivity</p>
-              <h3 class="app-name">AI Calendar</h3>
-              <p class="app-tagline">Auto-arranges your day by priority and deadline.</p>
-              <div class="app-links">
-                <a
-                  href="https://apps.apple.com/us/app/ai%E6%97%A5%E5%8E%86/id6748324487"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >App Store ↗</a
-                >
-                <a
-                  href="https://weiproduct.github.io/AICalendar/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Site ↗</a
-                >
-              </div>
-            </article>
-
-            <article class="app-card">
-              <img
-                src="assets/icons/ai-voice-notes.png"
-                srcset="
-                  assets/icons/ai-voice-notes.png    1x,
-                  assets/icons/ai-voice-notes@2x.png 2x
-                "
-                alt=""
-                width="64"
-                height="64"
-                class="app-icon"
-                loading="lazy"
-                decoding="async"
-              />
-              <p class="app-category">Productivity</p>
-              <h3 class="app-name">AI Voice Notes</h3>
-              <p class="app-tagline">Recordings turned into structured, searchable notes.</p>
-              <div class="app-links">
-                <a
-                  href="https://apps.apple.com/us/app/ai%E5%BD%95%E9%9F%B3%E7%AC%94%E8%AE%B0/id6748947046"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >App Store ↗</a
-                >
-                <a
-                  href="https://weiproduct.github.io/recording/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Site ↗</a
-                >
-              </div>
-            </article>
-
-            <article class="app-card">
-              <img
-                src="assets/icons/weirabits.png"
-                srcset="
-                  assets/icons/weirabits.png    1x,
-                  assets/icons/weirabits@2x.png 2x
-                "
-                alt=""
-                width="64"
-                height="64"
-                class="app-icon"
-                loading="lazy"
-                decoding="async"
-              />
-              <p class="app-category">Lifestyle</p>
-              <h3 class="app-name">Habits</h3>
-              <p class="app-tagline">Atomic Habits in your pocket — identity, loops, streaks.</p>
-              <div class="app-links">
-                <a
-                  href="https://apps.apple.com/us/app/weirabits/id6748370992"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >App Store ↗</a
-                >
-                <a
-                  href="https://weiproduct.github.io/WeiRabits/docs/index.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Site ↗</a
-                >
-              </div>
-            </article>
-
-            <article class="app-card">
-              <img
-                src="assets/icons/weatherspro.png"
-                srcset="
-                  assets/icons/weatherspro.png    1x,
-                  assets/icons/weatherspro@2x.png 2x
-                "
-                alt=""
-                width="64"
-                height="64"
-                class="app-icon"
-                loading="lazy"
-                decoding="async"
-              />
-              <p class="app-category">Lifestyle</p>
-              <h3 class="app-name">AI Weather</h3>
-              <p class="app-tagline">Forecasts with personalized clothing advice.</p>
-              <div class="app-links">
-                <a
-                  href="https://apps.apple.com/us/app/weatherspro/id6748373741"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >App Store ↗</a
-                >
-                <a
-                  href="https://weiproduct.github.io/Weather/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Site ↗</a
-                >
-              </div>
-            </article>
-
-            <article class="app-card">
-              <img
-                src="assets/icons/ai-tomato-clock.png"
-                srcset="
-                  assets/icons/ai-tomato-clock.png    1x,
-                  assets/icons/ai-tomato-clock@2x.png 2x
-                "
-                alt=""
-                width="64"
-                height="64"
-                class="app-icon"
-                loading="lazy"
-                decoding="async"
-              />
-              <p class="app-category">Productivity</p>
-              <h3 class="app-name">AI Pomodoro</h3>
-              <p class="app-tagline">Focus timer that adapts to your rhythm.</p>
-              <div class="app-links">
-                <a
-                  href="https://apps.apple.com/us/app/ai%E7%95%AA%E8%8C%84%E9%97%B9%E9%92%9F/id6748548518"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >App Store ↗</a
-                >
-                <a
-                  href="https://weiproduct.github.io/AITomatoClock/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Site ↗</a
-                >
-              </div>
-            </article>
-
-            <article class="app-card">
-              <img
-                src="assets/icons/ai-vocabulary.png"
-                srcset="
-                  assets/icons/ai-vocabulary.png    1x,
-                  assets/icons/ai-vocabulary@2x.png 2x
-                "
-                alt=""
-                width="64"
-                height="64"
-                class="app-icon"
-                loading="lazy"
-                decoding="async"
-              />
-              <p class="app-category">Learning</p>
-              <h3 class="app-name">AI Vocabulary</h3>
-              <p class="app-tagline">English study with AI-tuned spaced repetition.</p>
-              <div class="app-links">
-                <a
-                  href="https://apps.apple.com/us/app/ai%E8%83%8C%E5%8D%95%E8%AF%8D/id6748568205"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >App Store ↗</a
-                >
-                <a
-                  href="https://weiproduct.github.io/aiwordslearning/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Site ↗</a
-                >
-              </div>
-            </article>
-
-            <article class="app-card">
-              <img
-                src="assets/icons/ai-calories.png"
-                srcset="
-                  assets/icons/ai-calories.png    1x,
-                  assets/icons/ai-calories@2x.png 2x
-                "
-                alt=""
-                width="64"
-                height="64"
-                class="app-icon"
-                loading="lazy"
-                decoding="async"
-              />
-              <p class="app-category">Health</p>
-              <h3 class="app-name">Food Calories</h3>
-              <p class="app-tagline">Snap a meal, get the calorie breakdown.</p>
-              <div class="app-links">
-                <a
-                  href="https://apps.apple.com/us/app/ai%E5%8D%A1%E8%B7%AF%E9%87%8C/id6748717022"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >App Store ↗</a
-                >
-                <a
-                  href="https://weiproduct.github.io/AICaloriesSupport-/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Site ↗</a
-                >
-              </div>
-            </article>
-
-            <article class="app-card">
-              <img
-                src="assets/icons/ai-meditation.png"
-                srcset="
-                  assets/icons/ai-meditation.png    1x,
-                  assets/icons/ai-meditation@2x.png 2x
-                "
-                alt=""
-                width="64"
-                height="64"
-                class="app-icon"
-                loading="lazy"
-                decoding="async"
-              />
-              <p class="app-category">Health</p>
-              <h3 class="app-name">Meditation</h3>
-              <p class="app-tagline">Guided sessions with an AI companion.</p>
-              <div class="app-links">
-                <a
-                  href="https://apps.apple.com/us/app/ai%E5%86%A5%E6%83%B3/id6749164175"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >App Store ↗</a
-                >
-                <a
-                  href="https://weiproduct.github.io/AIMeditation/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Site ↗</a
-                >
-              </div>
-            </article>
-
-            <article class="app-card">
-              <img
-                src="assets/icons/ai-platform.png"
-                srcset="
-                  assets/icons/ai-platform.png    1x,
-                  assets/icons/ai-platform@2x.png 2x
-                "
-                alt=""
-                width="64"
-                height="64"
-                class="app-icon"
-                loading="lazy"
-                decoding="async"
-              />
-              <p class="app-category">Productivity</p>
-              <h3 class="app-name">AI Platform</h3>
-              <p class="app-tagline">GPT and Gemini, side-by-side in one app.</p>
-              <div class="app-links">
-                <a
-                  href="https://apps.apple.com/us/app/ai%E5%B9%B3%E5%8F%B0/id6748650326"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >App Store ↗</a
-                >
-                <a
-                  href="https://weiproduct.github.io/ai-platform-support/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Site ↗</a
-                >
-              </div>
-            </article>
-
-            <article class="app-card">
-              <img
-                src="assets/icons/aimbti.png"
-                srcset="
-                  assets/icons/aimbti.png    1x,
-                  assets/icons/aimbti@2x.png 2x
-                "
-                alt=""
-                width="64"
-                height="64"
-                class="app-icon"
-                loading="lazy"
-                decoding="async"
-              />
-              <p class="app-category">Lifestyle</p>
-              <h3 class="app-name">AIMBTI</h3>
-              <p class="app-tagline">93-question MBTI with an AI advisor for follow-up.</p>
-              <div class="app-links">
-                <a
-                  href="https://apps.apple.com/us/app/aimbti/id6749165632"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >App Store ↗</a
-                >
-                <a
-                  href="https://weiproduct.github.io/MBTI/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Site ↗</a
-                >
-              </div>
-            </article>
-
-            <article class="app-card">
-              <img
-                src="assets/icons/dailymatters.png"
-                srcset="
-                  assets/icons/dailymatters.png    1x,
-                  assets/icons/dailymatters@2x.png 2x
-                "
-                alt=""
-                width="64"
-                height="64"
-                class="app-icon"
-                loading="lazy"
-                decoding="async"
-              />
-              <p class="app-category">Productivity</p>
-              <h3 class="app-name">Dailymatters</h3>
-              <p class="app-tagline">Daily planner that gives time-management advice.</p>
-              <div class="app-links">
-                <a
-                  href="https://apps.apple.com/us/app/dailymatters/id6749191628"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >App Store ↗</a
-                >
-                <a
-                  href="https://weiproduct.github.io/dailymatters/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Site ↗</a
-                >
-              </div>
-            </article>
-          </div>
-
-          <p class="apps-more">
-            <span><strong>+ 5 more</strong> across smart-home, dating, hydration, and notes.</span>
-            <a href="https://github.com/WeiProduct" target="_blank" rel="noopener noreferrer"
-              >See the full portfolio →</a
-            >
-          </p>
-        </div>
-      </section>
-
-      <section id="notes">
-        <div class="container">
-          <span class="section-eyebrow"><span class="section-num">03</span>Notes</span>
-          <h2 class="section-title">Writing</h2>
-          <div class="notes-content">
-            <p>
-              Working notes on building consumer AI products as a one-person studio — what ships,
-              what flops, what I'd do differently. The day-to-day is also on
-              <a href="https://github.com/WeiProduct" rel="me">GitHub</a> — 40+ public repos,
-              most of them are the apps themselves.
-            </p>
-            <ul class="notes-list">
-              <li>
-                <time datetime="2026-05">May 2026</time>
-                <a class="note-title" href="essays/consumer-ai-utility-layer.html">
-                  Consumer AI is not a chat box
-                  <span class="note-len">~6 min</span>
-                  <span aria-hidden="true">→</span>
-                </a>
-              </li>
-              <li>
-                <time datetime="2026-05">May 2026</time>
-                <a class="note-title" href="essays/in-house-toolkit.html">
-                  What it takes to ship 17 apps as one person
-                  <span class="note-len">~5 min</span>
-                  <span aria-hidden="true">→</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="about">
-        <div class="container">
-          <div class="about-grid">
-            <div>
-              <span class="section-eyebrow"><span class="section-num">04</span>About</span>
-              <h2 class="section-title">Builder first.</h2>
+            <h2 class="section-title">Relevant Coursework</h2>
+            <div class="coursework-intro">
+                <p>My comprehensive education spans multiple disciplines, preparing me for diverse career paths in technology and business.</p>
             </div>
-            <div class="about-text">
-              <p>
-                I'm Wei Fu. I started <a href="https://weiproduct.com">WeiProduct</a> in 2023
-                while studying at UMass Amherst, finished CS and Managerial Economics in 2025,
-                and have been running the studio full-time since. The philosophy is to ship
-                narrow, design for repeated moments, and compound the apps that find their users.
-              </p>
-              <p>
-                The dual degree shapes how I prioritize: every feature is a hypothesis about
-                user value, every release is a small bet. Engineering ships the experiment;
-                economics decides which experiment is worth running.
-              </p>
-              <p>
-                I work primarily in Swift and SwiftUI on iOS, Python for tooling, and TypeScript
-                on the web. I lean on the major model providers (OpenAI, Anthropic) rather than
-                training from scratch — the value lives in product surfaces, not the weights.
-              </p>
+            <div class="coursework-grid">
+                <div class="coursework-category">
+                    <h3><i class="fas fa-robot"></i> Machine Learning & AI</h3>
+                    <ul class="course-list">
+                        <li><strong>Machine Learning</strong> - Advanced ML algorithms and applications</li>
+                        <li><strong>Artificial Intelligence</strong> - AI fundamentals and problem-solving</li>
+                        <li><strong>Reasoning Under Uncertainty</strong> - Probabilistic reasoning and decision-making</li>
+                        <li><strong>Data Structures</strong> - Efficient data organization and algorithms</li>
+                    </ul>
+                </div>
+                <div class="coursework-category">
+                    <h3><i class="fas fa-code"></i> Software Development</h3>
+                    <ul class="course-list">
+                        <li><strong>Operating Systems</strong> - System-level programming and OS design</li>
+                        <li><strong>Software Engineering</strong> - Large-scale software development practices</li>
+                        <li><strong>Computer Networks</strong> - Network protocols and architecture</li>
+                        <li><strong>Software Entrepreneurship</strong> - Building software startups</li>
+                        <li><strong>Programming Methodology</strong> - Advanced programming techniques</li>
+                    </ul>
+                </div>
+                <div class="coursework-category">
+                    <h3><i class="fas fa-chart-line"></i> FinTech & Business</h3>
+                    <ul class="course-list">
+                        <li><strong>Money and Banking</strong> - Financial systems and monetary policy</li>
+                        <li><strong>Fundamentals of Finance</strong> - Corporate finance and investments</li>
+                        <li><strong>Financial Accounting</strong> - Financial reporting and analysis</li>
+                        <li><strong>Managerial Economics</strong> - Economic decision-making in business</li>
+                        <li><strong>Decision Analysis</strong> - Data-driven business decisions</li>
+                    </ul>
+                </div>
+                <div class="coursework-category">
+                    <h3><i class="fas fa-database"></i> Data & Analytics</h3>
+                    <ul class="course-list">
+                        <li><strong>Data Management</strong> - Database design and management</li>
+                        <li><strong>Statistics I</strong> - Statistical methods and analysis</li>
+                        <li><strong>Intro to Statistics</strong> - Statistical foundations</li>
+                        <li><strong>Business & Econ Statistics</strong> - Applied statistical analysis</li>
+                        <li><strong>Multivariate Calculus</strong> - Advanced mathematical foundations</li>
+                    </ul>
+                </div>
             </div>
-          </div>
-
-          <ul class="skills-list" style="margin-top: var(--s-12)">
-            <li>
-              <h3>Build</h3>
-              <p>Swift / SwiftUI, TypeScript, Python, Node.js, Vercel, App Store Connect.</p>
-            </li>
-            <li>
-              <h3>AI</h3>
-              <p>OpenAI, Anthropic, Whisper, Realtime APIs, prompt engineering, evals.</p>
-            </li>
-            <li>
-              <h3>Business</h3>
-              <p>Pricing, ASO, retention loops, financial modeling, growth experiments.</p>
-            </li>
-          </ul>
         </div>
-      </section>
+    </section>
 
-      <section id="contact">
+    <section id="apps" class="apps">
         <div class="container">
-          <span class="section-eyebrow"><span class="section-num">05</span>Contact</span>
-          <h2 class="section-title">Let's talk.</h2>
-          <div class="contact-content">
-            <p>
-              If you build consumer products in the AI layer, or have one shipping you'd like a
-              second opinion on, the door is open.
-            </p>
-            <ul class="contact-list">
-              <li>
-                <span class="label">Email</span>
-                <a href="mailto:1597498880weiproduct@gmail.com"
-                  >1597498880weiproduct@gmail.com</a
-                >
-              </li>
-              <li>
-                <span class="label">GitHub</span>
-                <a
-                  href="https://github.com/WeiProduct"
-                  target="_blank"
-                  rel="me noopener noreferrer"
-                  >@WeiProduct</a
-                >
-              </li>
-              <li>
-                <span class="label">LinkedIn</span>
-                <a
-                  href="https://www.linkedin.com/in/wei-fu-004724256/"
-                  target="_blank"
-                  rel="me noopener noreferrer"
-                  >Wei Fu</a
-                >
-              </li>
-              <li>
-                <span class="label">Studio</span>
-                <a href="https://weiproduct.com" target="_blank" rel="me noopener noreferrer"
-                  >weiproduct.com</a
-                >
-              </li>
-            </ul>
-          </div>
+            <h2 class="section-title">iOS Applications</h2>
+            <div class="apps-grid">
+                <div class="app-card">
+                    <img src="assets/icons/piggyfinance.png" alt="Piggy Accounting" class="app-icon" loading="lazy" decoding="async" width="80" height="80">
+                    <h3>Piggy Accounting</h3>
+                    <div class="app-links">
+                        <a href="https://apps.apple.com/us/app/%E8%AE%B0%E8%B4%A62/id6748370595" target="_blank" class="btn-app-store">
+                            <i class="fab fa-app-store"></i> App Store
+                        </a>
+                        <a href="https://weiproduct.github.io/piggy-finance/" target="_blank" class="btn-website">
+                            <i class="fas fa-globe"></i> Website
+                        </a>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <img src="assets/icons/ai-calendar.png" alt="AI Calendar" class="app-icon" loading="lazy" decoding="async" width="80" height="80">
+                    <h3>AI Calendar</h3>
+                    <div class="app-links">
+                        <a href="https://apps.apple.com/us/app/ai%E6%97%A5%E5%8E%86/id6748324487" target="_blank" class="btn-app-store">
+                            <i class="fab fa-app-store"></i> App Store
+                        </a>
+                        <a href="https://weiproduct.github.io/AICalendar/" target="_blank" class="btn-website">
+                            <i class="fas fa-globe"></i> Website
+                        </a>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <img src="assets/icons/weirabits.png" alt="Habits" class="app-icon" loading="lazy" decoding="async" width="80" height="80">
+                    <h3>Habits</h3>
+                    <div class="app-links">
+                        <a href="https://apps.apple.com/us/app/weirabits/id6748370992" target="_blank" class="btn-app-store">
+                            <i class="fab fa-app-store"></i> App Store
+                        </a>
+                        <a href="https://weiproduct.github.io/WeiRabits/docs/index.html" target="_blank" class="btn-website">
+                            <i class="fas fa-globe"></i> Website
+                        </a>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <img src="assets/icons/weatherspro.png" alt="AI Weather" class="app-icon" loading="lazy" decoding="async" width="80" height="80">
+                    <h3>AI Weather</h3>
+                    <div class="app-links">
+                        <a href="https://apps.apple.com/us/app/weatherspro/id6748373741" target="_blank" class="btn-app-store">
+                            <i class="fab fa-app-store"></i> App Store
+                        </a>
+                        <a href="https://weiproduct.github.io/Weather/" target="_blank" class="btn-website">
+                            <i class="fas fa-globe"></i> Website
+                        </a>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <img src="assets/icons/ai-tomato-clock.png" alt="AI Pomodoro Timer" class="app-icon" loading="lazy" decoding="async" width="80" height="80">
+                    <h3>AI Pomodoro Timer</h3>
+                    <div class="app-links">
+                        <a href="https://apps.apple.com/us/app/ai%E7%95%AA%E8%8C%84%E9%97%B9%E9%92%9F/id6748548518" target="_blank" class="btn-app-store">
+                            <i class="fab fa-app-store"></i> App Store
+                        </a>
+                        <a href="https://weiproduct.github.io/AITomatoClock/" target="_blank" class="btn-website">
+                            <i class="fas fa-globe"></i> Website
+                        </a>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <img src="assets/icons/ai-vocabulary.png" alt="AI Vocabulary" class="app-icon" loading="lazy" decoding="async" width="80" height="80">
+                    <h3>AI Vocabulary</h3>
+                    <div class="app-links">
+                        <a href="https://apps.apple.com/us/app/ai%E8%83%8C%E5%8D%95%E8%AF%8D/id6748568205" target="_blank" class="btn-app-store">
+                            <i class="fab fa-app-store"></i> App Store
+                        </a>
+                        <a href="https://weiproduct.github.io/aiwordslearning/" target="_blank" class="btn-website">
+                            <i class="fas fa-globe"></i> Website
+                        </a>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <img src="assets/icons/ai-calories.png" alt="Food Calories" class="app-icon" loading="lazy" decoding="async" width="80" height="80">
+                    <h3>Food Calories</h3>
+                    <div class="app-links">
+                        <a href="https://apps.apple.com/us/app/ai%E5%8D%A1%E8%B7%AF%E9%87%8C/id6748717022" target="_blank" class="btn-app-store">
+                            <i class="fab fa-app-store"></i> App Store
+                        </a>
+                        <a href="https://weiproduct.github.io/AICaloriesSupport-/" target="_blank" class="btn-website">
+                            <i class="fas fa-globe"></i> Website
+                        </a>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <img src="assets/icons/ai-helper.png" alt="Dating Chat" class="app-icon" loading="lazy" decoding="async" width="80" height="80">
+                    <h3>Dating Chat</h3>
+                    <div class="app-links">
+                        <a href="https://apps.apple.com/us/app/ai%E7%BA%A6%E4%BC%9A%E5%8A%A9%E6%89%8B/id6748549192" target="_blank" class="btn-app-store">
+                            <i class="fab fa-app-store"></i> App Store
+                        </a>
+                        <a href="https://weiproduct.github.io/aidatingchat2/" target="_blank" class="btn-website">
+                            <i class="fas fa-globe"></i> Website
+                        </a>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <img src="assets/icons/ai-platform.png" alt="Grok iOS: AI Platform" class="app-icon" loading="lazy" decoding="async" width="80" height="80">
+                    <h3>Grok iOS: AI Platform</h3>
+                    <div class="app-links">
+                        <a href="https://apps.apple.com/us/app/ai%E5%B9%B3%E5%8F%B0/id6748650326" target="_blank" class="btn-app-store">
+                            <i class="fab fa-app-store"></i> App Store
+                        </a>
+                        <a href="https://weiproduct.github.io/ai-platform-support/" target="_blank" class="btn-website">
+                            <i class="fas fa-globe"></i> Website
+                        </a>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <img src="assets/icons/smart-light-master.png" alt="AI Smart Light" class="app-icon" loading="lazy" decoding="async" width="80" height="80">
+                    <h3>AI Smart Light</h3>
+                    <div class="app-links">
+                        <a href="https://apps.apple.com/us/app/%E6%99%BA%E8%83%BD%E8%A1%A5%E5%85%89%E5%B8%88/id6749024443" target="_blank" class="btn-app-store">
+                            <i class="fab fa-app-store"></i> App Store
+                        </a>
+                        <a href="https://weiproduct.github.io/AISmartlight/" target="_blank" class="btn-website">
+                            <i class="fas fa-globe"></i> Website
+                        </a>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <img src="assets/icons/ai-meditation.png" alt="Meditation" class="app-icon" loading="lazy" decoding="async" width="80" height="80">
+                    <h3>Meditation</h3>
+                    <div class="app-links">
+                        <a href="https://apps.apple.com/us/app/ai%E5%86%A5%E6%83%B3/id6749164175" target="_blank" class="btn-app-store">
+                            <i class="fab fa-app-store"></i> App Store
+                        </a>
+                        <a href="https://weiproduct.github.io/AIMeditation/" target="_blank" class="btn-website">
+                            <i class="fas fa-globe"></i> Website
+                        </a>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <img src="assets/icons/dailymatters.png" alt="Dailymatters" class="app-icon" loading="lazy" decoding="async" width="80" height="80">
+                    <h3>Dailymatters</h3>
+                    <div class="app-links">
+                        <a href="https://apps.apple.com/us/app/dailymatters/id6749191628" target="_blank" class="btn-app-store">
+                            <i class="fab fa-app-store"></i> App Store
+                        </a>
+                        <a href="https://weiproduct.github.io/dailymatters/" target="_blank" class="btn-website">
+                            <i class="fas fa-globe"></i> Website
+                        </a>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <img src="assets/icons/aidailymatters.png" alt="AI Daily Matters" class="app-icon" loading="lazy" decoding="async" width="80" height="80">
+                    <h3>AI Daily Matters</h3>
+                    <div class="app-links">
+                        <a href="https://apps.apple.com/us/app/aidailymatters/id6749191633" target="_blank" class="btn-app-store">
+                            <i class="fab fa-app-store"></i> App Store
+                        </a>
+                        <a href="https://weiproduct.github.io/AIDailyMatters/" target="_blank" class="btn-website">
+                            <i class="fas fa-globe"></i> Website
+                        </a>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <img src="assets/icons/aimbti.png" alt="AIMBTI" class="app-icon" loading="lazy" decoding="async" width="80" height="80">
+                    <h3>AIMBTI</h3>
+                    <div class="app-links">
+                        <a href="https://apps.apple.com/us/app/aimbti/id6749165632" target="_blank" class="btn-app-store">
+                            <i class="fab fa-app-store"></i> App Store
+                        </a>
+                        <a href="https://weiproduct.github.io/MBTI/" target="_blank" class="btn-website">
+                            <i class="fas fa-globe"></i> Website
+                        </a>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <img src="assets/icons/aidrinkwater.png" alt="AI Drink Water" class="app-icon" loading="lazy" decoding="async" width="80" height="80">
+                    <h3>AI Drink Water</h3>
+                    <div class="app-links">
+                        <a href="https://apps.apple.com/us/app/aidrinkwater/id6749274211" target="_blank" class="btn-app-store">
+                            <i class="fab fa-app-store"></i> App Store
+                        </a>
+                        <a href="https://weiproduct.github.io/Drinking/" target="_blank" class="btn-website">
+                            <i class="fas fa-globe"></i> Website
+                        </a>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <img src="assets/icons/ainote.png" alt="AI Note" class="app-icon" loading="lazy" decoding="async" width="80" height="80">
+                    <h3>AI Note</h3>
+                    <div class="app-links">
+                        <a href="https://apps.apple.com/us/app/ai%E8%AE%B0%E4%BA%8B%E6%9C%AC/id6749283592" target="_blank" class="btn-app-store">
+                            <i class="fab fa-app-store"></i> App Store
+                        </a>
+                        <a href="https://weiproduct.github.io/notes/" target="_blank" class="btn-website">
+                            <i class="fas fa-globe"></i> Website
+                        </a>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <img src="assets/icons/ai-voice-notes.png" alt="AI Voice Notes" class="app-icon" loading="lazy" decoding="async" width="80" height="80">
+                    <h3>AI Voice Notes</h3>
+                    <div class="app-links">
+                        <a href="https://apps.apple.com/us/app/ai%E5%BD%95%E9%9F%B3%E7%AC%94%E8%AE%B0/id6748947046" target="_blank" class="btn-app-store">
+                            <i class="fab fa-app-store"></i> App Store
+                        </a>
+                        <a href="https://weiproduct.github.io/recording/" target="_blank" class="btn-website">
+                            <i class="fas fa-globe"></i> Website
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </section>
-    </main>
+    </section>
+
+    <!-- GitHub Projects section - Hidden until more impressive projects are ready -->
+    <!-- <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">GitHub Projects</h2>
+            <div id="github-projects" class="projects-grid">
+                Projects will be loaded dynamically
+            </div>
+        </div>
+    </section> -->
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Technical Skills</h3>
+                    <ul class="skill-list">
+                        <li>Swift & iOS Development (13 Apple Store Published Apps)</li>
+                        <li>Machine Learning & AI</li>
+                        <li>JavaScript & Web Development</li>
+                        <li>Python & Data Analysis</li>
+                        <li>Operating Systems & Networks</li>
+                        <li>Database Management & API Integration</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-chart-line"></i> Business Skills</h3>
+                    <ul class="skill-list">
+                        <li>Financial Analysis & Finance</li>
+                        <li>Investment Strategy (200%+ Returns)</li>
+                        <li>Managerial Economics</li>
+                        <li>Data-Driven Decision Making</li>
+                        <li>Business Strategy & Entrepreneurship</li>
+                        <li>Money & Banking</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-users"></i> Soft Skills</h3>
+                    <ul class="skill-list">
+                        <li>Cross-functional Collaboration</li>
+                        <li>Problem Solving</li>
+                        <li>Communication</li>
+                        <li>Critical Thinking</li>
+                        <li>Innovation & Creativity</li>
+                        <li>Adaptability</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <p class="contact-intro">
+                    The world is experiencing the Fourth Industrial Revolution—the AI revolution. With the advent of advanced AI and humanoid robots, our economic output can become tremendous, even unlimited, enabling everyone to access any goods or services they desire.
+                </p>
+                <p class="contact-intro">
+                    I'm building to accelerate this future and make the world a better place—let's connect.
+                </p>
+                <div class="contact-methods">
+                    <a href="tel:+14134727021" class="contact-method">
+                        <i class="fas fa-phone"></i>
+                        <span>(413) 472-7021</span>
+                    </a>
+                    <a href="mailto:1597498880weiproduct@gmail.com" class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <span>1597498880weiproduct@gmail.com</span>
+                    </a>
+                    <a href="https://github.com/WeiProduct" target="_blank" class="contact-method">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/wei-fu-004724256/" target="_blank" class="contact-method">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer class="footer">
-      <div class="container">
-        <span>© 2026 Wei Fu</span>
-        <span>
-          <a href="uses.html">Stack</a>
-          · <a href="feed.xml">RSS</a>
-          · <a href="resume.html">Résumé</a>
-          · <a href="https://github.com/WeiProduct/ME">Source</a>
-        </span>
-      </div>
+        <div class="container">
+            <p>&copy; 2025 Wei Fu. All rights reserved.</p>
+        </div>
     </footer>
 
-    <button class="chat-toggle" id="chatToggle" aria-label="Open chat" aria-expanded="false">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-      </svg>
-    </button>
-
-    <aside class="chat-widget" id="chatWidget" aria-label="Chat with Wei's assistant" hidden>
-      <header class="chat-header">
-        <div class="chat-title">
-          Wei's assistant
-          <small>Ask about the apps, the studio, or how I work</small>
+    <!-- Chat Widget -->
+    <div id="chatWidget" class="chat-widget">
+        <div class="chat-header">
+            <div class="chat-header-left">
+                <div>
+                    <h4>Wei Fu - AI Digital Persona</h4>
+                    <div class="chat-header-subtitle">INTJ | CS & Economics | UMass Amherst | Dean's List Honor</div>
+                </div>
+            </div>
+            <div class="chat-header-controls">
+                <button class="voice-toggle" id="voiceToggle" title="Toggle voice">
+                    <i class="fas fa-volume-up"></i> Voice
+                </button>
+                <button class="fullscreen-toggle" id="fullscreenToggle" title="Toggle fullscreen">
+                    <i class="fas fa-expand"></i>
+                </button>
+                <button class="chat-minimize" id="chatMinimize">
+                    <i class="fas fa-minus"></i>
+                </button>
+            </div>
         </div>
-        <button class="chat-close" id="chatClose" aria-label="Close chat">×</button>
-      </header>
-      <div class="chat-messages" id="chatMessages" aria-live="polite"></div>
-      <form class="chat-form" id="chatForm">
-        <input
-          type="text"
-          class="chat-input"
-          id="chatInput"
-          placeholder="Ask anything…"
-          autocomplete="off"
-          maxlength="500"
-          required
-        />
-        <button type="submit" class="chat-send" id="chatSend">Send</button>
-      </form>
-    </aside>
+        <div class="chat-messages" id="chatMessages"></div>
+        <form class="chat-input-form" id="chatForm">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Ask about my projects, investments, or technical expertise..." required>
+            <button type="submit" class="chat-send">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </form>
+    </div>
+    
+    <!-- Chat Toggle Button -->
+    <button class="chat-toggle" id="chatToggle" aria-label="Open chat">
+        <i class="fas fa-comments"></i>
+    </button>
 
     <script src="js/main.js" defer></script>
     <script src="js/chat.js" defer></script>
-  </body>
+</body>
 </html>
