@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+    />
+
+    <title>一个人 ship 17 款应用要靠什么 — 付玮</title>
+    <meta
+      name="description"
+      content="内部工具、那 60% 的拆解,以及哪些东西不复用。"
+    />
+    <meta name="author" content="Wei Fu" />
+
+    <link rel="canonical" href="https://weiproduct.github.io/ME/zh/essays/in-house-toolkit.html" />
+    <link rel="alternate" hreflang="en" href="https://weiproduct.github.io/ME/essays/in-house-toolkit.html" />
+    <link rel="alternate" hreflang="zh-CN" href="https://weiproduct.github.io/ME/zh/essays/in-house-toolkit.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="一个人 ship 17 款应用要靠什么" />
+    <meta property="og:description" content="内部工具、那 60% 的拆解,以及哪些东西不复用。" />
+    <meta property="og:url" content="https://weiproduct.github.io/ME/zh/essays/in-house-toolkit.html" />
+    <meta property="og:image" content="https://weiproduct.github.io/ME/assets/og.png" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="article:author" content="Wei Fu" />
+    <meta property="article:published_time" content="2026-05-14" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="一个人 ship 17 款应用要靠什么" />
+    <meta name="twitter:description" content="内部工具拆解。" />
+    <meta name="twitter:image" content="https://weiproduct.github.io/ME/assets/og.png" />
+
+    <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../../assets/icon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="../../assets/icon-180.png" sizes="180x180" />
+    <link rel="alternate" type="application/rss+xml" title="Wei Fu — Notes" href="../../feed.xml" />
+
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/essay.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "一个人 ship 17 款应用要靠什么",
+        "description": "内部工具、那 60% 的拆解,以及哪些东西不复用。",
+        "datePublished": "2026-05-14",
+        "inLanguage": "zh-CN",
+        "author": {
+          "@type": "Person",
+          "name": "Wei Fu",
+          "url": "https://weiproduct.github.io/ME/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "WeiProduct",
+          "url": "https://weiproduct.com"
+        },
+        "mainEntityOfPage": "https://weiproduct.github.io/ME/zh/essays/in-house-toolkit.html"
+      }
+    </script>
+  </head>
+  <body class="essay-page">
+    <a class="skip-link" href="#article">跳到正文</a>
+
+    <nav class="essay-nav" aria-label="导航">
+      <div class="container">
+        <a class="essay-nav-back" href="../">← 付 玮</a>
+        <span class="essay-nav-meta">
+          <a href="../../essays/in-house-toolkit.html" hreflang="en" lang="en">EN</a>
+        </span>
+      </div>
+    </nav>
+
+    <main>
+      <article id="article" class="essay">
+        <header class="essay-header">
+          <p class="essay-meta">
+            <span>文章</span>
+            <span>2026 年 5 月</span>
+            <span>约 5 分钟</span>
+          </p>
+          <h1>一个人 ship 十七款应用要靠什么。</h1>
+          <p class="essay-lede">
+            内部工具、那 60% 的拆解,以及哪些东西不复用。
+          </p>
+        </header>
+
+        <div class="essay-body">
+          <p>
+            人们常问:一个人的工作室,两年怎么做出 17 款 iOS 应用?
+            答案不光鲜——大部分活在新应用启动之前就已经干完了。
+          </p>
+
+          <p>
+            <a href="https://weiproduct.com">WeiProduct</a> 的头三款应用各自重写了同样五件事——
+            登录、内购、设置、遥测、放在 OpenAI 前面的服务端代理。做到第四款,
+            工作室明显是个模板而不是一串产品。所以我把模板正式做出来。下面这些都是模板的一部分。
+          </p>
+
+          <h2>复用的部分</h2>
+
+          <ul class="uses-list">
+            <li>
+              <strong>SwiftUI 组件。</strong>表单、设置行、付费墙、引导流程、空状态。
+              预先调好、可访问、即插即用。每款新应用大概挑十二个出来,改改文案。
+            </li>
+            <li>
+              <strong>登录 + 内购。</strong>一个模块。默认 Apple ID 匿名登录,可选升级到邮箱;
+              订阅 IAP 接通 App Store Connect。一年没真正改动过。
+            </li>
+            <li>
+              <strong>遥测。</strong>一个轻客户端,只发固定 schema 的事件(启动、付费墙曝光、
+              购买、留存里程碑)。后端是一个非常小的聚合接口。这就够回答早期唯一重要的问题:
+              用户回来了吗。
+            </li>
+            <li>
+              <strong>服务端代理模板。</strong>一个加固过的 serverless 函数,放在 OpenAI 前面。
+              来源白名单、模型白名单、输入上限、服务端 prompt、限流。
+              新应用:复制模板、改 system prompt、部署。
+            </li>
+          </ul>
+
+          <h2>那 60%,拆开来看</h2>
+
+          <p>
+            这套工具把每款新应用上架时间平均砍掉约 60%。在抽象层面这个数字没意义,
+            值得说清楚省在哪。
+          </p>
+
+          <p>
+            大部分<em>不是</em>在敲代码更快。大部分是省下决策。登录方式已经选好,
+            我不会再花一下午对比库。付费墙布局已经设计完,我不会再开 Figma。
+            工具的杠杆是"决策消除"——代码复用是可见的那部分。
+          </p>
+
+          <p>
+            剩下的省时间来自 App Store Connect 这边那条长尾——头三次做都很疼:
+            本地化的元数据、截图模板、审核说明、IAP 设置、签名。
+            现在这些是 checklist,不是探索。
+          </p>
+
+          <h2>不复用的部分</h2>
+
+          <p>
+            工具到产品边界为止。每款应用最关键的一屏——用户每天打开的那一屏——
+            从零开始做。这是故意的。如果连主循环都模板化,所有应用会开始彼此相似,
+            没有一款能赢得习惯。<a href="consumer-ai-utility-layer.html">另一篇文章</a>
+            的论点同样适用:隐形的 AI 住在主循环里,主循环必须按那个具体的用户时刻设计。
+          </p>
+
+          <p>
+            边界大约是:外壳复用,内核不复用。
+          </p>
+
+          <h2>工具比决策次要</h2>
+
+          <p>
+            技术出身的创始人都有这个诱惑——在工具上花的时间超过用工具发出来的产品上的时间。
+            我犯过这个错。花两个月打磨模板,产出的新应用反而更少。
+          </p>
+
+          <p>
+            只有当一次工具改进<em>消除了下一个应用里的一个决策</em>时,它才有意义。
+            更快的代码路径、更漂亮的抽象、更聪明的架构——
+            如果一款新应用仍然要思考登录、遥测、付费墙,这些都不算数。
+            一旦决策被消除,停下打磨工具,去 ship。
+          </p>
+
+          <p>
+            工作室能跑通,是因为剩下能选的决策——我在解决什么习惯、主循环怎么感觉、
+            AI 是不是还隐形——才是值得花时间的那些。
+          </p>
+        </div>
+
+        <footer class="essay-footer">
+          <p class="essay-sig">— 付玮 · <time datetime="2026-05">2026 年 5 月</time></p>
+          <p class="essay-foot-links">
+            <a href="../">回首页</a>
+            <a href="consumer-ai-utility-layer.html">论点文</a>
+            <a href="../../uses.html">技术栈</a>
+            <a href="../../essays/in-house-toolkit.html" hreflang="en" lang="en">English</a>
+          </p>
+        </footer>
+      </article>
+    </main>
+  </body>
+</html>
