@@ -217,18 +217,14 @@ section + section {
 }
 .hero-avatar {
   flex: none;
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  background: var(--accent);
-  color: var(--on-accent);
-  display: grid;
-  place-items: center;
-  font-weight: 600;
-  font-size: 1rem;
-  letter-spacing: 0.02em;
-  font-feature-settings: 'ss01';
-  user-select: none;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  object-fit: cover;
+  object-position: center 20%;
+  background: var(--bg-soft);
+  display: block;
+  box-shadow: 0 0 0 1px var(--rule);
 }
 .hero-eyebrow {
   font-size: var(--t-sm);
@@ -655,10 +651,9 @@ section + section {
     margin-bottom: var(--s-4);
   }
   .hero-avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    font-size: 0.9rem;
+    width: 52px;
+    height: 52px;
+    border-radius: 13px;
   }
   .hero-specs {
     gap: var(--s-2) var(--s-4);
