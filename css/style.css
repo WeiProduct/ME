@@ -598,6 +598,20 @@ section + section {
   section { padding: var(--s-16) 0; }
   .hero { padding: var(--s-16) 0; }
 
+  .hero-row {
+    gap: var(--s-4);
+    margin-bottom: var(--s-4);
+  }
+  .hero-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+  }
+  .hero-specs {
+    gap: var(--s-2) var(--s-4);
+  }
+
   .nav-toggle {
     display: flex;
   }
