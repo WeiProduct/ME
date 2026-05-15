@@ -35,11 +35,25 @@ function trapFocus(e) {
   }
 }
 
-const SUGGESTIONS = [
-  "What's the thesis?",
-  'How do you ship so fast?',
-  'Open to collab?',
-];
+const IS_ZH = document.documentElement.lang.startsWith('zh');
+
+const STRINGS = IS_ZH
+  ? {
+      greeting: '你好——我是付玮的助理。可以问应用、工作室、做事方式。',
+      suggestions: ['你的论点是什么？', '怎么能 ship 这么快？', '在找合作吗？'],
+      noReply: '没有回复,再试一次?',
+      networkError:
+        '暂时连不上服务器。可以发邮件到 1597498880weiproduct@gmail.com。',
+    }
+  : {
+      greeting: "Hi — I'm Wei's assistant. Ask about the apps, the studio, or how I work.",
+      suggestions: ["What's the thesis?", 'How do you ship so fast?', 'Open to collab?'],
+      noReply: 'No response. Try again?',
+      networkError:
+        "Can't reach the server right now. Email 1597498880weiproduct@gmail.com instead.",
+    };
+
+const SUGGESTIONS = STRINGS.suggestions;
 
 function renderSuggestions() {
   const wrap = document.createElement('div');
@@ -66,10 +80,7 @@ function openWidget() {
   toggle.setAttribute('aria-expanded', 'true');
   toggle.style.display = 'none';
   if (messagesEl.children.length === 0) {
-    appendMessage(
-      'bot',
-      "Hi — I'm Wei's assistant. Ask about the apps, the studio, or how I work.",
-    );
+    appendMessage('bot', STRINGS.greeting);
     renderSuggestions();
   }
   input.focus();
@@ -146,16 +157,12 @@ form?.addEventListener('submit', async (e) => {
       appendMessage('bot', reply);
       history.push({ role: 'assistant', content: reply });
     } else {
-      appendMessage('bot', 'No response. Try again?', { error: true });
+      appendMessage('bot', STRINGS.noReply, { error: true });
     }
   } catch (err) {
     console.error(err);
     typingEl.remove();
-    appendMessage(
-      'bot',
-      "Can't reach the server right now. Email 1597498880weiproduct@gmail.com instead.",
-      { error: true },
-    );
+    appendMessage('bot', STRINGS.networkError, { error: true });
   } finally {
     sendBtn.disabled = false;
     input.focus();
