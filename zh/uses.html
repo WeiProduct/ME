@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+    />
+
+    <title>技术栈 — 付玮</title>
+    <meta
+      name="description"
+      content="付玮在 WeiProduct 工作室 ship AI 应用用到的工具和服务。"
+    />
+    <meta name="author" content="Wei Fu" />
+
+    <link rel="canonical" href="https://weiproduct.github.io/ME/zh/uses.html" />
+    <link rel="alternate" hreflang="en" href="https://weiproduct.github.io/ME/uses.html" />
+    <link rel="alternate" hreflang="zh-CN" href="https://weiproduct.github.io/ME/zh/uses.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="技术栈 — 付玮" />
+    <meta property="og:description" content="ship 17 款 iOS 应用用到的工具和服务。" />
+    <meta property="og:url" content="https://weiproduct.github.io/ME/zh/uses.html" />
+    <meta property="og:image" content="https://weiproduct.github.io/ME/assets/og.png" />
+    <meta property="og:locale" content="zh_CN" />
+
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../assets/icon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="../assets/icon-180.png" sizes="180x180" />
+    <link rel="alternate" type="application/rss+xml" title="Wei Fu — Notes" href="../feed.xml" />
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/essay.css" />
+  </head>
+  <body class="essay-page">
+    <a class="skip-link" href="#article">跳到正文</a>
+
+    <nav class="essay-nav" aria-label="导航">
+      <div class="container">
+        <a class="essay-nav-back" href="./">← 付 玮</a>
+        <span class="essay-nav-meta">
+          <a href="../uses.html" hreflang="en" lang="en">EN</a>
+          · <a href="./#work">作品</a>
+        </span>
+      </div>
+    </nav>
+
+    <main>
+      <article id="article" class="essay">
+        <header class="essay-header">
+          <p class="essay-meta">
+            <span>技术栈</span>
+            <span>更新于 2026 年 5 月</span>
+          </p>
+          <h1>我用什么 ship 出来。</h1>
+          <p class="essay-lede">
+            付玮在 WeiProduct 工作室 ship AI 应用用到的工具和服务。
+            随技术栈变化更新。
+          </p>
+        </header>
+
+        <div class="essay-body">
+          <p>
+            工作室只有一个人。杠杆在复用——一套内部工具(SwiftUI 组件、登录、IAP、遥测、
+            服务端代理模板)把每款新应用上架时间平均砍掉约 60%。下面的每一项要么是这套
+            工具的一部分,要么直接为它服务。
+          </p>
+
+          <h2>iOS</h2>
+          <ul class="uses-list">
+            <li>
+              <strong>Swift &amp; SwiftUI</strong>——每款上架应用。声明式 UI 是一个人同时
+              做设计、开发、上架时最大的单一倍率。
+            </li>
+            <li>
+              <strong>Xcode + App Store Connect</strong>——完整的 build → 审核 → 发布闭环,
+              每款应用手动跑。还没投资 iOS 端的 CI,体量还没到。
+            </li>
+          </ul>
+
+          <h2>Web 与后端</h2>
+          <ul class="uses-list">
+            <li>
+              <strong>TypeScript &amp; Node.js</strong>——营销页、支持页,以及这个站前面挡在
+              OpenAI 前面的聊天代理。
+            </li>
+            <li>
+              <strong>Python</strong>——内部工具:数据清洗、App Store 元数据整理、prompt eval。
+            </li>
+            <li>
+              <strong>Vercel</strong>——每个 web 资源和 serverless 函数都在这里。按量付费比
+              专属基础设施更贴合一人工作室的成本曲线。
+            </li>
+          </ul>
+
+          <h2>AI / ML</h2>
+          <ul class="uses-list">
+            <li>
+              <strong>OpenAI</strong>——主要模型供应商,负责聊天和结构化输出。
+              生产流量大部分走 <code>gpt-4o-mini</code>,消费场景的性价比可以接受。
+            </li>
+            <li>
+              <strong>Whisper</strong>——语音转文字,撑起 AI 录音笔记。
+            </li>
+            <li>
+              <strong>Anthropic</strong>——次选供应商;在需要更长上下文或不同文风时用。
+            </li>
+            <li>
+              <strong>不训练、不微调。</strong>直接调托管模型。消费级 AI 产品的价值在产品
+              交互层,不在底层权重。
+            </li>
+          </ul>
+
+          <h2>操作原则</h2>
+          <p>
+            技术栈刻意保守。每多加一层,意味着这一层要在 17 款应用里维护。
+            默认更少的依赖、更简单的原语、更托管的服务。
+            只有当某个东西明确变成瓶颈时才换——不为新潮。
+          </p>
+        </div>
+
+        <footer class="essay-footer">
+          <p class="essay-sig">— 付玮 · <time datetime="2026-05">2026 年 5 月</time></p>
+          <p class="essay-foot-links">
+            <a href="./">回首页</a>
+            <a href="essays/consumer-ai-utility-layer.html">论点文</a>
+            <a href="../uses.html" hreflang="en" lang="en">English</a>
+            <a href="https://github.com/WeiProduct" rel="me">GitHub</a>
+          </p>
+        </footer>
+      </article>
+    </main>
+  </body>
+</html>
