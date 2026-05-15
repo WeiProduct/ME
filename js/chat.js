@@ -14,8 +14,29 @@ const API_ENDPOINT =
     : 'https://personal-portfolio-api-sandy.vercel.app/api/chat-proxy';
 
 const history = [];
+let openerEl = null;
+
+function focusables() {
+  return [closeBtn, input, sendBtn].filter((el) => el && !el.disabled);
+}
+
+function trapFocus(e) {
+  if (e.key !== 'Tab' || widget.hidden) return;
+  const items = focusables();
+  if (items.length === 0) return;
+  const first = items[0];
+  const last = items[items.length - 1];
+  if (e.shiftKey && document.activeElement === first) {
+    e.preventDefault();
+    last.focus();
+  } else if (!e.shiftKey && document.activeElement === last) {
+    e.preventDefault();
+    first.focus();
+  }
+}
 
 function openWidget() {
+  openerEl = document.activeElement instanceof HTMLElement ? document.activeElement : toggle;
   widget.hidden = false;
   widget.classList.add('open');
   toggle.setAttribute('aria-expanded', 'true');
@@ -34,7 +55,8 @@ function closeWidget() {
   widget.hidden = true;
   toggle.setAttribute('aria-expanded', 'false');
   toggle.style.display = '';
-  toggle.focus();
+  (openerEl || toggle).focus();
+  openerEl = null;
 }
 
 function appendMessage(role, text, opts = {}) {
@@ -60,7 +82,12 @@ toggle?.addEventListener('click', openWidget);
 closeBtn?.addEventListener('click', closeWidget);
 
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && !widget.hidden) closeWidget();
+  if (widget.hidden) return;
+  if (e.key === 'Escape') {
+    closeWidget();
+    return;
+  }
+  trapFocus(e);
 });
 
 form?.addEventListener('submit', async (e) => {

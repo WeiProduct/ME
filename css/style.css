@@ -161,8 +161,13 @@ section + section {
   transition: color var(--transition);
 }
 .nav-link:hover,
-.nav-link:focus-visible {
+.nav-link:focus-visible,
+.nav-link.active {
   color: var(--fg);
+}
+
+.nav-link.active {
+  font-weight: 600;
 }
 
 .nav-toggle {
