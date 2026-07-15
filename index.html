@@ -23,6 +23,18 @@
     <link rel="preload" href="css/style.css" as="style">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Additive enhancement layer (new components + opt-in dark mode) -->
+    <link rel="stylesheet" href="css/enhance.css">
+    <!-- Restore saved theme before paint to avoid a flash (opt-in only) -->
+    <script>
+        (function () {
+            try {
+                if (localStorage.getItem('theme') === 'dark') {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                }
+            } catch (e) {}
+        }());
+    </script>
     <!-- Critical inline CSS for immediate hero visibility -->
     <style>
         /* Critical CSS to ensure pure white background */
@@ -147,10 +159,24 @@
                 <li><a href="#apps" class="nav-link">iOS Apps</a></li>
                 <!-- <li><a href="#projects" class="nav-link">Projects</a></li> -->
                 <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#tech-stack" class="nav-link">Tech</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="nav-theme-li">
+                    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
             </ul>
         </div>
     </nav>
+
+    <!-- Availability / work-authorization banner (additive) -->
+    <div class="availability-banner">
+        <strong>Open to iOS / AI / SWE roles</strong>
+        <span class="ab-dot">·</span>Boston / remote / relocate
+        <span class="ab-dot">·</span>F-1 OPT, seeking H-1B sponsorship
+        <span class="ab-dot">·</span><a href="resume.html" class="ab-link">Résumé</a>
+    </div>
 
     <section id="home" class="hero">
         <div class="container">
@@ -161,8 +187,10 @@
                 <p class="hero-description">
                     Bridging technology and business to create products that are useful at scale
                 </p>
+                <p class="hero-positioning">iOS &amp; AI Engineer · 17 apps live on the App Store · SwiftUI + on-device &amp; LLM AI</p>
                 <div class="hero-buttons">
                     <a href="#apps" class="btn btn-primary">View iOS Apps</a>
+                    <a href="resume.html" class="btn btn-resume"><i class="fas fa-file-arrow-down"></i> Download Résumé</a>
                     <a href="#contact" class="btn btn-secondary">Get In Touch</a>
                 </div>
                 <div class="social-links">
@@ -172,6 +200,17 @@
                     <a href="https://www.linkedin.com/in/wei-fu-004724256/" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-linkedin"></i>
                     </a>
+                </div>
+                <!-- Ask my AI twin (opens the existing chat) -->
+                <div class="ai-twin-cta">
+                    <button type="button" class="ai-twin-btn"><i class="fas fa-robot"></i> Ask my AI twin about my work</button>
+                    <p class="twin-lead">Or try one of these:</p>
+                    <div class="twin-chips">
+                        <button type="button" class="twin-chip" data-prompt="What have you built, and which apps are you most proud of?">What have you built?</button>
+                        <button type="button" class="twin-chip" data-prompt="What is your iOS and AI tech stack?">Your AI / iOS stack?</button>
+                        <button type="button" class="twin-chip" data-prompt="What is your work authorization and availability for roles?">Work authorization?</button>
+                        <button type="button" class="twin-chip" data-prompt="Tell me about a hard technical problem you solved.">A hard problem you solved?</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -282,6 +321,8 @@
     <section id="apps" class="apps">
         <div class="container">
             <h2 class="section-title">iOS Applications</h2>
+            <!-- Category filter (buttons injected by enhance.js) -->
+            <div class="app-filter" id="appFilter" role="group" aria-label="Filter apps by category"></div>
             <div class="apps-grid">
                 <div class="app-card">
                     <img src="assets/icons/piggyfinance.png" alt="Piggy Accounting" class="app-icon" loading="lazy" decoding="async" width="80" height="80">
@@ -491,6 +532,47 @@
         </div>
     </section>
 
+    <!-- Featured product screens (real App Store screenshots) -->
+    <section id="featured" class="featured">
+        <div class="container">
+            <h2 class="section-title">Featured Product Screens</h2>
+            <div class="case-study">
+                <div class="case-head">
+                    <h3><i class="fas fa-cloud-sun"></i> AI Weather</h3>
+                    <p>Live forecasts and a real UV index, paired with AI insight and clothing advice — built on WeatherKit with dual OpenAI + Gemini backends. Tap a screen to enlarge.</p>
+                </div>
+                <div class="case-shots">
+                    <div class="phone-frame" data-shot="assets/screenshots/ai-weather/1.png">
+                        <img src="assets/screenshots/ai-weather/1.png" alt="AI Weather — current conditions" loading="lazy" decoding="async">
+                    </div>
+                    <div class="phone-frame" data-shot="assets/screenshots/ai-weather/2.png">
+                        <img src="assets/screenshots/ai-weather/2.png" alt="AI Weather — forecast detail" loading="lazy" decoding="async">
+                    </div>
+                    <div class="phone-frame" data-shot="assets/screenshots/ai-weather/3.png">
+                        <img src="assets/screenshots/ai-weather/3.png" alt="AI Weather — insights" loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </div>
+            <div class="case-study">
+                <div class="case-head">
+                    <h3><i class="fas fa-piggy-bank"></i> Piggy Accounting</h3>
+                    <p>Log an expense just by chatting — the assistant parses the amount, category and date, then tracks budgets and stats. SwiftUI + SwiftData with a Gemini backend. Tap a screen to enlarge.</p>
+                </div>
+                <div class="case-shots">
+                    <div class="phone-frame" data-shot="assets/screenshots/piggy-finance/1.png">
+                        <img src="assets/screenshots/piggy-finance/1.png" alt="Piggy Accounting — home" loading="lazy" decoding="async">
+                    </div>
+                    <div class="phone-frame" data-shot="assets/screenshots/piggy-finance/2.png">
+                        <img src="assets/screenshots/piggy-finance/2.png" alt="Piggy Accounting — transactions" loading="lazy" decoding="async">
+                    </div>
+                    <div class="phone-frame" data-shot="assets/screenshots/piggy-finance/3.png">
+                        <img src="assets/screenshots/piggy-finance/3.png" alt="Piggy Accounting — stats" loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- GitHub Projects section - Hidden until more impressive projects are ready -->
     <!-- <section id="projects" class="projects">
         <div class="container">
@@ -539,6 +621,86 @@
                     </ul>
                 </div>
             </div>
+
+            <!-- Skills in action: each skill linked to shipping proof (additive) -->
+            <div class="skills-in-action">
+                <h3 class="sia-title">Skills in Action</h3>
+                <div class="sia-grid">
+                    <div class="sia-item">
+                        <span class="sia-skill">SwiftUI + SwiftData</span>
+                        <span class="sia-proof">Powers the data layer of
+                            <a href="https://apps.apple.com/app/id6748324487" target="_blank">AI Calendar</a>,
+                            <a href="https://apps.apple.com/app/id6748370595" target="_blank">Piggy Accounting</a> and
+                            <a href="https://apps.apple.com/app/id6748947046" target="_blank">AI Voice Notes</a>.</span>
+                    </div>
+                    <div class="sia-item">
+                        <span class="sia-skill">Agentic AI</span>
+                        <span class="sia-proof">Drives the coaching flows in
+                            <a href="https://apps.apple.com/app/id6748549192" target="_blank">Dating Chat</a> and
+                            <a href="https://apps.apple.com/app/id6749191633" target="_blank">AI Daily Matters</a>.</span>
+                    </div>
+                    <div class="sia-item">
+                        <span class="sia-skill">LLM integration (OpenAI + Gemini)</span>
+                        <span class="sia-proof">Behind the insights in
+                            <a href="https://apps.apple.com/app/id6748373741" target="_blank">AI Weather</a> and
+                            <a href="https://apps.apple.com/app/id6749165632" target="_blank">AIMBTI</a>.</span>
+                    </div>
+                    <div class="sia-item">
+                        <span class="sia-skill">Serverless AI proxies</span>
+                        <span class="sia-proof">Vercel-hosted API proxies keep keys server-side across the apps — and power the AI chat on this site.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech-stack" class="tech-stack">
+        <div class="container">
+            <h2 class="section-title">Tech Stack</h2>
+            <p class="techstack-intro">The tools I reach for to design, build and ship AI-native iOS products end to end.</p>
+            <div class="techstack-grid">
+                <div class="techstack-group">
+                    <h3><i class="fas fa-mobile-screen-button"></i> Mobile</h3>
+                    <div class="tech-pills">
+                        <span class="tech-pill">Swift</span>
+                        <span class="tech-pill">SwiftUI</span>
+                        <span class="tech-pill">SwiftData</span>
+                        <span class="tech-pill">UIKit interop</span>
+                        <span class="tech-pill">WidgetKit</span>
+                        <span class="tech-pill">EventKit</span>
+                        <span class="tech-pill">WeatherKit</span>
+                        <span class="tech-pill">Vision</span>
+                        <span class="tech-pill">AVFoundation</span>
+                        <span class="tech-pill">Speech</span>
+                        <span class="tech-pill">XCTest</span>
+                    </div>
+                </div>
+                <div class="techstack-group">
+                    <h3><i class="fas fa-robot"></i> AI</h3>
+                    <div class="tech-pills">
+                        <span class="tech-pill">OpenAI API</span>
+                        <span class="tech-pill">Google Gemini</span>
+                        <span class="tech-pill">Prompt engineering</span>
+                        <span class="tech-pill">Agentic workflows</span>
+                        <span class="tech-pill">Function calling</span>
+                        <span class="tech-pill">Streaming responses</span>
+                        <span class="tech-pill">On-device ML</span>
+                        <span class="tech-pill">Speech-to-text</span>
+                    </div>
+                </div>
+                <div class="techstack-group">
+                    <h3><i class="fas fa-server"></i> Backend &amp; Tooling</h3>
+                    <div class="tech-pills">
+                        <span class="tech-pill">Node.js</span>
+                        <span class="tech-pill">Vercel serverless</span>
+                        <span class="tech-pill">REST APIs</span>
+                        <span class="tech-pill">App Store Connect API</span>
+                        <span class="tech-pill">Git &amp; GitHub</span>
+                        <span class="tech-pill">JavaScript</span>
+                        <span class="tech-pill">Python</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -584,6 +746,7 @@
                     <a href="https://github.com/WeiProduct/ME" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Source</a>
                 </span>
             </p>
+            <p class="footer-availability">Open to iOS / AI / SWE roles · Boston / remote / relocate · F-1 OPT, seeking H-1B sponsorship</p>
         </div>
     </footer>
 
@@ -624,5 +787,6 @@
 
     <script src="js/main.js" defer></script>
     <script src="js/chat.js" defer></script>
+    <script src="js/enhance.js" defer></script>
 </body>
 </html>
