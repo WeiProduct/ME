@@ -127,6 +127,12 @@
       "@type": "Person",
       "name": "Wei Fu",
       "url": "https://weiproduct.github.io/ME/",
+      "image": "https://weiproduct.github.io/ME/assets/wei-headshot-800.jpg",
+      "email": "mailto:founder@weiproduct.com",
+      "homeLocation": {
+        "@type": "Place",
+        "name": "San Francisco Bay Area, CA"
+      },
       "sameAs": [
         "https://github.com/WeiProduct",
         "https://www.linkedin.com/in/wei-fu-004724256/"
@@ -158,9 +164,13 @@
                 <li><a href="#coursework" class="nav-link">Coursework</a></li>
                 <li><a href="#apps" class="nav-link">iOS Apps</a></li>
                 <!-- <li><a href="#projects" class="nav-link">Projects</a></li> -->
+                <li><a href="#architecture" class="nav-link">Deep Dive</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#tech-stack" class="nav-link">Tech</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="nav-theme-li">
+                    <button class="cmdk-hint" id="cmdkHint" type="button" aria-label="Open command palette (Cmd+K)" title="Command palette (⌘K)">⌘K</button>
+                </li>
                 <li class="nav-theme-li">
                     <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
                         <i class="fas fa-moon"></i>
@@ -173,7 +183,7 @@
     <!-- Availability / work-authorization banner (additive) -->
     <div class="availability-banner">
         <strong>Open to iOS / AI / SWE roles</strong>
-        <span class="ab-dot">·</span>Boston / remote / relocate
+        <span class="ab-dot">·</span>SF Bay Area / remote / relocate
         <span class="ab-dot">·</span>F-1 OPT, seeking H-1B sponsorship
         <span class="ab-dot">·</span><a href="resume.html" class="ab-link">Résumé</a>
     </div>
@@ -181,6 +191,15 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
+                <img
+                    src="assets/wei-headshot-400.jpg"
+                    srcset="assets/wei-headshot-400.jpg 1x, assets/wei-headshot-800.jpg 2x"
+                    alt="Wei Fu"
+                    class="hero-headshot"
+                    width="144"
+                    height="144"
+                    decoding="async"
+                    fetchpriority="high">
                 <h1 class="hero-title">Wei Fu</h1>
                 <p class="hero-subtitle">Computer Science & Managerial Economics Graduate</p>
                 <p class="hero-subtitle">University of Massachusetts Amherst • Class of 2025</p>
@@ -188,9 +207,11 @@
                     Bridging technology and business to create products that are useful at scale
                 </p>
                 <p class="hero-positioning">iOS &amp; AI Engineer · 17 apps live on the App Store · SwiftUI + on-device &amp; LLM AI</p>
+                <p class="hero-pitch">&ldquo;I can help a company develop any full-stack features it needs and ship quickly.&rdquo;</p>
                 <div class="hero-buttons">
                     <a href="#apps" class="btn btn-primary">View iOS Apps</a>
-                    <a href="resume.html" class="btn btn-resume"><i class="fas fa-file-arrow-down"></i> Download Résumé</a>
+                    <a href="Wei_Fu_Resume.pdf" class="btn btn-resume" download aria-label="Download résumé as PDF"><i class="fas fa-file-arrow-down"></i> Download Résumé</a>
+                    <a href="resume.html" class="btn btn-resume-pdf" aria-label="Open résumé web version"><i class="fas fa-file-lines"></i> Web</a>
                     <a href="#contact" class="btn btn-secondary">Get In Touch</a>
                 </div>
                 <div class="social-links">
@@ -314,6 +335,41 @@
                         <li><strong>Multivariate Calculus</strong> - Advanced mathematical foundations</li>
                     </ul>
                 </div>
+            </div>
+
+            <!-- Standout Coursework — transcript-verified grades (round 2, additive) -->
+            <div class="standout-coursework">
+                <h3 class="standout-title"><i class="fas fa-award"></i> Standout Coursework</h3>
+                <div class="standout-grid">
+                    <div class="standout-group">
+                        <h4><i class="fas fa-code"></i> Computer Science</h4>
+                        <ul class="standout-list">
+                            <li><span class="standout-course">Operating Systems</span><span class="grade-chip grade-a">A</span></li>
+                            <li><span class="standout-course">Software Entrepreneurship</span><span class="grade-chip grade-a">A</span></li>
+                            <li><span class="standout-course">Practice &amp; Applications of Data Management</span><span class="grade-chip grade-a">A</span></li>
+                            <li><span class="standout-course">Artificial Intelligence</span><span class="grade-chip grade-am">A&minus;</span></li>
+                            <li><span class="standout-course">Machine Learning</span><span class="grade-chip grade-am">A&minus;</span></li>
+                            <li><span class="standout-course">Computer Networks</span><span class="grade-chip grade-am">A&minus;</span></li>
+                            <li><span class="standout-course">Reasoning Under Uncertainty</span><span class="grade-chip grade-am">A&minus;</span></li>
+                            <li><span class="standout-course">Programming with Data Structures</span><span class="grade-chip grade-am">A&minus;</span></li>
+                        </ul>
+                    </div>
+                    <div class="standout-group">
+                        <h4><i class="fas fa-chart-line"></i> Business &amp; Economics</h4>
+                        <ul class="standout-list">
+                            <li><span class="standout-course">Money &amp; Banking</span><span class="grade-chip grade-a">A</span></li>
+                            <li><span class="standout-course">Fundamentals of Finance</span><span class="grade-chip grade-a">A</span></li>
+                            <li><span class="standout-course">Principles of Management</span><span class="grade-chip grade-a">A</span></li>
+                            <li><span class="standout-course">Financial Accounting</span><span class="grade-chip grade-a">A</span></li>
+                            <li><span class="standout-course">Managerial Accounting</span><span class="grade-chip grade-a">A</span></li>
+                            <li><span class="standout-course">Managerial Economics</span><span class="grade-chip grade-a">A</span></li>
+                            <li><span class="standout-course">Intermediate Microeconomic Theory</span><span class="grade-chip grade-a">A</span></li>
+                            <li><span class="standout-course">Public Policy in Private Markets</span><span class="grade-chip grade-a">A</span></li>
+                            <li><span class="standout-course">Natural Resource Economics</span><span class="grade-chip grade-a">A</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="standout-note">Grades from official UMass transcript.</p>
             </div>
         </div>
     </section>
@@ -532,6 +588,18 @@
         </div>
     </section>
 
+    <!-- Ship Log — real release data from Apple's public App Store API (round 2, additive) -->
+    <section id="ship-log" class="ship-log">
+        <div class="container">
+            <h2 class="section-title">Ship Log</h2>
+            <p class="shiplog-intro">Real release history, straight from Apple. Versions, dates and release notes below are Apple-published App Store data — not self-reported.</p>
+            <div class="shiplog-timeline" id="shipLogTimeline">
+                <noscript><p>Enable JavaScript to see the release timeline, or browse the App Store links above.</p></noscript>
+            </div>
+            <p class="shiplog-caption" id="shipLogCaption" hidden></p>
+        </div>
+    </section>
+
     <!-- Featured product screens (real App Store screenshots) -->
     <section id="featured" class="featured">
         <div class="container">
@@ -573,6 +641,77 @@
         </div>
     </section>
 
+    <!-- Engineering deep dive — the real shared architecture behind the apps (round 2, additive) -->
+    <section id="architecture" class="architecture">
+        <div class="container">
+            <h2 class="section-title">Anatomy of an AI-Native iOS App</h2>
+            <p class="arch-intro">All 17 apps share one hardened pattern: the client never holds an AI key. Every request flows through a per-app serverless proxy that decides what is allowed to run.</p>
+            <div class="arch-diagram-wrap">
+                <svg class="arch-svg" viewBox="0 0 960 400" role="img" aria-label="Architecture diagram: a SwiftUI iOS client calls a hardened Vercel serverless proxy with origin and model allow-lists and server-side API keys, which calls OpenAI, Google Gemini and Whisper.">
+                    <defs>
+                        <marker id="archArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                            <path d="M 0 0 L 10 5 L 0 10 z" class="arch-arrowhead"></path>
+                        </marker>
+                    </defs>
+                    <!-- Client -->
+                    <rect x="16" y="104" width="230" height="192" rx="14" class="arch-box"></rect>
+                    <text x="131" y="140" text-anchor="middle" class="arch-title">iOS app · SwiftUI</text>
+                    <line x1="36" y1="156" x2="226" y2="156" class="arch-rule"></line>
+                    <text x="36" y="184" class="arch-item">· SwiftData on-device store</text>
+                    <text x="36" y="212" class="arch-item">· Agentic coach loop</text>
+                    <text x="36" y="240" class="arch-item">· Streaming AI UI</text>
+                    <text x="36" y="268" class="arch-item">· XCUITest suites</text>
+                    <!-- Client -> Proxy -->
+                    <line x1="246" y1="200" x2="362" y2="200" class="arch-arrow" marker-end="url(#archArrow)"></line>
+                    <text x="304" y="182" text-anchor="middle" class="arch-label">HTTPS</text>
+                    <text x="304" y="226" text-anchor="middle" class="arch-label arch-label-strong">no keys in binary</text>
+                    <!-- Proxy -->
+                    <rect x="370" y="76" width="254" height="248" rx="14" class="arch-box arch-box-accent"></rect>
+                    <text x="497" y="112" text-anchor="middle" class="arch-title">Vercel serverless proxy</text>
+                    <line x1="394" y1="128" x2="606" y2="128" class="arch-rule"></line>
+                    <text x="394" y="156" class="arch-item">· Origin allow-list</text>
+                    <text x="394" y="184" class="arch-item">· Model allow-list</text>
+                    <text x="394" y="212" class="arch-item">· Request size caps</text>
+                    <text x="394" y="240" class="arch-item">· API keys server-side only</text>
+                    <text x="394" y="268" class="arch-item">· One proxy per app</text>
+                    <text x="394" y="296" class="arch-item arch-item-muted">api/chat-proxy.js in this repo</text>
+                    <!-- Proxy -> Providers -->
+                    <line x1="624" y1="150" x2="712" y2="122" class="arch-arrow" marker-end="url(#archArrow)"></line>
+                    <line x1="624" y1="200" x2="712" y2="200" class="arch-arrow" marker-end="url(#archArrow)"></line>
+                    <line x1="624" y1="250" x2="712" y2="278" class="arch-arrow" marker-end="url(#archArrow)"></line>
+                    <!-- Providers -->
+                    <rect x="720" y="92" width="224" height="60" rx="12" class="arch-box arch-box-provider"></rect>
+                    <text x="832" y="118" text-anchor="middle" class="arch-provider">OpenAI</text>
+                    <text x="832" y="138" text-anchor="middle" class="arch-item-muted arch-center">chat · vision</text>
+                    <rect x="720" y="170" width="224" height="60" rx="12" class="arch-box arch-box-provider"></rect>
+                    <text x="832" y="196" text-anchor="middle" class="arch-provider">Google Gemini</text>
+                    <text x="832" y="216" text-anchor="middle" class="arch-item-muted arch-center">chat · vision</text>
+                    <rect x="720" y="248" width="224" height="60" rx="12" class="arch-box arch-box-provider"></rect>
+                    <text x="832" y="274" text-anchor="middle" class="arch-provider">Whisper</text>
+                    <text x="832" y="294" text-anchor="middle" class="arch-item-muted arch-center">speech-to-text</text>
+                </svg>
+            </div>
+            <div class="arch-cards">
+                <div class="arch-card">
+                    <h3><i class="fas fa-database"></i> On-device by default</h3>
+                    <p>User data lives in SwiftData on the phone. AI requests carry only the context they need — nothing is synced to a server by default.</p>
+                </div>
+                <div class="arch-card">
+                    <h3><i class="fas fa-shield-alt"></i> Hardened proxy</h3>
+                    <p>Each app gets its own Vercel proxy with origin and model allow-lists plus request size caps. AI keys exist only server-side — the same pattern that guards this site's chat (<code>api/chat-proxy.js</code>).</p>
+                </div>
+                <div class="arch-card">
+                    <h3><i class="fas fa-arrows-rotate"></i> Agentic coach loop</h3>
+                    <p>Plan → act → reflect loops drive the coaching features in apps like Dating Chat and AI Daily Matters, instead of one-shot prompts.</p>
+                </div>
+                <div class="arch-card">
+                    <h3><i class="fas fa-vial"></i> Tested before it ships</h3>
+                    <p>XCUITest suites drive the real UI end-to-end — every App Store submission is gated on a green test run.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- GitHub Projects section - Hidden until more impressive projects are ready -->
     <!-- <section id="projects" class="projects">
         <div class="container">
@@ -582,6 +721,48 @@
             </div>
         </div>
     </section> -->
+
+    <!-- Open Source & Activity — live GitHub data with graceful fallback (round 2, additive) -->
+    <section id="open-source" class="open-source">
+        <div class="container">
+            <h2 class="section-title">Open Source &amp; Activity</h2>
+            <div class="gh-stats" id="ghStats" hidden></div>
+            <div class="gh-grid" id="ghRepos" hidden></div>
+            <p class="gh-fallback" id="ghFallback">
+                Loading live GitHub data…
+            </p>
+            <p class="gh-caption">Live data from the public GitHub API · <a href="https://github.com/WeiProduct" target="_blank" rel="noopener noreferrer">github.com/WeiProduct</a></p>
+        </div>
+    </section>
+
+    <!-- How I Work — evidence-tied practices (round 2, additive) -->
+    <section id="how-i-work" class="how-i-work">
+        <div class="container">
+            <h2 class="section-title">How I Work</h2>
+            <div class="hiw-grid">
+                <div class="hiw-card">
+                    <h3><i class="fas fa-file-lines"></i> Spec first</h3>
+                    <p>Every app starts as a written spec before the first line of Swift. This site is built the same way — its specs live in <a href="https://github.com/WeiProduct/ME/tree/main/specs" target="_blank" rel="noopener noreferrer">the repo</a> next to the code.</p>
+                </div>
+                <div class="hiw-card">
+                    <h3><i class="fas fa-key"></i> Keys never ship in binaries</h3>
+                    <p>All 17 apps reach AI providers through hardened serverless proxies with origin and model allow-lists. See the <a href="#architecture">deep dive above</a> — it is the literal architecture, not a slide.</p>
+                </div>
+                <div class="hiw-card">
+                    <h3><i class="fas fa-clipboard-check"></i> Test what ships</h3>
+                    <p>XCUITest suites drive the real UI — launch, tap, assert — before every App Store submission. If the suite is red, nothing ships.</p>
+                </div>
+                <div class="hiw-card">
+                    <h3><i class="fas fa-rocket"></i> Ship, then iterate</h3>
+                    <p>Small releases, shipped continuously. The evidence is the <a href="#ship-log">Ship Log above</a> — Apple-published versions and dates, not a claim.</p>
+                </div>
+                <div class="hiw-card">
+                    <h3><i class="fas fa-language"></i> Bilingual by default</h3>
+                    <p>Products ship in English and Chinese from day one — UI, App Store listings and release notes. Native Mandarin, fluent English.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="skills" class="skills">
         <div class="container">
@@ -704,6 +885,35 @@
         </div>
     </section>
 
+    <!-- Recruiter FAQ — compact accordion (round 2, additive) -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">Recruiter FAQ</h2>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>What is your work authorization?</summary>
+                    <p>F-1 OPT — authorized to work in the US now. Seeking H-1B sponsorship for the long term.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Where are you based, and would you relocate?</summary>
+                    <p>San Francisco Bay Area, CA. Open to remote, hybrid, or full relocation anywhere in the US.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>What roles are you targeting?</summary>
+                    <p>iOS Engineer, AI/ML Engineer, or generalist Software Engineer — anywhere product-minded engineering and shipping speed matter.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>What can you demo in an interview?</summary>
+                    <p>17 live App Store apps (links in the <a href="#apps">iOS Applications</a> section), the shared proxy architecture in the <a href="#architecture">deep dive</a>, and this site's <button type="button" class="faq-twin-link">AI twin</button> — ask it anything about my work.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Where can I get your résumé?</summary>
+                    <p>Right here: <a href="resume.html">web version</a> or <a href="Wei_Fu_Resume.pdf" download>PDF download</a>.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
@@ -723,6 +933,10 @@
                         <i class="fas fa-envelope"></i>
                         <span>1597498880weiproduct@gmail.com</span>
                     </a>
+                    <a href="mailto:founder@weiproduct.com" class="contact-method">
+                        <i class="fas fa-briefcase"></i>
+                        <span>founder@weiproduct.com</span>
+                    </a>
                     <a href="https://github.com/WeiProduct" target="_blank" class="contact-method">
                         <i class="fab fa-github"></i>
                         <span>GitHub</span>
@@ -731,6 +945,15 @@
                         <i class="fab fa-linkedin"></i>
                         <span>LinkedIn</span>
                     </a>
+                </div>
+                <!-- Contact quick actions (round 2, additive) -->
+                <div class="contact-actions">
+                    <a href="wei-fu.vcf" download="wei-fu.vcf" class="btn-contact-action">
+                        <i class="fas fa-address-card"></i> Save contact
+                    </a>
+                    <button type="button" class="btn-contact-action" id="copyEmailBtn" data-email="founder@weiproduct.com">
+                        <i class="fas fa-copy"></i> Copy email
+                    </button>
                 </div>
             </div>
         </div>
@@ -743,10 +966,12 @@
                 <span style="margin-left: 1rem; opacity: 0.85;">
                     <a href="resume.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Résumé</a>
                     ·
+                    <a href="Wei_Fu_Resume.pdf" download style="color:inherit;text-decoration:underline;text-underline-offset:3px;">PDF</a>
+                    ·
                     <a href="https://github.com/WeiProduct/ME" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Source</a>
                 </span>
             </p>
-            <p class="footer-availability">Open to iOS / AI / SWE roles · Boston / remote / relocate · F-1 OPT, seeking H-1B sponsorship</p>
+            <p class="footer-availability">Open to iOS / AI / SWE roles · SF Bay Area / remote / relocate · F-1 OPT, seeking H-1B sponsorship</p>
         </div>
     </footer>
 
@@ -785,6 +1010,438 @@
         <i class="fas fa-comments"></i>
     </button>
 
+
+    <!-- SEO pack (round 2, additive): app catalog + recruiter FAQ structured data -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "iOS apps by Wei Fu on the App Store",
+  "numberOfItems": 17,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "Piggy Accounting",
+        "operatingSystem": "iOS",
+        "applicationCategory": "Finance",
+        "softwareVersion": "1.2",
+        "url": "https://apps.apple.com/us/app/%E8%AE%B0%E8%B4%A62/id6748370595",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Wei Fu"
+        },
+        "alternateName": "记账2"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "AI Calendar",
+        "operatingSystem": "iOS",
+        "applicationCategory": "Productivity",
+        "softwareVersion": "1.0.2",
+        "url": "https://apps.apple.com/us/app/ai%E6%97%A5%E5%8E%86/id6748324487",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Wei Fu"
+        },
+        "alternateName": "AI日历"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "Habits",
+        "operatingSystem": "iOS",
+        "applicationCategory": "Productivity",
+        "softwareVersion": "1.2",
+        "url": "https://apps.apple.com/us/app/weirabits/id6748370992",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Wei Fu"
+        },
+        "alternateName": "WeiRabits"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "AI Weather",
+        "operatingSystem": "iOS",
+        "applicationCategory": "Weather",
+        "softwareVersion": "1.4",
+        "url": "https://apps.apple.com/us/app/weatherspro/id6748373741",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Wei Fu"
+        },
+        "alternateName": "WeathersPro"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "AI Pomodoro Timer",
+        "operatingSystem": "iOS",
+        "applicationCategory": "Productivity",
+        "softwareVersion": "1.2",
+        "url": "https://apps.apple.com/us/app/ai%E7%95%AA%E8%8C%84%E9%97%B9%E9%92%9F/id6748548518",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Wei Fu"
+        },
+        "alternateName": "AI番茄闹钟"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "AI Vocabulary",
+        "operatingSystem": "iOS",
+        "applicationCategory": "Education",
+        "softwareVersion": "1.2",
+        "url": "https://apps.apple.com/us/app/ai%E8%83%8C%E5%8D%95%E8%AF%8D/id6748568205",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Wei Fu"
+        },
+        "alternateName": "AI背单词"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "Food Calories",
+        "operatingSystem": "iOS",
+        "applicationCategory": "Lifestyle",
+        "softwareVersion": "1.2",
+        "url": "https://apps.apple.com/us/app/ai%E5%8D%A1%E8%B7%AF%E9%87%8C/id6748717022",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Wei Fu"
+        },
+        "alternateName": "AI卡路里"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "Dating Chat",
+        "operatingSystem": "iOS",
+        "applicationCategory": "Lifestyle",
+        "softwareVersion": "2.0.1",
+        "url": "https://apps.apple.com/us/app/ai%E7%BA%A6%E4%BC%9A%E5%8A%A9%E6%89%8B/id6748549192",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Wei Fu"
+        },
+        "alternateName": "AI约会助手"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "Grok iOS: AI Platform",
+        "operatingSystem": "iOS",
+        "applicationCategory": "Productivity",
+        "softwareVersion": "1.0",
+        "url": "https://apps.apple.com/us/app/ai%E5%B9%B3%E5%8F%B0/id6748650326",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Wei Fu"
+        },
+        "alternateName": "AI平台"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 10,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "AI Smart Light",
+        "operatingSystem": "iOS",
+        "applicationCategory": "Utilities",
+        "softwareVersion": "1.3.0",
+        "url": "https://apps.apple.com/us/app/%E6%99%BA%E8%83%BD%E8%A1%A5%E5%85%89%E5%B8%88/id6749024443",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Wei Fu"
+        },
+        "alternateName": "智能补光师"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 11,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "Meditation",
+        "operatingSystem": "iOS",
+        "applicationCategory": "Lifestyle",
+        "softwareVersion": "1.2",
+        "url": "https://apps.apple.com/us/app/ai%E5%86%A5%E6%83%B3/id6749164175",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Wei Fu"
+        },
+        "alternateName": "AI冥想"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 12,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "Dailymatters",
+        "operatingSystem": "iOS",
+        "applicationCategory": "Lifestyle",
+        "softwareVersion": "1.2",
+        "url": "https://apps.apple.com/us/app/dailymatters/id6749191628",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Wei Fu"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 13,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "AI Daily Matters",
+        "operatingSystem": "iOS",
+        "applicationCategory": "Lifestyle",
+        "softwareVersion": "1.2",
+        "url": "https://apps.apple.com/us/app/aidailymatters/id6749191633",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Wei Fu"
+        },
+        "alternateName": "AIDailyMatters"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 14,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "AIMBTI",
+        "operatingSystem": "iOS",
+        "applicationCategory": "Lifestyle",
+        "softwareVersion": "1.2",
+        "url": "https://apps.apple.com/us/app/aimbti/id6749165632",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Wei Fu"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 15,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "AI Drink Water",
+        "operatingSystem": "iOS",
+        "applicationCategory": "Lifestyle",
+        "softwareVersion": "1.1.0",
+        "url": "https://apps.apple.com/us/app/aidrinkwater/id6749274211",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Wei Fu"
+        },
+        "alternateName": "AIDrinkWater"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 16,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "AI Note",
+        "operatingSystem": "iOS",
+        "applicationCategory": "Productivity",
+        "softwareVersion": "1.0",
+        "url": "https://apps.apple.com/us/app/ai%E8%AE%B0%E4%BA%8B%E6%9C%AC/id6749283592",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Wei Fu"
+        },
+        "alternateName": "AI记事本"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 17,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "AI Voice Notes",
+        "operatingSystem": "iOS",
+        "applicationCategory": "Productivity",
+        "softwareVersion": "1.2",
+        "url": "https://apps.apple.com/us/app/ai%E5%BD%95%E9%9F%B3%E7%AC%94%E8%AE%B0/id6748947046",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Wei Fu"
+        },
+        "alternateName": "AI录音笔记"
+      }
+    }
+  ]
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is your work authorization?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "F-1 OPT — authorized to work in the US now. Seeking H-1B sponsorship for the long term."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where are you based, and would you relocate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "San Francisco Bay Area, CA. Open to remote, hybrid, or full relocation anywhere in the US."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What roles are you targeting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "iOS Engineer, AI/ML Engineer, or generalist Software Engineer — anywhere product-minded engineering and shipping speed matter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What can you demo in an interview?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "17 live App Store apps, the shared serverless-proxy architecture, and this site's AI twin — ask it anything about my work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I get your résumé?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On the site: a web version at resume.html and a PDF download (Wei_Fu_Resume.pdf)."
+      }
+    }
+  ]
+}
+    </script>
     <script src="js/main.js" defer></script>
     <script src="js/chat.js" defer></script>
     <script src="js/enhance.js" defer></script>
