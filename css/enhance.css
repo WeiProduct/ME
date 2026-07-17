@@ -1327,3 +1327,25 @@ summary:focus-visible,
     .standout-coursework { padding: 1.4rem; }
     .standout-course { font-size: 0.9rem; }
 }
+
+/* ---------- Chat widget theme layer (round 3, additive) ----------
+   js/chat.js styles the widget through --chat-* variables with light
+   defaults; this block only supplies the dark values. */
+:root[data-theme="dark"] {
+    --chat-surface: #14171d;
+    --chat-messages-bg: #0f1115;
+    --chat-border: #232833;
+    --chat-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    --chat-header-bg: #1c2230;
+    --chat-bubble-bot-bg: #1c212b;
+    --chat-bubble-bot-text: #e7e9ee;
+    --chat-bubble-user-bg: #2f56b8;
+    --chat-link: #8fb2ff;
+    --chat-code-bg: rgba(255, 255, 255, 0.1);
+    --chat-chip-bg: #1c212b;
+    --chat-chip-text: #cbd2dc;
+    --chat-chip-border: #2a2f3a;
+    --chat-input-bg: #0f1115;
+    --chat-input-text: #e7e9ee;
+    --chat-muted: #9aa4b2;
+}

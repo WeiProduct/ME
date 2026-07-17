@@ -976,12 +976,12 @@
     </footer>
 
     <!-- Chat Widget -->
-    <div id="chatWidget" class="chat-widget">
+    <div id="chatWidget" class="chat-widget" role="dialog" aria-label="Chat with Wei Fu's AI twin">
         <div class="chat-header">
             <div class="chat-header-left">
                 <div>
-                    <h4>Wei Fu - AI Digital Persona</h4>
-                    <div class="chat-header-subtitle">INTJ | CS & Economics | UMass Amherst | Dean's List Honor</div>
+                    <h4>Wei Fu · AI Twin</h4>
+                    <div class="chat-header-subtitle">iOS &amp; AI Engineer · Founder of WeiProduct · 17 apps on the App Store</div>
                 </div>
             </div>
             <div class="chat-header-controls">
@@ -996,9 +996,14 @@
                 </button>
             </div>
         </div>
-        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-messages" id="chatMessages" role="log" aria-live="polite" aria-relevant="additions"></div>
+        <div class="chat-quick-actions">
+            <a class="chat-resume-link" href="Wei_Fu_Resume.pdf" download aria-label="Download Wei Fu's résumé as PDF">
+                <i class="fas fa-file-arrow-down" aria-hidden="true"></i> Download résumé
+            </a>
+        </div>
         <form class="chat-input-form" id="chatForm">
-            <input type="text" class="chat-input" id="chatInput" placeholder="Ask about my projects, investments, or technical expertise..." required>
+            <textarea class="chat-input" id="chatInput" rows="1" maxlength="2000" placeholder="Ask about my apps, stack, coursework, or availability…" aria-label="Message Wei Fu's AI twin" required></textarea>
             <button type="submit" class="chat-send">
                 <i class="fas fa-paper-plane"></i>
             </button>
@@ -1006,7 +1011,7 @@
     </div>
     
     <!-- Chat Toggle Button -->
-    <button class="chat-toggle" id="chatToggle" aria-label="Open chat">
+    <button class="chat-toggle" id="chatToggle" aria-label="Open chat with Wei Fu's AI twin" aria-expanded="false">
         <i class="fas fa-comments"></i>
     </button>
 
