@@ -254,7 +254,7 @@ body.resume-page {
 /* ---- 2026-07: compact one-page print tuning (appended) ---- */
 @media print {
   body.resume-page { font-size: 8.5pt; line-height: 1.27; }
-  @page { margin: 0.3in 0.42in; size: Letter; }
+  @page { margin: 0.27in 0.42in; size: Letter; }
   .resume { padding: 0; }
   .resume-header h1 { font-size: 15pt; margin-bottom: 1pt; }
   .resume-loc { margin: 0 0 2pt; }
@@ -291,4 +291,15 @@ body.resume-page {
   .resume-role-head { display: block; }
   .resume-role-head h3 { display: inline; }
   .resume-dates { display: inline; margin-left: 7pt; white-space: nowrap; }
+}
+
+/* ---- big-tech layout polish (appended) ---- */
+.resume-header { text-align: center; }
+.resume-header h1 { letter-spacing: 0.01em; }
+@media print {
+  body.resume-page { font-size: 8.6pt; line-height: 1.28; }
+  .resume a { text-decoration: none; color: var(--r-fg); }
+  .resume-section h2 { margin-top: 3pt; }
+  .resume-header { margin-bottom: 7pt; padding-bottom: 5pt; }
+  .resume-contact { font-size: 8.2pt; }
 }
