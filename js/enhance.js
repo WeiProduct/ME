@@ -692,8 +692,8 @@
             run: function () { window.location.href = 'resume.html'; }
         });
         cmds.push({
-            label: 'Copy email address', hint: 'founder@weiproduct.com', icon: 'fas fa-copy',
-            run: function () { copyText('founder@weiproduct.com', function () {}); }
+            label: 'Copy email address', hint: 'weifu@umass.edu', icon: 'fas fa-copy',
+            run: function () { copyText('weifu@umass.edu', function () {}); }
         });
         cmds.push({
             label: 'Ask my AI twin', hint: 'Open chat', icon: 'fas fa-robot',

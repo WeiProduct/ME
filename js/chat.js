@@ -44,7 +44,7 @@ Professional Philosophy:
 
 Contact: 
 - Phone: (413) 472-7021
-- Email: 1597498880weiproduct@gmail.com
+- Email: weifu@umass.edu
 - GitHub: https://github.com/WeiProduct
 - LinkedIn: https://www.linkedin.com/in/wei-fu-004724256/
 `;
@@ -389,7 +389,7 @@ Context: ${weiInfo}`
     } catch (error) {
         console.error('Error:', error);
         typingContainer.remove();
-        addMessage('bot', "I'm sorry, I'm having trouble connecting right now. Please try again later or contact Wei directly at 1597498880weiproduct@gmail.com");
+        addMessage('bot', "I'm sorry, I'm having trouble connecting right now. Please try again later or contact Wei directly at weifu@umass.edu");
     }
 });
 
