@@ -7,6 +7,8 @@
 // existing INTJ persona keeps working unchanged.
 
 const ALLOWED_ORIGINS = new Set([
+  'https://weifuandy.com',
+  'https://www.weifuandy.com',
   'https://weiproduct.github.io',
   'https://weiproduct.com',
   'https://www.weiproduct.com',

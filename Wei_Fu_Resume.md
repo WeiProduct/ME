@@ -71,7 +71,7 @@ Results-driven Computer Science and Economics professional with demonstrated exp
 - **AI Daily Matters:** Enhanced daily planning with AI insights
 
 **Personal Portfolio Website with AI Digital Persona**
-- Developed interactive portfolio at weiproduct.github.io/ME featuring an AI-powered digital assistant
+- Developed interactive portfolio at weifuandy.com featuring an AI-powered digital assistant
 - Implemented real-time chat with voice synthesis, visual avatar, and INTJ personality traits
 - Secured API integration through Vercel proxy, ensuring data protection
 - Achieved seamless user experience with fullscreen mode and responsive design
