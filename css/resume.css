@@ -250,3 +250,45 @@ body.resume-page {
     row-gap: 0.6rem;
   }
 }
+
+/* ---- 2026-07: compact one-page print tuning (appended) ---- */
+@media print {
+  body.resume-page { font-size: 8.5pt; line-height: 1.27; }
+  @page { margin: 0.3in 0.42in; size: Letter; }
+  .resume { padding: 0; }
+  .resume-header h1 { font-size: 15pt; margin-bottom: 1pt; }
+  .resume-loc { margin: 0 0 2pt; }
+  .resume-contact { line-height: 1.3; }
+  .resume-header { margin-bottom: 6pt; padding-bottom: 4pt; }
+  .resume-section { margin-bottom: 5pt; }
+  .resume-section h2 { font-size: 8.5pt; margin-bottom: 4pt; padding-bottom: 2pt; }
+  .resume-section p { margin: 0; }
+  .resume-section, .resume-role { page-break-inside: auto; }
+  .resume-role { margin-bottom: 3.5pt; }
+  .resume-role h3 { font-size: 9.5pt; }
+  .resume-role ul { margin-top: 1pt; }
+  .resume-role ul li { margin-bottom: 1pt; }
+  .resume-place { margin: 0 0 1pt; }
+  .resume-skills { row-gap: 2pt; }
+  .resume-skills dd { margin-bottom: 2pt; }
+  .resume-section--last { margin-bottom: 0; }
+}
+
+/* ---- ATS + one-page print fixes (appended per review) ---- */
+@media print {
+  .resume { min-height: 0; }
+  .resume-section h2, .resume-skills dt { letter-spacing: normal; }
+  .resume-role ul li, .resume-section > ul li {
+    font-size: inherit; line-height: inherit; padding-left: 0;
+  }
+  .resume-role ul, .resume-section > ul { list-style: disc outside; padding-left: 10pt; }
+  .resume-role ul li::before, .resume-section > ul li::before { content: none; }
+  .resume-skills { display: block; }
+  .resume-skills dt { display: inline; }
+  .resume-skills dt::after { content: ": "; }
+  .resume-skills dd { display: inline; margin: 0; }
+  .resume-skills dd::after { content: "\A"; white-space: pre; }
+  .resume-role-head { display: block; }
+  .resume-role-head h3 { display: inline; }
+  .resume-dates { display: inline; margin-left: 7pt; white-space: nowrap; }
+}
