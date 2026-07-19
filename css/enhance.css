@@ -172,6 +172,24 @@
 }
 .btn-screens:hover { background: #e5e7eb; transform: translateY(-2px); }
 
+.app-pending {
+    background: #fff7ed;
+    color: #9a3412;
+    border: 1px solid #fed7aa;
+    cursor: default;
+}
+.app-pending:hover {
+    background: #fff7ed;
+    color: #9a3412;
+    transform: none;
+}
+.app-card[id] { scroll-margin-top: 110px; }
+[data-theme="dark"] .app-pending {
+    background: #431407;
+    color: #fdba74;
+    border-color: #7c2d12;
+}
+
 /* ---------- Featured screens / case studies ---------- */
 .featured .case-study {
     margin-bottom: 3.5rem;

@@ -26,15 +26,16 @@ EDUCATION
 - UMass Amherst, dual B.S. Computer Science + Managerial Economics (May 2025). GPA 3.63/4.00, Dean's List 5 semesters, 4-year merit scholarship.
 - A/A− coursework: Artificial Intelligence, Machine Learning, Operating Systems, Computer Networks, Software Entrepreneurship, Data Management, Money & Banking, Fundamentals of Finance, Managerial Economics.
 
-PORTFOLIO (all live on the App Store; link format https://apps.apple.com/app/id<ID>)
-- 17 iOS apps. All 17 first releases shipped within four weeks (Jul 9 – Aug 6, 2025, Apple data). 15 of 17 have shipped post-1.0 updates.
-- Apps (name=id): AI Calendar=6748324487, Piggy Finance/记账2=6748370595, WeiRabits=6748370992, AI Weather/WeathersPro=6748373741, AI Pomodoro Timer=6748548518, AI Vocabulary=6748568205, Food Calories=6748717022, Dating Chat=6748549192, AI Platform=6748650326, AI Smart Light=6749024443, AI Meditation=6749164175, Dailymatters=6749191628, AI Daily Matters=6749191633, AIMBTI=6749165632, AI Drink Water=6749274211, AI Note=6749283592, AI Voice Notes=6748947046.
+PORTFOLIO
+- 18 iOS apps built. 17 are live on the App Store; all 17 first releases shipped within four weeks (Jul 9 – Aug 6, 2025, Apple data). 15 of 17 have shipped post-1.0 updates.
+- Live apps (name=id; public link format https://apps.apple.com/app/id<ID>): AI Calendar=6748324487, Piggy Finance/记账2=6748370595, WeiRabits=6748370992, AI Weather/WeathersPro=6748373741, AI Pomodoro Timer=6748548518, AI Vocabulary=6748568205, Food Calories=6748717022, Dating Chat=6748549192, AI Platform=6748650326, AI Smart Light=6749024443, AI Meditation=6749164175, Dailymatters=6749191628, AI Daily Matters=6749191633, AIMBTI=6749165632, AI Drink Water=6749274211, AI Note=6749283592, AI Voice Notes=6748947046.
+- ilink is the 18th app and is submitted for App Store review, not yet publicly downloadable. It turns longer family voice updates into one or two AI-generated sentences, preserves the original transcript, and can regenerate the summary. It is designed for family check-ins, especially between older parents and adult children.
 
 ENGINEERING
 - SwiftUI + SwiftData clients. Hardened per-app Vercel serverless proxies: origin/model allow-lists, server-side key management. OpenAI, Whisper, Claude and Gemini integrations. XCTest/XCUITest suites in multiple apps. App Store Connect API release automation. Products are bilingual EN/中文.
 
 WEIPRODUCT (company thesis)
-- 17 focused AI agents across 5 life domains (productivity, finance, learning, wellness, utility) that connect into one personal context layer.
+- 18 focused AI agents across 5 life domains (productivity, finance, learning, wellness, utility and family use cases) that connect into one personal context layer.
 - Roadmap: Phase 1 focused agents (shipped) → Phase 2 cross-agent context (in progress) → Phase 3 unified personal decision layer (planned).
 - Moat framing: shared agent infrastructure + compounding cross-agent context + shipping velocity. No public traction metrics yet.
 
@@ -149,7 +150,7 @@ function renderMarkdown(text) {
 // ---------------------------------------------------------------------------
 // Widget open/close + focus management
 // ---------------------------------------------------------------------------
-const GREETING = "Hi — I'm Wei's AI twin, speaking as Wei. iOS/AI engineer, founder of WeiProduct, **17 apps live on the App Store**. Ask me about my apps, architecture, coursework or availability — English or 中文 both work.";
+const GREETING = "Hi — I'm Wei's AI twin, speaking as Wei. iOS/AI engineer, founder of WeiProduct, **18 apps built — 17 live and ilink in review**. Ask me about my apps, architecture, coursework or availability — English or 中文 both work.";
 
 function openChat() {
     chatWidget.classList.add('active');
@@ -275,7 +276,7 @@ function addMessage(sender, text) {
 // Suggested follow-up chips (static pool, picked by simple keyword affinity)
 // ---------------------------------------------------------------------------
 const CHIP_POOL = [
-    { label: 'Walk me through the 17 apps', prompt: 'Walk me through your 17 apps — what are the highlights?', keys: ['app', 'ship', 'built', 'portfolio', 'store'] },
+    { label: 'Walk me through the 18 apps', prompt: 'Walk me through your 18 apps — what are the highlights?', keys: ['app', 'ship', 'built', 'portfolio', 'store'] },
     { label: 'How are they architected?', prompt: 'How are your apps architected? Walk me through the stack.', keys: ['architect', 'stack', 'swiftui', 'swiftdata', 'engineering', 'tech'] },
     { label: 'API key security', prompt: 'How do your Vercel proxies keep API keys safe?', keys: ['proxy', 'security', 'key', 'vercel', 'server'] },
     { label: 'Work authorization', prompt: 'What is your work authorization status?', keys: ['visa', 'authorization', 'opt', 'h-1b', 'h1b', 'sponsor'] },

@@ -59,7 +59,8 @@
         '6749165632': { cat: 'Lifestyle', tag: 'Discover your type with an AI-guided assessment.', tech: ['SwiftUI', 'OpenAI', 'Gemini'], shots: 'aimbti' },
         '6749274211': { cat: 'Health & Wellness', tag: 'Smart hydration reminders tuned by AI.', tech: ['SwiftUI', 'SwiftData', 'Notifications'], shots: null },
         '6749283592': { cat: 'Productivity', tag: 'Notes that summarize and organize themselves.', tech: ['SwiftUI', 'SwiftData', 'OpenAI'], shots: null },
-        '6748947046': { cat: 'Productivity', tag: 'Record, transcribe and summarize with AI.', tech: ['SwiftUI', 'Speech', 'OpenAI'], shots: 'ai-voice-notes' }
+        '6748947046': { cat: 'Productivity', tag: 'Record, transcribe and summarize with AI.', tech: ['SwiftUI', 'Speech', 'OpenAI'], shots: 'ai-voice-notes' },
+        '6792455240': { cat: 'Lifestyle', tag: 'Turn long voice updates into one or two AI summaries so family—especially parents—can stay close.', tech: ['SwiftUI', 'AVFoundation', 'OpenAI'], shots: null }
     };
 
     /* -------------------- Lightbox -------------------- */
@@ -108,7 +109,7 @@
     var cards = Array.prototype.slice.call(document.querySelectorAll('.apps-grid .app-card'));
     cards.forEach(function (card) {
         var link = card.querySelector('a[href*="/id"]');
-        var id = null;
+        var id = card.getAttribute('data-app-id') || null;
         if (link) {
             var m = link.getAttribute('href').match(/id(\d+)/);
             if (m) { id = m[1]; }
@@ -570,7 +571,7 @@
             match: 'FinTech',
             chips: [
                 ['Piggy Accounting', 'https://apps.apple.com/app/id6748370595'],
-                ['17 apps shipped as a solo business', '#apps']
+                ['18 apps built as a solo business', '#apps']
             ]
         },
         {
