@@ -1,6 +1,6 @@
 {
   "source": "Apple App Store (iTunes Lookup API)",
-  "fetched": "2026-07-16T21:09:07.000Z",
+  "fetched": "2026-08-28T01:38:03.236Z",
   "apps": [
     {
       "id": "6748370595",
@@ -10,18 +10,18 @@
       "updated": "2026-07-15T07:41:08Z",
       "notes": "agentic features",
       "genre": "Finance",
-      "price": 0.0,
+      "price": 0,
       "url": "https://apps.apple.com/us/app/%E8%AE%B0%E8%B4%A62/id6748370595?uo=4"
     },
     {
       "id": "6748324487",
       "name": "AI日历",
-      "version": "1.0.2",
+      "version": "1.1",
       "released": "2025-07-09T07:00:00Z",
-      "updated": "2025-07-31T13:34:08Z",
-      "notes": "LLM and voice mode",
+      "updated": "2026-07-17T10:24:21Z",
+      "notes": "-agentic features",
       "genre": "Productivity",
-      "price": 0.0,
+      "price": 0,
       "url": "https://apps.apple.com/us/app/ai%E6%97%A5%E5%8E%86/id6748324487?uo=4"
     },
     {
@@ -32,7 +32,7 @@
       "updated": "2026-07-14T18:10:26Z",
       "notes": "agentic fatures",
       "genre": "Productivity",
-      "price": 0.0,
+      "price": 0,
       "url": "https://apps.apple.com/us/app/weirabits/id6748370992?uo=4"
     },
     {
@@ -43,7 +43,7 @@
       "updated": "2026-07-13T17:40:36Z",
       "notes": "AI Weather Insight is smarter: it now factors in your clothing preferences and air quality, with a more prominent spot on the home screen. • Real-time Air Quality (AQI) with health reminders • Rate AI suggestions with thumbs up/down • Fixed",
       "genre": "Weather",
-      "price": 0.0,
+      "price": 0,
       "url": "https://apps.apple.com/us/app/weatherspro/id6748373741?uo=4"
     },
     {
@@ -54,7 +54,7 @@
       "updated": "2026-07-14T18:11:47Z",
       "notes": "agentic features",
       "genre": "Productivity",
-      "price": 0.0,
+      "price": 0,
       "url": "https://apps.apple.com/us/app/ai%E7%95%AA%E8%8C%84%E9%97%B9%E9%92%9F/id6748548518?uo=4"
     },
     {
@@ -65,7 +65,7 @@
       "updated": "2026-07-14T15:56:25Z",
       "notes": "agentic features",
       "genre": "Education",
-      "price": 0.0,
+      "price": 0,
       "url": "https://apps.apple.com/us/app/ai%E8%83%8C%E5%8D%95%E8%AF%8D/id6748568205?uo=4"
     },
     {
@@ -76,7 +76,7 @@
       "updated": "2026-07-15T06:50:57Z",
       "notes": "Agentic features",
       "genre": "Lifestyle",
-      "price": 0.0,
+      "price": 0,
       "url": "https://apps.apple.com/us/app/ai%E5%8D%A1%E8%B7%AF%E9%87%8C/id6748717022?uo=4"
     },
     {
@@ -87,18 +87,18 @@
       "updated": "2026-07-14T17:11:55Z",
       "notes": "Polish and performance. • Saved replies now live in a cleaner, faster list — swipe to delete, tap to copy • Smoother chat and quicker image handling under the hood • General cleanup and fixes",
       "genre": "Lifestyle",
-      "price": 0.0,
+      "price": 0,
       "url": "https://apps.apple.com/us/app/ai%E7%BA%A6%E4%BC%9A%E5%8A%A9%E6%89%8B/id6748549192?uo=4"
     },
     {
       "id": "6748650326",
       "name": "AI平台",
-      "version": "1.0",
+      "version": "1.1",
       "released": "2025-07-17T07:00:00Z",
-      "updated": "2025-07-17T14:55:14Z",
-      "notes": "",
+      "updated": "2026-07-20T06:55:00Z",
+      "notes": "本次更新把 AI平台 升级成真正的智能助手： • 记忆：助手会记住你的偏好和正在做的事，跨对话自动带上下文（可在设置里查看/编辑/关闭，全部仅存本机） • 语音输入：点麦克风说话，实时转成文字 • 看图问答：拍照或选图，直接就图片提问 • 朗读回复：一键把回答读给你听 • 一键智能体：浮标点一下开新对话，长按选「多步调研/生成图文/联网总结」 • 界面精简为「助手 / 我的」，更聚焦 • OpenAI 全程流式，回复更快",
       "genre": "Productivity",
-      "price": 0.0,
+      "price": 0,
       "url": "https://apps.apple.com/us/app/ai%E5%B9%B3%E5%8F%B0/id6748650326?uo=4"
     },
     {
@@ -109,7 +109,7 @@
       "updated": "2026-07-15T06:41:37Z",
       "notes": "Meet your upgraded AI Lighting Advisor — now it can actually see your shot. • One-tap AI tuning: on the camera screen, tap the sparkles button. The app looks at your live preview (face brightness, color cast, ambient light) and adjusts the ",
       "genre": "Utilities",
-      "price": 0.0,
+      "price": 0,
       "url": "https://apps.apple.com/us/app/%E6%99%BA%E8%83%BD%E8%A1%A5%E5%85%89%E5%B8%88/id6749024443?uo=4"
     },
     {
@@ -120,7 +120,7 @@
       "updated": "2026-07-15T07:26:44Z",
       "notes": "Agentic features",
       "genre": "Lifestyle",
-      "price": 0.0,
+      "price": 0,
       "url": "https://apps.apple.com/us/app/ai%E5%86%A5%E6%83%B3/id6749164175?uo=4"
     },
     {
@@ -131,7 +131,7 @@
       "updated": "2026-07-14T18:12:19Z",
       "notes": "本次更新修复了多个重要问题并优化了稳定性： - 修复备份恢复后重复事件可能失效的问题，现在完整保留重复规则、结束条件与提醒。 - 修复月度重复（如每月 31 日）日期逐月偏移的问题。 - 修复编辑重复事件“这一次及以后”后新系列不生效的问题。 - 修复批量删除、提醒开关、通知状态等多处细节。 - 统一通知调度，事件修改或删除后旧提醒能正确更新。 感谢你的使用与反馈！",
       "genre": "Lifestyle",
-      "price": 0.0,
+      "price": 0,
       "url": "https://apps.apple.com/us/app/dailymatters/id6749191628?uo=4"
     },
     {
@@ -142,7 +142,7 @@
       "updated": "2026-07-14T18:14:48Z",
       "notes": "AI features",
       "genre": "Lifestyle",
-      "price": 0.0,
+      "price": 0,
       "url": "https://apps.apple.com/us/app/aidailymatters/id6749191633?uo=4"
     },
     {
@@ -153,18 +153,18 @@
       "updated": "2026-07-14T18:16:17Z",
       "notes": "agentic features",
       "genre": "Lifestyle",
-      "price": 0.0,
+      "price": 0,
       "url": "https://apps.apple.com/us/app/aimbti/id6749165632?uo=4"
     },
     {
       "id": "6749274211",
       "name": "AIDrinkWater",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "released": "2025-08-04T07:00:00Z",
-      "updated": "2026-07-13T17:38:52Z",
-      "notes": "New in 1.1.0 — your water tracker is now AI-powered: • AI hydration assistant: just say \"I drank 500ml\", ask about your progress, or have reminders set for you — all in one message. • Smart reminders that adapt to your progress and daily ha",
+      "updated": "2026-07-21T18:43:28Z",
+      "notes": "What's new in 1.2.0: • Redesigned, simpler layout — everything now lives in three tabs: Today, Trends, and Me. • Trends combines your statistics and history in one place with a quick switcher. • One-tap AI actions: log water, check progress",
       "genre": "Lifestyle",
-      "price": 0.0,
+      "price": 0,
       "url": "https://apps.apple.com/us/app/aidrinkwater/id6749274211?uo=4"
     },
     {
@@ -175,7 +175,7 @@
       "updated": "2025-08-05T04:06:54Z",
       "notes": "",
       "genre": "Productivity",
-      "price": 0.0,
+      "price": 0,
       "url": "https://apps.apple.com/us/app/ai%E8%AE%B0%E4%BA%8B%E6%9C%AC/id6749283592?uo=4"
     },
     {
@@ -186,8 +186,19 @@
       "updated": "2026-07-14T18:15:09Z",
       "notes": "agentic features",
       "genre": "Productivity",
-      "price": 0.0,
+      "price": 0,
       "url": "https://apps.apple.com/us/app/ai%E5%BD%95%E9%9F%B3%E7%AC%94%E8%AE%B0/id6748947046?uo=4"
+    },
+    {
+      "id": "6792455240",
+      "name": "ilink 家人陪伴",
+      "version": "1.0.3",
+      "released": "2026-08-13T07:00:00Z",
+      "updated": "2026-08-13T10:24:11Z",
+      "notes": "",
+      "genre": "Lifestyle",
+      "price": 0,
+      "url": "https://apps.apple.com/us/app/ilink-%E5%AE%B6%E4%BA%BA%E9%99%AA%E4%BC%B4/id6792455240?uo=4"
     }
   ]
 }

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /* =============================================================
    fetch-appstore-data.mjs
-   Fetches real, Apple-published App Store metadata for all 17
+   Fetches real, Apple-published App Store metadata for all 18
    live apps via the public iTunes Lookup API and writes a slim
    snapshot to assets/data/appstore.json.
 
@@ -32,7 +32,8 @@ const APP_IDS = [
   '6749165632', // AIMBTI
   '6749274211', // AI Drink Water (AIDrinkWater)
   '6749283592', // AI Note (AI记事本)
-  '6748947046'  // AI Voice Notes (AI录音笔记)
+  '6748947046', // AI Voice Notes (AI录音笔记)
+  '6792455240'  // ilink 家人陪伴
 ];
 
 const NOTES_MAX = 240;

@@ -27,9 +27,9 @@ EDUCATION
 - A/A− coursework: Artificial Intelligence, Machine Learning, Operating Systems, Computer Networks, Software Entrepreneurship, Data Management, Money & Banking, Fundamentals of Finance, Managerial Economics.
 
 PORTFOLIO
-- 18 iOS apps built. 17 are live on the App Store; all 17 first releases shipped within four weeks (Jul 9 – Aug 6, 2025, Apple data). 15 of 17 have shipped post-1.0 updates.
-- Live apps (name=id; public link format https://apps.apple.com/app/id<ID>): AI Calendar=6748324487, Piggy Finance/记账2=6748370595, WeiRabits=6748370992, AI Weather/WeathersPro=6748373741, AI Pomodoro Timer=6748548518, AI Vocabulary=6748568205, Food Calories=6748717022, Dating Chat=6748549192, AI Platform=6748650326, AI Smart Light=6749024443, AI Meditation=6749164175, Dailymatters=6749191628, AI Daily Matters=6749191633, AIMBTI=6749165632, AI Drink Water=6749274211, AI Note=6749283592, AI Voice Notes=6748947046.
-- ilink is the 18th app and is submitted for App Store review, not yet publicly downloadable. It turns longer family voice updates into one or two AI-generated sentences, preserves the original transcript, and can regenerate the summary. It is designed for family check-ins, especially between older parents and adult children.
+- 18 iOS apps are live on the App Store. The first 17 releases shipped within four weeks (Jul 9 – Aug 6, 2025, Apple data); ilink launched as the 18th app on Aug 13, 2026.
+- Live apps (name=id; public link format https://apps.apple.com/app/id<ID>): AI Calendar=6748324487, Piggy Finance/记账2=6748370595, WeiRabits=6748370992, AI Weather/WeathersPro=6748373741, AI Pomodoro Timer=6748548518, AI Vocabulary=6748568205, Food Calories=6748717022, Dating Chat=6748549192, AI Platform=6748650326, AI Smart Light=6749024443, AI Meditation=6749164175, Dailymatters=6749191628, AI Daily Matters=6749191633, AIMBTI=6749165632, AI Drink Water=6749274211, AI Note=6749283592, AI Voice Notes=6748947046, ilink 家人陪伴=6792455240.
+- ilink is the 18th live app. It turns longer family voice updates into one or two AI-generated sentences, preserves the original transcript, and can regenerate the summary. It is designed for family check-ins, especially between older parents and adult children.
 
 ENGINEERING
 - SwiftUI + SwiftData clients. Hardened per-app Vercel serverless proxies: origin/model allow-lists, server-side key management. OpenAI, Whisper, Claude and Gemini integrations. XCTest/XCUITest suites in multiple apps. App Store Connect API release automation. Products are bilingual EN/中文.
@@ -150,7 +150,7 @@ function renderMarkdown(text) {
 // ---------------------------------------------------------------------------
 // Widget open/close + focus management
 // ---------------------------------------------------------------------------
-const GREETING = "Hi — I'm Wei's AI twin, speaking as Wei. iOS/AI engineer, founder of WeiProduct, **18 apps built — 17 live and ilink in review**. Ask me about my apps, architecture, coursework or availability — English or 中文 both work.";
+const GREETING = "Hi — I'm Wei's AI twin, speaking as Wei. iOS/AI engineer, founder of WeiProduct, with **18 apps live on the App Store**. Ask me about my apps, architecture, coursework or availability — English or 中文 both work.";
 
 function openChat() {
     chatWidget.classList.add('active');
@@ -283,7 +283,7 @@ const CHIP_POOL = [
     { label: 'Roles & availability', prompt: 'What roles are you looking for, and when can you start?', keys: ['role', 'hire', 'available', 'job', 'recruit', 'start'] },
     { label: 'Coursework & GPA', prompt: 'Which CS and economics courses did you do best in?', keys: ['course', 'gpa', 'umass', 'degree', 'education', 'study'] },
     { label: "WeiProduct's vision", prompt: "What is WeiProduct's long-term vision and roadmap?", keys: ['weiproduct', 'company', 'vision', 'roadmap', 'agent', 'founder', 'thesis'] },
-    { label: 'Shipping velocity', prompt: 'How did you ship 17 apps in four weeks?', keys: ['four weeks', 'velocity', 'fast', 'ship', 'automation'] },
+    { label: 'Shipping velocity', prompt: 'How did you ship your first 17 apps in four weeks?', keys: ['four weeks', 'velocity', 'fast', 'ship', 'automation'] },
     { label: 'Testing approach', prompt: 'How do you test your apps?', keys: ['test', 'xctest', 'xcuitest', 'quality'] },
     { label: 'AI integrations', prompt: 'Which AI models do you integrate, and how?', keys: ['openai', 'gemini', 'claude', 'whisper', 'model', 'llm', 'ai'] },
     { label: 'Contact Wei', prompt: 'How can I contact Wei about a role?', keys: ['contact', 'email', 'reach', 'resume', 'résumé'] },
